@@ -1,57 +1,43 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
+date: 2026-07-04
 weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Deploy the web interface to the internet using Amazon S3 and Amazon CloudFront services.
+* Compress rank badge and warship images to make the website load faster and run smoother.
+* Create a CI/CD automation file with GitHub Actions to redeploy the website whenever code is pushed to the `develop` branch.
+* Run tests on all existing game features and fix remaining bugs in the project.
+* Design and build a brand new user interface (UI) for all game screens, making them look cleaner, modern, and more attractive.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date |
+| --- | ---- | ---------- | --------------- |
+| 2 | - **Research:** Learn how to host a static website on Amazon S3 and speed up page load times using CloudFront CDN <br> - **Implementation:** Create an S3 Bucket to hold the Frontend interface code; configure CloudFront to distribute the website and set up security configurations | 06/29/2026 | 06/29/2026 |
+| 3 | - **Research:** Learn about tools to compress images into WebP format to reduce file sizes without making them blurry <br> - **Implementation:** Compress all rank badge and warship images; replace the old assets with the newly optimized images | 06/30/2026 | 06/30/2026 |
+| 4 | - **Research:** Learn how GitHub Actions works to automatically build and push code to AWS <br> - **Implementation:** Write the CI/CD configuration file (`deploy-frontend.yml`) to automatically build and update the web files on S3 and clear the CloudFront cache when new code is pushed to the `develop` branch | 07/01/2026 | 07/01/2026 |
+| 5 | - **Research:** Draw up test cases to systematically verify all existing game features <br> - **Implementation:** Test the entire system (Cognito login, PvP matchmaking, rank points calculation, sound systems) and fix bugs that occur | 07/02/2026 | 07/02/2026 |
+| 6 | - **Research:** Study modern design styles, color palettes, and transition effects to brainstorm the UI overhaul <br> - **Implementation:** Design and implement a completely new interface for the Homepage (Home), Profile page, and ship setup screen | 07/03/2026 | 07/03/2026 |
+| 7 | - **Research:** Learn how to align and sync the new interface across mobile phones and tablet devices <br> - **Implementation:** Finish the new layout for the PvP battle screen; optimize responsive displays for mobile screens and perform final tests | 07/04/2026 | 07/04/2026 |
 
 ### Week 9 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Static Web Hosting on AWS:**
+  * Successfully hosted the Frontend files on S3 and configured CloudFront so users can access the website globally via the internet with fast response times.
 
-* Successfully created and configured an AWS Free Tier account.
+* **Optimized Image Assets:**
+  * Compressed all warship and rank badge images to WebP format, reducing load times and speed up image rendering.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* **Automated CI/CD Pipeline (GitHub Actions):**
+  * Successfully built the workflow file (`deploy-frontend.yml`) to build, deploy static files to S3, and invalidate the CloudFront cache whenever updates are pushed to `develop` or `main`.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* **Testing and Bug Fixing:**
+  * Tested all major features and resolved bugs related to connection flows and match synchronization.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Complete UI Overhaul:**
+  * Replaced the old interface with a modern, eye-catching design featuring polished colors and smooth transitions on the lobby, profile, and PvP game screens.

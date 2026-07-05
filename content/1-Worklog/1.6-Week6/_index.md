@@ -8,45 +8,42 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-* Connect and integrate AWS Cognito user authentication service into the application.
-* Complete the Responsive design (cross-device compatibility) for the entire interface of the Battleship Game application.
-* Build a Serverless architecture using AWS Lambda and Amazon API Gateway to handle backend logic and API calls.
-* Configure Amazon DynamoDB to store user information and match history data.
-* Research and plan a detailed proposal for developing a real-time PvP mode using the WebSocket protocol.
+* Research and configure AWS Cognito to establish a connection with the project, design the login and registration interfaces linked to Cognito to implement this authentication feature.
+* Set up necessary configurations in Cognito to support signing in with Google and Facebook.
+* Use AWS Lambda and Amazon API Gateway to build a serverless backend.
+* Set up Amazon DynamoDB database to store user information.
+* Create images of the first 4 warships to add to the Player vs AI mode.
+* Test and fix issues with ship rotation, ship placement, and dragging and dropping ships on the board.
 
 ### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date |
 | --- | ---- | ---------- | --------------- |
-| 2 | - Research and configure Amazon Cognito User Pool and Client App <br> - Integrate the AWS Cognito SDK into the React application (Frontend) to manage registration, login, logout, and user session states | 06/08/2026 | 06/08/2026 |
-| 3 | - Design and complete Responsive compatibility for the game interface <br> - Optimize layouts, navigation menus, and board sizes for mobile and tablet devices <br> - Refactor the audio initialization flow and optimize screen resize event listeners to prevent blocking the main thread during Cognito redirects | 06/09/2026 | 06/09/2026 |
-| 4 | - Design the Serverless architecture for the Battleship application <br> - Configure Amazon API Gateway integrated with AWS Lambda <br> - Create and deploy the `getUser` Lambda Function to retrieve player profile details | 06/10/2026 | 06/10/2026 |
-| 5 | - Research and design the NoSQL database using Amazon DynamoDB <br> - Define the match history table schema, identifying the Partition Key (userId) and Sort Key (endedAt) for efficient querying <br> - Create the `saveMatchHistory` Lambda Function to record and save match results upon game completion | 06/11/2026 | 06/11/2026 |
-| 6 | - Integrate the API calls to save match history (`savePvpRankedMatchHistory`) and display user statistics on the Profile interface <br> - Finalize the Lambda Function for retrieving paginated match history with room code masking for security | 06/12/2026 | 06/12/2026 |
-| 7 | - Study real-time messaging using the WebSocket protocol <br> - Draft the architectural plan for the online PvP matchmaking and gameplay mode (room creation, joining, and syncing player coordinates and turns) | 06/13/2026 | 06/14/2026 |
+| 2 | - **Research:** Learn how login works in AWS Cognito (User Pools) <br> - **Implementation:** Create and configure a Cognito User Pool; design Registration (`Register.jsx`) and Login (`Login.jsx`) interfaces; install the Amplify SDK to connect interfaces with Cognito and call authentication functions (`registerUser`, `confirmRegister`, `loginUser`) | 06/08/2026 | 06/08/2026 |
+| 3 | - **Research:** Learn how to set up Google and Facebook login on Cognito <br> - **Implementation:** Set up App Registrations on Google Cloud Console and Facebook Developers; configure Cognito Identity Providers and call `loginWithSocialProvider` to enable Google and Facebook login | 06/09/2026 | 06/09/2026 |
+| 4 | - **Research:** Learn how to use Lambda and API Gateway for serverless backend <br> - **Implementation:** Create a REST API on API Gateway; write and configure Lambda function to retrieve player profile details (`getUser.js`) | 06/10/2026 | 06/10/2026 |
+| 5 | - **Research:** Learn how to save and manage user data in DynamoDB <br> - **Implementation:** Create a DynamoDB table for player profiles; write a Lambda function (`createUser.js`) connected to DynamoDB to automatically save user details right after successful signup | 06/11/2026 | 06/11/2026 |
+| 6 | - **Research:** Learn how to prepare and size images of warships for the game <br> - **Implementation:** Create images for the first 4 warships; add these images to the code and display them on the Player vs AI board | 06/12/2026 | 06/12/2026 |
+| 7 | - **Research:** Learn how grid coordinates work and how to handle drag-and-drop for images <br> - **Implementation:** Test and fix issues with ship rotation (`rotateShip` / `handleRotate`), dragging and dropping (`dragStart`, `dragOver`, `drop`), and placing ships onto the grid (`isValidPlacement`) to make board setup smoother | 06/13/2026 | 06/14/2026 |
 
 ### Week 6 Achievements:
 
 * **Successful User Authentication Integration (AWS Cognito):**
-  * Configured and connected the Frontend application with Cognito User Pools.
-  * Fully implemented the user registration flow, email OTP verification, sign-in, and sign-out.
-  * Optimized the post-login redirect flow (OAuth redirect) for the SPA, completely resolving main thread hangs on mobile devices.
+  * Configured Cognito User Pool and connected it to the Frontend.
+  * Designed the Registration (`Register.jsx`) and Login (`Login.jsx`) interfaces, integrating them with Amplify API functions (`registerUser`, `confirmRegister`, `loginUser`).
+  * Enabled user login with regular accounts and social login via Google and Facebook (`loginWithSocialProvider`).
 
-* **Completed Responsive Design and UI/UX Enhancements:**
-  * Created a flexible, responsive layout across all screens (Mobile, Tablet, Desktop) using Flexbox, CSS Grid, and Media Queries.
-  * Improved the mobile navigation experience by implementing a collapsible Hamburger menu.
-  * Resolved issues caused by window resize events and Web Audio API initialization, which previously drained resources and crashed mobile browsers.
+* **Serverless Backend API Architecture:**
+  * Completed the API Gateway REST endpoints and integrated them with AWS Lambda (`getUser.js`) to handle user profile retrieval requests.
 
-* **Established Serverless API & Routing:**
-  * Set up API Gateway as the REST API entry point with CORS enabled.
-  * Implemented high-performance Lambda functions with secure access control via IAM Roles.
-  * Secured API routes with automatic JSON Web Token (JWT) verification generated by Cognito.
+* **Database Integration with DynamoDB:**
+  * Created player profile tables in DynamoDB.
+  * Finished Lambda function (`createUser.js`) running as a Post Confirmation Trigger to automatically record user details in the database upon successful registration or social sign-in.
 
-* **Optimized Storage with DynamoDB:**
-  * Designed an efficient DynamoDB table structure utilizing Partition Key (`userId`) and Sort Key (`endedAt`), allowing fast and cost-effective match history retrieval.
-  * Synchronized database statistics (Total Games, Wins, Losses, Accuracy Rate) to display directly on the player's Profile card.
-  * Implemented server-side room code masking to obscure sensitive room codes in public match logs.
+* **Create and Add Warship Images:**
+  * Created and successfully imported the images of the first 4 warships.
+  * Rendered these warship images on the Player vs AI mode board.
 
-* **Detailed Plan for Real-time PvP via WebSocket:**
-  * Completed the system design document for the Lobby and Match Room management using API Gateway WebSocket APIs.
-  * Defined the JSON payload structure and transition states for the turn-based synchronization between clients.
+* **Fix Ship Placement and Rotation on the Board:**
+  * Fixed ship rotation bugs (rotating horizontally/vertically no longer goes off the grid or overlays other ships).
+  * Fixed drag-and-drop and ship placement issues on the grid to make it easier for players to set up their board before matches start.

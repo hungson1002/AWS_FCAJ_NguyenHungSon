@@ -8,46 +8,38 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Objectives:
 
-* Finalize real-time communication for PvP gameplay by integrating API Gateway WebSockets.
-* Complete the user profile picture (avatar) upload feature integrated with AWS S3 storage.
-* Complete the user Profile page, displaying comprehensive player statistics and detailed match history.
-* Add immersive sound effects for game interactions and optimize the audio asset loading process.
-* Achieve comprehensive Responsive design compatibility for all screens in the game.
-* Fix Lambda and API Gateway errors, and refactor the match history recording process to be handled on the Server-side for data integrity.
+* Learn about real-time socket connections to build online two-player mode (PvP), starting with custom rooms (creating and entering room codes).
+* Redesign the ship placement map to make it look better, clearer, and easier to use.
+* Build a matchmaking system and divide it into two modes: Casual and Ranked.
+* Create 7 badges corresponding to 7 rank tiers in the game: Bronze, Silver, Gold, Platinum, Diamond, Master, and Admiral, along with their specific points requirements.
+* Add a rank details popup in the player profile to view available ranks and the player's current rank.
+* Use the Phaser library to create animations for hit, miss, ship explosion, and win/loss notifications.
 
 ### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date |
 | --- | ---- | ---------- | --------------- |
-| 2 | - Study and configure API Gateway WebSocket APIs with default routes (`$connect`, `$disconnect`) and custom routes (`joinRoom`, `makeMove`) <br> - Develop Lambda functions to manage session and connection ID mapping for tracking online players | 06/15/2026 | 06/15/2026 |
-| 3 | - Connect WebSocket on the Frontend and implement real-time game state synchronization <br> - Integrate sound effects (explosion hits, water splashes, background music) <br> - Resolve browser autoplay policy issues by initializing audio securely via user interaction | 06/16/2026 | 06/16/2026 |
-| 4 | - Implement user avatar upload feature using AWS S3 <br> - Write a Lambda Function to generate S3 Presigned URLs so the Frontend can securely upload images directly to the S3 bucket <br> - Configure S3 Bucket IAM Policies and CORS to enable smooth asset uploading and rendering | 06/17/2026 | 06/17/2026 |
-| 5 | - Enhance the user Profile page by rendering dynamic avatars from S3 and updating profile metadata in DynamoDB <br> - Complete the visualization of player metrics (Service Record) and match logs in an intuitive format | 06/18/2026 | 06/18/2026 |
-| 6 | - Test, debug, and fix API Gateway CORS issues and Lambda function timeouts <br> - Design and implement a secure, optimized solution: transition the match history persistence (`saveMatchHistory`) from a client-triggered API call to an automated server-side write upon WebSocket disconnect/match completion | 06/19/2026 | 06/19/2026 |
-| 7 | - Optimize and complete Responsive design for all game screens (Lobby, ship setup, battle board, profile) <br> - Test WebSocket connection resilience during network disruptions and finalize the Week 7 report | 06/20/2026 | 06/21/2026 |
+| 2 | - **Research:** Learn how socket connections work for real-time data communication between two players <br> - **Implementation:** Create room management functions on the backend (`createRoom.js`, `joinRoom.js`); write simple custom room features allowing room code generation and entry for testing | 06/15/2026 | 06/15/2026 |
+| 3 | - **Research:** Learn how to arrange and color screen elements to redesign the ship placement board <br> - **Implementation:** Rewrite the board setup screen, adjusting colors, grid boxes, and buttons for a cleaner layout | 06/16/2026 | 06/16/2026 |
+| 4 | - **Research:** Learn how matchmaking queues work and how to divide rooms into Casual and Ranked modes <br> - **Implementation:** Write backend matchmaking functions (`matchmakeRoom.js`); establish client-side socket connection to queue players into the proper room | 06/17/2026 | 06/17/2026 |
+| 5 | - **Research:** Learn how to calculate rank points (RP) and define 7 rank tiers: Bronze (200 RP), Silver (500 RP), Gold (950 RP), Platinum (1500 RP), Diamond (2200 RP), Master (3100 RP), Admiral (4000 RP) <br> - **Implementation:** Create 7 badge images for each rank; write backend calculation functions (`calculateRankDelta`, `buildRankUpdate`) in `rankService.js`; implement rank-up effects | 06/18/2026 | 06/18/2026 |
+| 6 | - **Research:** Learn how to display rank information list on the profile interface <br> - **Implementation:** Create a popup in the Profile page (`Profile.jsx`) for players to view the list of 7 ranks, points requirements, and check their own rank | 06/19/2026 | 06/19/2026 |
+| 7 | - **Research:** Learn how to draw animations using the Phaser library <br> - **Implementation:** Write Phaser animations in `BattleEffectsLayer.jsx` for actions: hit (`playMiss`), miss (`playHit`), ship sinking/explosion (`playSunkFinisher`), and the rank-up effect (`RankUpScene`) in `RankUpAnimation.jsx` | 06/20/2026 | 06/21/2026 |
 
 ### Week 7 Achievements:
 
-* **Real-time Online PvP Implementation (WebSocket):**
-  * Successfully deployed API Gateway WebSocket API integrated with AWS Lambda to manage active connections and online matchmaking.
-  * Synchronized game events in real-time (turns, coordinates fired, ship sinking), delivering a lag-free PvP gaming experience.
+* **Two-player Mode (PvP):**
+  * Successfully integrated socket connections to let players create rooms (`createRoom.js`) and enter codes (`joinRoom.js`) to play together.
+  * Completed the automated matchmaking queue (`matchmakeRoom.js`) divided into Casual and Ranked modes.
 
-* **Completed Avatar Uploading via AWS S3:**
-  * Implemented a secure upload mechanism utilizing S3 Presigned URLs, minimizing overhead on backend servers.
-  * Programmed automatic profile updates in DynamoDB to reference the newly uploaded avatar S3 URLs across the application.
+* **Redesigned Ship Placement Map:**
+  * Remade the ship positioning screen with matching colors, a clearer grid, and easier board setup.
 
-* **Polished User Profile Page:**
-  * Connected frontend profile widgets to live DynamoDB statistics, rendering total games, wins, losses, and shooting accuracy metrics (shots, hits, misses).
-  * Styled a clean match history table featuring opponent avatars, game mode indicator (rank/casual), win/loss status, and match timestamps.
+* **Ranking System:**
+  * Established 7 rank tiers from Bronze to Admiral based on RP requirements (Bronze: 200, Silver: 500, Gold: 950, Platinum: 1500, Diamond: 2200, Master: 3100, Admiral: 4000).
+  * Finished backend rank calculation functions (`calculateRankDelta`, `buildRankUpdate` in `rankService.js`) and rank-up effects (`RankUpScene`).
+  * Added a rank information popup on the player Profile page (`Profile.jsx`).
 
-* **Enhanced Game Audio & Sound Effects:**
-  * Embedded high-quality audio triggers for game events: hits, misses, ship destruction, and game-over screens.
-  * Resolved asynchronous audio buffering issues to optimize initial page load speed and eliminate audio stuttering on mobile viewports.
-
-* **Comprehensive Responsive Design:**
-  * Ensured the game renders flawlessly on mobile and tablet form factors with adaptive CSS layout rules.
-  * Fixed visual bugs, text overlapping, and board grid warping on smaller screen sizes.
-
-* **System Debugging and Security Hardening:**
-  * Eliminated API Gateway integration issues (CORS configuration, JSON payload parsing, and Lambda timeout limits).
-  * **Secure Data Management Solution:** Closed the security vulnerability of client-controlled match history saves. The server now calculates the match outcome from WebSocket connection states and updates DynamoDB directly, preventing malicious score tampering.
+* **Game Animations:**
+  * Used Phaser to successfully create animations in `BattleEffectsLayer.jsx` for hit (`playMiss`), miss (`playHit`), and ship explosions (`playSunkFinisher`).
+  * Created a win/loss popup that displays at the end of matches.

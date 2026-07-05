@@ -8,36 +8,38 @@ pre: " <b> 1.8. </b> "
 
 ### Week 8 Objectives:
 
-* Research and implement the Custom Shipyard feature, allowing players to design their own ships.
-* Develop a leaderboard system to display the TOP 5 players with the highest scores across all rank tiers.
-* Optimize the user interface (UI) for both Desktop and responsive mobile views.
-* Enhance system security and stability by configuring Throttling (Rate Limiting) on API Gateway.
+* Improve and redecorate the interface of the entire project to make it look better, more vibrant, and professional.
+* Create images for 6 new warships to give players more options when setting up their fleet.
+* Integrate complete game audio: sound effects for miss, hit, ship explosion, along with winning/losing themes, lobby music, and battle music.
+* Create a Settings panel to let players customize volume levels or toggle background music and game sound effects.
+* Redesign the PvP battle board to show more player details and implement an in-game chat feature for players to talk during matches.
 
-### Tasks performed during the week:
+### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date |
 | --- | ---- | ---------- | --------------- |
-| 2   | - Researched Custom Shipyard solutions and grid coordinate systems to allow users to draw custom ship shapes <br> - Defined validation rules for custom-drawn ships | 06/22/2026 | 06/22/2026 |
-| 3   | - Implemented the Custom Shipyard UI on the Frontend with an interactive drawing grid <br> - Built validation algorithms (ensuring contiguous blocks and correct cell counts) and saved custom ship configurations | 06/23/2026 | 06/23/2026 |
-| 4   | - Designed DynamoDB schemas and developed Lambda Functions to query leaderboard statistics <br> - Retrieved TOP 5 player data with the highest scores for all rank tiers | 06/24/2026 | 06/24/2026 |
-| 5   | - Integrated the Leaderboard UI on the Frontend to show detailed rankings <br> - Optimized the user interface (UI) for Desktop and completed responsive adjustments for mobile and tablet screens | 06/25/2026 | 06/25/2026 |
-| 6   | - Configured Throttling (Rate Limiting) on AWS API Gateway endpoints <br> - Set limits on request rates and burst sizes to prevent API abuse and spamming | 06/26/2026 | 06/26/2026 |
-| 7   | - Conducted comprehensive testing of all new features (Custom Shipyard, Leaderboard, API Throttling) <br> - Fixed UI bugs on responsive views and compiled the Week 8 progress report | 06/27/2026 | 06/27/2026 |
+| 2 | - **Research:** Learn how to arrange colors and tweak CSS layouts to beautify the homepage, lobby, and battle screens <br> - **Implementation:** Edit the entire project's interface, updating buttons, borders, and backgrounds to make the app look much better | 06/22/2026 | 06/22/2026 |
+| 3 | - **Research:** Learn about image dimensions and how to prepare images for 6 new warships to fit the game grid <br> - **Implementation:** Create images for 6 new warships; add these ship images to the player's selection list before matches | 06/23/2026 | 06/23/2026 |
+| 4 | - **Research:** Learn how to play audio and control game sounds using helper libraries (such as Howler.js) <br> - **Implementation:** Write `soundService.js` to integrate background music for the lobby (`menuMusic`) and battle phase (`battleMusic`) via `syncBackgroundMusic`; add sound effects for miss, hit, and ship explosion using `playSound` | 06/24/2026 | 06/24/2026 |
+| 5 | - **Research:** Learn how to build volume adjustment sliders and manage audio toggle states in React <br> - **Implementation:** Create the Settings feature; build volume sliders for adjusting background music and game sound effects using `setSoundSettings` and `getSoundSettings` | 06/25/2026 | 06/25/2026 |
+| 6 | - **Research:** Learn how to display player information neatly on the PvP combat screen <br> - **Implementation:** Redesign the PvP battle room, adding areas to show detailed info for both sides (name, rank tier, avatar, wins/losses) | 06/26/2026 | 06/26/2026 |
+| 7 | - **Research:** Learn how to send and receive real-time chat messages via socket connections between players <br> - **Implementation:** Integrate `PvpBattlePanels.jsx` chat component and implement in-game chat in the PvP room by sending socket signals (`sendPvpSignal`) and updating the chat logs (`appendChatMessage`); test the whole system | 06/27/2026 | 06/27/2026 |
 
-### Achievements:
+### Week 8 Achievements:
 
-* **Completed the Custom Shipyard feature:**
-  * Enabled players to freely draw and customize their ship layouts based on personal preferences instead of using static templates.
-  * Successfully integrated placement validation (ensuring contiguous blocks and correct sizes) before the matchmaking starts.
+* **Improved Project Interface:**
+  * The entire homepage, lobby, and battle room interface were updated to look much cleaner and more professional.
 
-* **Implemented the Leaderboard system:**
-  * Built APIs to query DynamoDB and retrieve the TOP 5 players with the highest scores across all rank tiers (Bronze, Silver, Gold, Platinum, Diamond, etc.).
-  * Designed an intuitive, clean leaderboard interface showing rank badges and detailed win statistics.
+* **6 New Warships Added:**
+  * Created images and successfully imported 6 new types of warships, giving players more options to place.
 
-* **Enhanced User Interface and Responsiveness:**
-  * Optimized layout structures for Desktop screens, increasing sizes for primary interaction areas and controls.
-  * Resolved layout clipping, misalignments, and rendering issues on mobile and tablet screens.
+* **Complete Audio System:**
+  * Successfully integrated BGM for the lobby, battles (`syncBackgroundMusic`), wins, and losses.
+  * Added sound effects for shots hit, shots missed, and ship explosions (`playSound`).
 
-* **Secured API endpoints with API Gateway Throttling:**
-  * Successfully configured Throttling (Rate and Burst limits) on AWS API Gateway.
-  * Protected server resources from API spamming, ensuring system stability and reducing unwanted AWS Lambda invocation costs.
+* **Settings Panel for Sound Customization:**
+  * Finished the Settings feature, letting users easily adjust volume or toggle background music and sound effects with sliders (`setSoundSettings`, `getSoundSettings`).
+
+* **Upgraded PvP Interface & Chat Feature:**
+  * The PvP screen now displays complete statistics for both competitors (avatar, name, rank).
+  * Added a chat feature (`PvpBattlePanels.jsx`) to let two players message each other directly while playing using socket signal (`sendPvpSignal`) and updating the chat screen (`appendChatMessage`).
