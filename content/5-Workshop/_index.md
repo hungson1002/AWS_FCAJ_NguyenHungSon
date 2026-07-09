@@ -5,27 +5,24 @@ weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Building a Serverless Backend for Cloud Battleship Arena
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+**AWS Serverless** allows you to run applications without managing servers — AWS automatically scales on demand and you only pay for what you actually use.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+In this workshop, we will learn how to design, deploy, and test a complete backend system for a real-time multiplayer battleship game (**Cloud Battleship Arena**) using **AWS SAM**, **AWS Lambda**, **Amazon API Gateway** (HTTP & WebSocket), **Amazon DynamoDB**, and **Amazon Cognito**.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+We will build two types of APIs:
++ **HTTP API (REST)** — For managing game rooms, user profiles, and matchmaking.
++ **WebSocket API** — For transmitting real-time game state between players.
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [Workshop Overview](5.1-Workshop-overview/)
+2. [Environment Setup](5.2-Prerequiste/)
+3. [Deploy Backend with AWS SAM](5.3-SAM-Backend/)
+4. [Integrate Real-time WebSocket](5.4-WebSocket-Realtime/)
+5. [Secure APIs with Cognito (Advanced)](5.5-Cognito-Security/)
+6. [Clean Up Resources](5.6-Cleanup/)

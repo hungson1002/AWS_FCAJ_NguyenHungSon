@@ -6,28 +6,23 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Xây dựng Backend Serverless cho Cloud Battleship Arena
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+**AWS Serverless** cho phép bạn chạy các ứng dụng mà không cần quản lý máy chủ — AWS tự động mở rộng theo nhu cầu và bạn chỉ trả tiền cho những gì thực sự sử dụng.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Trong workshop này, chúng ta sẽ học cách thiết kế, triển khai và kiểm thử một hệ thống backend hoàn chỉnh cho trò chơi bắn tàu thời gian thực đa người chơi (**Cloud Battleship Arena**) bằng cách sử dụng **AWS SAM**, **AWS Lambda**, **Amazon API Gateway** (HTTP & WebSocket), **Amazon DynamoDB**, và **Amazon Cognito**.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Chúng ta sẽ xây dựng hai loại API:
++ **HTTP API (REST)** — Để quản lý phòng chơi, hồ sơ người dùng và matchmaking.
++ **WebSocket API** — Để truyền tải trạng thái game theo thời gian thực giữa các người chơi.
 
 #### Nội dung
 
 1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
+2. [Chuẩn bị môi trường](5.2-Prerequiste/)
+3. [Triển khai Backend với AWS SAM](5.3-SAM-Backend/)
+4. [Tích hợp WebSocket real-time](5.4-WebSocket-Realtime/)
+5. [Bảo mật API với Cognito (nâng cao)](5.5-Cognito-Security/)
 6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
