@@ -81,6 +81,19 @@ WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 
 ![DynamoDB 3 tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 
+**API Gateway Routes:**
+1. Mở **AWS Console → API Gateway → APIs**.
+2. Chọn HTTP API của dự án (ví dụ: `cloud-battleship-backend-dev`).
+3. Chọn **Routes** ở menu bên trái. Xác nhận tất cả các endpoint của HTTP API đều hiển thị đúng cấu trúc bên dưới route `/api`.
+
+![Cấu trúc routes của API Gateway](/images/5-Workshop/5.3-SAM-Backend/AllAPI.jpg)
+
+**Lambda Functions:**
+1. Mở **AWS Console → Lambda → Functions**.
+2. Xác nhận tất cả các Lambda functions của dự án đã được khởi tạo đầy đủ và sử dụng runtime `Node.js 24.x`.
+
+![Danh sách các Lambda function](/images/5-Workshop/5.3-SAM-Backend/AllLambda.jpg)
+
 ---
 
 #### Nội dung bài học

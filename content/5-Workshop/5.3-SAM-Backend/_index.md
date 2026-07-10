@@ -62,7 +62,7 @@ To automatically persist registered user profiles to our DynamoDB table after th
 4. Configure trigger details:
    - **Trigger type**: Select **Sign-up** > Check **Post confirmation trigger** (Triggers after signup verification succeeds).
    - **Assign Lambda function**: Select **Choose an existing Lambda function**.
-   - **Lambda function**: Select our project's `CreateUser` function (its name will match `cloud-battleship-backend-dev-CreateUserFunction-xxxxxx`).
+   - **Lambda function**: Select our project's `CreateUser` function.
 5. Click **Add Lambda trigger** to save the binding.
 
 ---
@@ -80,6 +80,19 @@ To automatically persist registered user profiles to our DynamoDB table after th
 2. Verify that `Rooms`, `Connections`, and `User` tables are successfully provisioned.
 
 ![DynamoDB database tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
+
+**API Gateway Routes:**
+1. Navigate to **AWS Console → API Gateway → APIs**.
+2. Select the HTTP API of the project (e.g., `cloud-battleship-backend-dev`).
+3. Click on **Routes** in the left menu. Verify that all HTTP API endpoints are correctly displayed under the `/api` route.
+
+![API Gateway Routes Structure](/images/5-Workshop/5.3-SAM-Backend/AllAPI.jpg)
+
+**Lambda Functions:**
+1. Navigate to **AWS Console → Lambda → Functions**.
+2. Verify that all project Lambda functions have been created and are configured to use the `Node.js 24.x` runtime.
+
+![Lambda Functions List](/images/5-Workshop/5.3-SAM-Backend/AllLambda.jpg)
 
 ---
 
