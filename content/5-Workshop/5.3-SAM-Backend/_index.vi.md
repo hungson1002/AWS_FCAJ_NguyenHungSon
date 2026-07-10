@@ -8,7 +8,7 @@ pre : " <b> 5.3. </b> "
 
 ### Mục tiêu
 
-Triển khai thành công toàn bộ Backend của Cloud Battleship Arena lên AWS — bao gồm **8 Lambda functions**, **2 API Gateways** (HTTP + WebSocket) và **3 DynamoDB tables** — sử dụng mẫu cấu hình `template.yaml`.
+Triển khai thành công toàn bộ Backend của Cloud Battleship Arena lên AWS — bao gồm **8 Lambda functions**, **2 API Gateways** (HTTP + WebSocket) và **5 DynamoDB tables** — sử dụng mẫu cấu hình `template.yaml`.
 
 ---
 
@@ -18,7 +18,7 @@ File `BackEnd/template.yaml` định nghĩa toàn bộ tài nguyên Backend bao 
 - **Globals**: Cấu hình chung cho cả 8 Lambda (Runtime `nodejs24.x`, Timeout 10 giây, và các biến môi trường dùng chung).
 - **BattleshipHttpApi**: HTTP API Gateway với bộ xác thực JWT (JWT Authorizer) tích hợp với Amazon Cognito.
 - **BattleshipWebSocketApi**: WebSocket API Gateway sử dụng route selection qua trường dữ liệu `action` trong tin nhắn gửi lên.
-- **RoomsTable / ConnectionsTable / ChatMessagesTable**: 3 bảng DynamoDB lưu trữ tương ứng phòng đấu, kết nối socket hiện hoạt và lịch sử tin nhắn trò chuyện (hỗ trợ TTL tự động xóa và chỉ mục phụ GSI).
+- **RoomsTable / ConnectionsTable / ChatMessagesTable / UserTable / MatchHistoryTable**: 5 bảng DynamoDB lưu trữ tương ứng phòng đấu, kết nối socket hiện hoạt, lịch sử tin nhắn, thông tin người chơi và lịch sử trận đấu (hỗ trợ TTL tự động xóa và chỉ mục phụ GSI).
 
 ---
 
@@ -110,7 +110,7 @@ Sau lần đầu chạy `sam deploy --guided`, SAM tự lưu tham số vào `sam
 
 **DynamoDB Tables:**
 1. Mở **AWS Console → DynamoDB → Tables**.
-2. Xác nhận 3 bảng `Rooms`, `Connections`, và `ChatMessages` đã được khởi tạo thành công.
+2. Xác nhận đủ **5 bảng** sau đã được khởi tạo thành công: `Rooms`, `Connections`, `ChatMessages`, `User`, và `MatchHistory`.
 
 ![DynamoDB 3 tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 
