@@ -7,7 +7,7 @@ pre: " <b> 2. </b> "
 ---
 
 # Cloud Battleship Arena
-## Nền tảng Game Bắn Tàu Thời Giang Thực Đa Người Chơi trên AWS Serverless
+## Nền tảng Game Bắn Tàu Thời Gian Thực Đa Người Chơi trên AWS Serverless
 
 ### 1. Tóm tắt điều hành
 **Cloud Battleship Arena** là một phiên bản hiện đại, hỗ trợ nhiều người chơi theo thời gian thực (Real-time Multiplayer) của tựa game bắn tàu kinh điển (Battleship). Dự án sử dụng kiến trúc **Serverless** hoàn toàn trên **Amazon Web Services (AWS)** để đảm bảo khả năng mở rộng cực cao và độ trễ thấp nhất, kết hợp với giao diện người dùng sống động, phản hồi nhanh được xây dựng bằng **React 19 + Vite**.
@@ -31,7 +31,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 - **AWS Lambda (Node.js 24.x)** thực thi toàn bộ logic backend: quản lý kết nối, định tuyến tin nhắn, ghép trận, xử lý lịch sử đấu.
 - **Amazon DynamoDB** lưu trữ dữ liệu tốc độ cao (siêu thấp độ trễ) cho các bảng `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory`.
 - **Amazon S3** lưu trữ Avatar người chơi thông qua Pre-signed URL.
-- **Amazon CloudFront** phân phối Frontend tĩnh toàn cầu với độ trễ thấp.
+- **Amazon CloudFront** đóng vai trò là cổng vào duy nhất (Single Entry Point), phân phối Frontend tĩnh toàn cầu với độ trễ thấp và bảo vệ an toàn cho toàn bộ hệ thống (HTTP & WebSocket API) qua AWS WAF.
 - **AWS SAM (Serverless Application Model)** định nghĩa, đóng gói và triển khai toàn bộ hạ tầng dưới dạng mã (IaC).
 
 **Lợi ích và hoàn vốn đầu tư (ROI)**
@@ -64,7 +64,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 | **AWS Lambda (Node.js 24.x)** | Toàn bộ logic game: connect/disconnect, fire, matchmaking, lịch sử |
 | **Amazon DynamoDB** | Lưu trữ `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory` với TTL tự động |
 | **Amazon S3** | Lưu trữ Avatar qua Pre-signed URL; host frontend tĩnh |
-| **Amazon CloudFront** | Phân phối Frontend toàn cầu, HTTPS, cache tối ưu |
+| **Amazon CloudFront** | Cổng vào duy nhất (Single Entry Point), phân phối Frontend toàn cầu, proxy/security cho REST & WebSocket API qua WAF |
 | **AWS SAM** | Infrastructure as Code — định nghĩa và triển khai hạ tầng |
 | **GitHub Actions + OIDC** | CI/CD tự động: build và deploy Frontend lên S3/CloudFront |
 
@@ -111,13 +111,7 @@ Dự án được phân bổ khoa học song hành cùng lộ trình thực tậ
 
 ### 5. Lộ trình & Mốc triển khai
 
-| Giai đoạn | Thời gian | Nội dung |
-|---|---|---|
-| Giai đoạn 1 | Tuần 1–4 | Nghiên cứu kiến thức nền tảng AWS (S3, CloudFront, Backup, Migration, VPC, EC2) |
-| Giai đoạn 2 | Tuần 5–6 | Khởi động dự án, tích hợp Cognito, thiết kế API Gateway & Lambda, lưu trữ DynamoDB |
-| Giai đoạn 3 | Tuần 7–8 | Hoàn thiện PvP WebSocket, S3 Avatar Upload URL, các chức năng khác và Throttling |
-| Giai đoạn 4 | Tuần 9 | Cải tiến UI, deploy Frontend lên S3/CloudFront, khắc phục Lambda Cold Start và hoàn thiện sơ đồ kiến trúc |
-| Vận hành | Liên tục | Giám sát qua CloudWatch Dashboard, tối ưu hóa chi phí và hiệu năng hệ thống |
+Xem chi tiết các giai đoạn triển khai tại **Mục 4 — Triển khai kỹ thuật** ở trên. Ngoài 4 giai đoạn phát triển chính, hệ thống được vận hành liên tục sau khi go-live thông qua **CloudWatch Dashboard** để giám sát lỗi Lambda, throttle DynamoDB và tối ưu hóa chi phí theo thực tế tải.
 
 ---
 
@@ -155,7 +149,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 
 #### Kế hoạch dự phòng
 
-- Nếu WebSocket API gặp sự cố: Fallback về polling HTTP API tạm thời.
+- Nếu mất kết nối WebSocket đột ngột: Sử dụng cơ chế phục hồi phiên kết nối (session reconnection) phía Client bằng cách dùng Connection ID cũ để tiếp tục trận đấu mà không làm gián đoạn trải nghiệm.
 - Sử dụng CloudFormation để rollback nhanh về phiên bản ổn định trước đó.
 - CloudWatch Alarms gửi email khi Lambda errors hoặc DynamoDB throttle vượt ngưỡng.
 
@@ -165,7 +159,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 
 **Cải tiến kỹ thuật**
 - Trải nghiệm game real-time mượt mà với độ trễ WebSocket dưới 100ms.
-- Hệ thống tự mở rộng từ 1 đến hàng nghìn người chơi đồng thời mà không cần can thiệp thủ công.
+- Khả năng mở rộng tự động theo nhu cầu thực tế nhờ kiến trúc Serverless — không cần can thiệp thủ công khi traffic tăng đột biến.
 - CI/CD hoàn chỉnh: mỗi lần push code lên `main` tự động deploy lên Production.
 
 **Giá trị học thuật & nghề nghiệp**

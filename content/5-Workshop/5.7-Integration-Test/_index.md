@@ -12,7 +12,7 @@ Validate the entire application flow by registering user accounts, establishing 
 
 ---
 
-#### Method A - Web UI Verification
+#### Web UI Verification
 
 1. Open your browser and navigate to the **CloudFrontDomainName** obtained from the Outputs in step 5.5.
 2. Click **Sign Up** to register two player accounts.

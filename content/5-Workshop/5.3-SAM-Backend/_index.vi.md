@@ -72,6 +72,10 @@ HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
 WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
+{{% notice warning %}}
+**Lưu ý về CORS**: Giá trị `CorsOrigin = http://localhost:5173` chỉ dùng để phát triển cục bộ. Sau khi hoàn tất bước **5.5 (Frontend Hosting)** và có domain CloudFront, bạn cần chạy lại `sam deploy` với tham số `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` — nếu không, API sẽ trả về lỗi CORS khi Frontend chạy trên CloudFront.
+{{% /notice %}}
+
 {{% notice tip %}}
 Sau lần đầu chạy `sam deploy --guided`, SAM tự lưu tham số vào `samconfig.toml`. Các lần deploy tiếp theo chỉ cần chạy lệnh `sam deploy` mà không cần thêm tham số `--guided`.
 {{% /notice %}}
@@ -103,7 +107,7 @@ Sau lần đầu chạy `sam deploy --guided`, SAM tự lưu tham số vào `sam
 
 **DynamoDB Tables:**
 1. Mở **AWS Console → DynamoDB → Tables**.
-2. Xác nhận 3 bảng `Rooms`, `Connections`, và `User` đã được khởi tạo thành công.
+2. Xác nhận 3 bảng `Rooms`, `Connections`, và `ChatMessages` đã được khởi tạo thành công.
 
 ![DynamoDB 3 tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 
