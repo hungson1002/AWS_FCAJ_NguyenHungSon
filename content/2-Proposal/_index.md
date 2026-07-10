@@ -55,7 +55,6 @@ The application uses a **Serverless, event-driven** architecture with three main
 
 ![Overall Cloud Battleship Arena AWS Architecture](/images/5-Workshop/5.2-Prerequisite/AWS_Architecture.png)
 
-> **Diagram scope:** The CloudFront → API Gateway arrow represents the browser's next request after loading the SPA; CloudFront is not an API reverse proxy. The JWT label applies only to user-profile endpoints, while room APIs and WebSocket connections do not currently require JWT.
 
 #### AWS Services Used
 

@@ -55,7 +55,6 @@ Cloud Battleship Arena tiếp cận vấn đề bằng kiến trúc **Serverless
 
 ![Kiến trúc tổng quan hệ thống Cloud Battleship Arena](/images/5-Workshop/5.2-Prerequisite/AWS_Architecture.png)
 
-> **Phạm vi sơ đồ:** Mũi tên CloudFront → API Gateway biểu diễn request tiếp theo do trình duyệt gửi sau khi tải SPA, không phải CloudFront reverse proxy API. Nhãn JWT chỉ áp dụng cho các endpoint hồ sơ người dùng; room API và WebSocket hiện chưa bắt buộc JWT.
 
 #### Dịch vụ AWS sử dụng
 
