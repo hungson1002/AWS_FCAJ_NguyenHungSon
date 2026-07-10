@@ -72,8 +72,11 @@ HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
 WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
-{{% notice warning %}}
-**CORS Note**: The `CorsOrigin = http://localhost:5173` value is for local development only. Once you complete **Step 5.5 (Frontend Hosting)** and have your CloudFront domain, you must re-run `sam deploy` with `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` — otherwise, the API will return CORS errors when the Frontend is served from CloudFront.
+{{% notice note %}}
+**Current step**: Deploy with `CorsOrigin = http://localhost:5173` for local development. After completing **step 5.5.2 (CloudFront Distribution)** and obtaining your CloudFront domain, return here to redeploy with:
+```bash
+sam deploy --parameter-overrides CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>
+```
 {{% /notice %}}
 
 {{% notice tip %}}

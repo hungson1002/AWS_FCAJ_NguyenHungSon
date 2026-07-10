@@ -72,8 +72,11 @@ HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
 WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
-{{% notice warning %}}
-**Lưu ý về CORS**: Giá trị `CorsOrigin = http://localhost:5173` chỉ dùng để phát triển cục bộ. Sau khi hoàn tất bước **5.5 (Frontend Hosting)** và có domain CloudFront, bạn cần chạy lại `sam deploy` với tham số `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` — nếu không, API sẽ trả về lỗi CORS khi Frontend chạy trên CloudFront.
+{{% notice note %}}
+**Bước hiện tại**: Triển khai với `CorsOrigin = http://localhost:5173` dùng để phát triển cục bộ. Sau khi hoàn tất **bước 5.5.2 (CloudFront Distribution)** và có domain CloudFront, hãy quay lại đây để redeploy với:
+```bash
+sam deploy --parameter-overrides CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>
+```
 {{% /notice %}}
 
 {{% notice tip %}}

@@ -1,9 +1,9 @@
 ---
 title : "Giám sát CDN CloudFront"
 date : 2024-01-01
-weight : 3
+weight : 5
 chapter : false
-pre : " <b> 5.5.3 </b> "
+pre : " <b> 5.5.5 </b> "
 ---
 
 ### Mục tiêu

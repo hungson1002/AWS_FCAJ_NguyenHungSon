@@ -72,7 +72,7 @@ Trong cửa sổ `wscat`, gửi payload sau:
 Lambda `wsMessage` sẽ xử lý và trả về phản hồi (hoặc không trả nếu chưa có route `ping`). Điều quan trọng là kết nối không bị đứt và Lambda được gọi.
 
 {{% notice tip %}}
-Nếu nhận được lỗi `403 Forbidden`, kiểm tra lại cấu hình IAM của Lambda `wsConnect` — nó cần quyền `execute-api:ManageConnections` để gửi tin nhắn ngược về client.
+Nếu nhận được lỗi `403 Forbidden` khi `wscat` kết nối, kiểm tra cấu hình route `$connect` trên API Gateway — route này có thể đang bật IAM Authorization không cần thiết. Đảm bảo Authorization của route `$connect` được đặt là **NONE**. (Lưu ý: quyền `execute-api:ManageConnections` là quyền Lambda dùng để **gửi tin nhắn ngược về client**, không liên quan đến việc client kết nối vào.)
 {{% /notice %}}
 
 ---

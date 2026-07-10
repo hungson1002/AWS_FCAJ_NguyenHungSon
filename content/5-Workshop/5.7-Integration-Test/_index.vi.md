@@ -12,6 +12,18 @@ Xác thực toàn bộ luồng hoạt động thực tế của game bằng các
 
 ---
 
+#### Danh sách kiểm tra trước khi test (Pre-check)
+
+{{% notice warning %}}
+Trước khi mở trình duyệt, hãy xác nhận đủ các điều kiện sau. Nếu bỏ qua bất kỳ mục nào, game sẽ báo lỗi CORS hoặc không load được.
+{{% /notice %}}
+
+- [ ] Đã redeploy SAM với `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` tại bước 5.5.2 chưa?
+- [ ] Frontend đã được build và upload lên S3 Bucket chưa? (qua CI/CD ở 5.6 hoặc upload thủ công `aws s3 sync dist/ s3://<BUCKET>/`)
+- [ ] Truy cập CloudFront domain trên trình duyệt có hiển thị giao diện game không (không phải trang trắng)?
+
+---
+
 #### Kiểm thử qua giao diện Web (Web UI)
 
 1. Mở trình duyệt và truy cập vào tên miền **CloudFrontDomainName** đã lấy từ Outputs ở bước 5.5.

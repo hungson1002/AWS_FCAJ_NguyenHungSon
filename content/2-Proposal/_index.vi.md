@@ -111,7 +111,15 @@ Dự án được phân bổ khoa học song hành cùng lộ trình thực tậ
 
 ### 5. Lộ trình & Mốc triển khai
 
-Xem chi tiết các giai đoạn triển khai tại **Mục 4 — Triển khai kỹ thuật** ở trên. Ngoài 4 giai đoạn phát triển chính, hệ thống được vận hành liên tục sau khi go-live thông qua **CloudWatch Dashboard** để giám sát lỗi Lambda, throttle DynamoDB và tối ưu hóa chi phí theo thực tế tải.
+Dự án phân bổ theo 4 giai đoạn tương ứng với 9 tuần thực tập (chi tiết tại Mục 4). Sau khi go-live, hệ thống được vận hành liên tục qua **CloudWatch Dashboard** để giám sát các chỉ số quan trọng:
+
+| Giai đoạn | Tuần | Mốc hoàn thành |
+|---|---|---|
+| Đào tạo LAB | 1–4 | Nắm vững S3, CloudFront, EC2, Networking |
+| Core Backend | 5–6 | Cognito, API Gateway, Lambda, DynamoDB hoạt động |
+| PvP & Game Logic | 7–8 | WebSocket thời gian thực, Avatar, Throttling |
+| Triển khai & Hoàn thiện | 9 | CI/CD, CloudFront, Architecture diagram |
+| **Vận hành liên tục** | Post go-live | CloudWatch monitoring, Cost optimization |
 
 ---
 
@@ -149,7 +157,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 
 #### Kế hoạch dự phòng
 
-- Nếu mất kết nối WebSocket đột ngột: Sử dụng cơ chế phục hồi phiên kết nối (session reconnection) phía Client bằng cách dùng Connection ID cũ để tiếp tục trận đấu mà không làm gián đoạn trải nghiệm.
+- Nếu mất kết nối WebSocket đột ngột: Client tự động kết nối lại (reconnect) để nhận một Connection ID mới từ API Gateway, sau đó gọi REST API để re-link vào Room đang chơi dở — toàn bộ trạng thái trận đấu được khôi phục từ DynamoDB mà không cần người chơi làm gì thêm.
 - Sử dụng CloudFormation để rollback nhanh về phiên bản ổn định trước đó.
 - CloudWatch Alarms gửi email khi Lambda errors hoặc DynamoDB throttle vượt ngưỡng.
 
@@ -158,7 +166,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 ### 8. Kết quả kỳ vọng
 
 **Cải tiến kỹ thuật**
-- Trải nghiệm game real-time mượt mà với độ trễ WebSocket dưới 100ms.
+- Trải nghiệm game real-time mượt mà với độ trễ WebSocket thấp (điển hình dưới 200ms cho kết nối đã warm trong cùng Region `ap-southeast-1`).
 - Khả năng mở rộng tự động theo nhu cầu thực tế nhờ kiến trúc Serverless — không cần can thiệp thủ công khi traffic tăng đột biến.
 - CI/CD hoàn chỉnh: mỗi lần push code lên `main` tự động deploy lên Production.
 

@@ -24,7 +24,7 @@ Provision a highly optimized and secure static frontend distribution channel for
 
 - [Create S3 Bucket & Configure OAC](5.5.1-S3-Bucket/)
 - [Setup CloudFront Distribution](5.5.2-CloudFront-Distribution/)
-- [CloudFront CDN Monitoring](5.5.3-CloudFront-Monitoring/)
 - [Secure Avatar Storage Setup (S3 & CloudFront OAC)](5.5.4-S3-Avatar-Bucket/)
 - [AWS WAF Edge Security Integration](5.5.5-WAF-Integration/)
+- [CloudFront CDN Monitoring](5.5.3-CloudFront-Monitoring/)
 

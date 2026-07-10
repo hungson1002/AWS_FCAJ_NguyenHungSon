@@ -111,7 +111,15 @@ The project is structured scientifically to align with the actual 9-week interns
 
 ### 5. Timeline & Milestones
 
-Refer to the four implementation phases detailed in **Section 4 — Technical Implementation** above. Beyond the four main development phases, the system runs continuously post go-live with **CloudWatch Dashboard** monitoring for Lambda errors, DynamoDB throttling, and cost optimization based on real-world traffic.
+The project is structured across 4 phases aligned with the 9-week internship (details in Section 4). After go-live, the system is continuously monitored via **CloudWatch Dashboard** for key operational metrics:
+
+| Phase | Weeks | Completion Milestone |
+|---|---|---|
+| LAB Training | 1–4 | Proficient with S3, CloudFront, EC2, Networking |
+| Core Backend | 5–6 | Cognito, API Gateway, Lambda, DynamoDB operational |
+| PvP & Game Logic | 7–8 | Real-time WebSocket, Avatar uploads, Throttling |
+| Deploy & Finalize | 9 | CI/CD, CloudFront, Architecture diagram complete |
+| **Continuous Operations** | Post go-live | CloudWatch monitoring, Cost optimization |
 
 ---
 
@@ -149,7 +157,7 @@ The **pay-per-use** AWS Serverless model ensures extremely low costs at low traf
 
 #### Contingency Plans
 
-- If a WebSocket connection drops: Client-side session reconnection logic will restore the gameplay state using the previous Connection ID without interrupting the match.
+- If a WebSocket connection drops unexpectedly: The client automatically reconnects to obtain a fresh Connection ID from API Gateway, then calls the REST API to re-link into the active Room — the entire match state is restored from DynamoDB without requiring any player action.
 - Use CloudFormation to quickly roll back to the last stable version.
 - CloudWatch Alarms send email notifications when Lambda errors or DynamoDB throttling exceeds thresholds.
 
@@ -158,7 +166,7 @@ The **pay-per-use** AWS Serverless model ensures extremely low costs at low traf
 ### 8. Expected Outcomes
 
 **Technical Achievements**
-- Smooth real-time gameplay with WebSocket latency under 100ms.
+- Smooth real-time gameplay with low WebSocket latency (typically under 200ms for warm connections within the same `ap-southeast-1` Region).
 - Automatic scaling in response to real-world demand thanks to the Serverless architecture — no manual intervention required during traffic spikes.
 - Complete CI/CD pipeline: every push to `main` automatically deploys to Production.
 
