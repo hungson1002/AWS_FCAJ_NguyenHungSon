@@ -10,7 +10,7 @@ pre : " <b> 5.5.4 </b> "
 
 Để người dùng tải và hiển thị ảnh đại diện (avatar) một cách an toàn, hệ thống sử dụng **Amazon S3** kết hợp **Amazon CloudFront** và cơ chế **Origin Access Control (OAC)**. 
 
-S3 Avatar Bucket (`cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu`) đã được tạo tự động thông qua tệp SAM template của Backend. Trong bước này, chúng ta sẽ cấu hình thêm S3 Avatar Bucket này làm một **Origin** mới trong **CloudFront Distribution** hiện tại (`BattleshipArena`) và thiết lập cơ chế Cache Invalidation bằng tay để đồng bộ hóa cập nhật hình ảnh.
+S3 Avatar Bucket (ví dụ: `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu` - *lưu ý: hậu tố `vp9oxrrlmrsu` là ngẫu nhiên và sẽ khác với bucket thực tế của bạn*) đã được tạo tự động thông qua tệp SAM template của Backend. Trong bước này, chúng ta sẽ cấu hình thêm S3 Avatar Bucket này làm một **Origin** mới trong **CloudFront Distribution** hiện tại (`BattleshipArena`) và thiết lập cơ chế Cache Invalidation bằng tay để đồng bộ hóa cập nhật hình ảnh.
 
 ---
 
@@ -30,7 +30,7 @@ S3 Avatar Bucket (`cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu`) đã
 1. Truy cập **CloudFront Console** > Nhấp vào CloudFront Distribution của bạn (ví dụ: `BattleshipArena` hoặc mã distribution `E1QBTJG476LN8`).
 2. Chọn tab **Origins** > Nhấp **Create origin**.
 3. Cấu hình các thông tin origin như sau:
-   - **Origin domain**: Chọn S3 Avatar Bucket đã được tạo từ template (ví dụ: `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu.s3.ap-southeast-1.amazonaws.com`).
+   - **Origin domain**: Chọn S3 Avatar Bucket đã được tạo từ template (chọn bucket có tên tương tự dạng `cloud-battleship-backend-dev-avatarbucket-YOUR_UNIQUE_SUFFIX.s3.ap-southeast-1.amazonaws.com`, trong đó `YOUR_UNIQUE_SUFFIX` là hậu tố ngẫu nhiên do SAM sinh ra).
    - **Origin access**: Tích chọn **Origin access control settings (recommended)**.
    - **Origin access control**: Chọn `battleship-arena-AvatarOAC` vừa tạo ở bước trên (hoặc nhấp **Create new OAC** nếu chưa tạo trước đó).
 
@@ -42,9 +42,9 @@ S3 Avatar Bucket (`cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu`) đã
 
 #### 3. Cập nhật S3 Bucket Policy
 Để CloudFront OAC có quyền đọc tệp từ S3 Bucket đã tạo, bạn cần cập nhật Bucket Policy trên S3:
-1. Truy cập **Amazon S3 Console** > Chọn bucket `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu`.
+1. Truy cập **Amazon S3 Console** > Chọn bucket của bạn (ví dụ: `cloud-battleship-backend-dev-avatarbucket-YOUR_UNIQUE_SUFFIX`).
 2. Chọn tab **Permissions** > Kéo xuống phần **Bucket policy** và nhấn **Edit**.
-3. Dán chính sách JSON sau (thay thế bằng Account ID và CloudFront Distribution ID thực tế của bạn):
+3. Dán chính sách JSON sau (thay thế bằng Account ID, CloudFront Distribution ID và **tên S3 Avatar Bucket thực tế của bạn**):
 
 ```json
 {
@@ -57,7 +57,7 @@ S3 Avatar Bucket (`cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu`) đã
                 "Service": "cloudfront.amazonaws.com"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::cloud-battleship-backend-dev-avatarbucket-vp9oxrrlmrsu/*",
+            "Resource": "arn:aws:s3:::YOUR_S3_AVATAR_BUCKET_NAME/*",
             "Condition": {
                 "StringEquals": {
                     "AWS:SourceArn": "arn:aws:cloudfront::YOUR_ACCOUNT_ID:distribution/YOUR_CLOUDFRONT_DIST_ID"
