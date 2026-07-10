@@ -12,6 +12,16 @@ After completing this workshop, you will understand and deploy the end-to-end pr
 
 ---
 
+#### Overall System Architecture Diagram
+
+To get a high-level view of how the AWS services interact with each other in the Cloud Battleship Arena game, refer to the architecture diagram below:
+
+![AWS Architecture Diagram](/images/5-Workshop/5.1-Introduction/AWS_Architecture.png)
+
+This diagram describes the complete flow from when users access the game client via CloudFront, authenticate via Cognito, connect in real-time through WebSocket API Gateway, run serverless game logic on Lambda, and store persistent state in DynamoDB and S3.
+
+---
+
 #### AWS Services Used in this Workshop
 
 | Service | Role in the Project |
