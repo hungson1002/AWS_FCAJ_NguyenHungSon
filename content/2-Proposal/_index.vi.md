@@ -29,7 +29,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 - **Amazon Cognito** xử lý xác thực người dùng an toàn.
 - **Amazon API Gateway (HTTP & WebSocket APIs)** cung cấp endpoint RESTful cho quản lý phòng/matchmaking và kênh WebSocket hai chiều cho game real-time.
 - **AWS Lambda (Node.js 24.x)** thực thi toàn bộ logic backend: quản lý kết nối, định tuyến tin nhắn, ghép trận, xử lý lịch sử đấu.
-- **Amazon DynamoDB** lưu trữ dữ liệu tốc độ cao (siêu thấp độ trễ) cho các bảng `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory`.
+- **Amazon DynamoDB** lưu trữ dữ liệu tốc độ cao (siêu thấp độ trễ) cho các bảng `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, `MatchHistory`.
 - **Amazon S3** lưu trữ Avatar người chơi thông qua Pre-signed URL.
 - **Amazon CloudFront** đóng vai trò là cổng vào duy nhất (Single Entry Point), phân phối Frontend tĩnh toàn cầu với độ trễ thấp và bảo vệ an toàn cho toàn bộ hệ thống (HTTP & WebSocket API) qua AWS WAF.
 - **AWS SAM (Serverless Application Model)** định nghĩa, đóng gói và triển khai toàn bộ hạ tầng dưới dạng mã (IaC).
@@ -62,7 +62,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 | **Amazon API Gateway (HTTP)** | Cung cấp RESTful endpoints: tạo phòng, ghép trận, hồ sơ |
 | **Amazon API Gateway (WebSocket)** | Kênh giao tiếp hai chiều real-time trong suốt trận đấu |
 | **AWS Lambda (Node.js 24.x)** | Toàn bộ logic game: connect/disconnect, fire, matchmaking, lịch sử |
-| **Amazon DynamoDB** | Lưu trữ `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory` với TTL tự động |
+| **Amazon DynamoDB** | Lưu trữ `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, `MatchHistory` với TTL tự động |
 | **Amazon S3** | Lưu trữ Avatar qua Pre-signed URL; host frontend tĩnh |
 | **Amazon CloudFront** | Cổng vào duy nhất (Single Entry Point), phân phối Frontend toàn cầu, proxy/security cho REST & WebSocket API qua WAF |
 | **AWS SAM** | Infrastructure as Code — định nghĩa và triển khai hạ tầng |
@@ -111,7 +111,15 @@ Dự án được phân bổ khoa học song hành cùng lộ trình thực tậ
 
 ### 5. Lộ trình & Mốc triển khai
 
-Xem chi tiết các giai đoạn triển khai tại **Mục 4 — Triển khai kỹ thuật** ở trên. Ngoài 4 giai đoạn phát triển chính, hệ thống được vận hành liên tục sau khi go-live thông qua **CloudWatch Dashboard** để giám sát lỗi Lambda, throttle DynamoDB và tối ưu hóa chi phí theo thực tế tải.
+Dự án phân bổ theo 4 giai đoạn tương ứng với 9 tuần thực tập (chi tiết tại Mục 4). Sau khi go-live, hệ thống được vận hành liên tục qua **CloudWatch Dashboard** để giám sát các chỉ số quan trọng:
+
+| Giai đoạn | Tuần | Mốc hoàn thành |
+|---|---|---|
+| Đào tạo LAB | 1–4 | Nắm vững S3, CloudFront, EC2, Networking |
+| Core Backend | 5–6 | Cognito, API Gateway, Lambda, DynamoDB hoạt động |
+| PvP & Game Logic | 7–8 | WebSocket thời gian thực, Avatar, Throttling |
+| Triển khai & Hoàn thiện | 9 | CI/CD, CloudFront, Architecture diagram |
+| **Vận hành liên tục** | Post go-live | CloudWatch monitoring, Cost optimization |
 
 ---
 
@@ -149,7 +157,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 
 #### Kế hoạch dự phòng
 
-- Nếu mất kết nối WebSocket đột ngột: Sử dụng cơ chế phục hồi phiên kết nối (session reconnection) phía Client bằng cách dùng Connection ID cũ để tiếp tục trận đấu mà không làm gián đoạn trải nghiệm.
+- Nếu mất kết nối WebSocket đột ngột: Client tự động kết nối lại (reconnect) để nhận một Connection ID mới từ API Gateway, sau đó gọi REST API để re-link vào Room đang chơi dở — toàn bộ trạng thái trận đấu được khôi phục từ DynamoDB mà không cần người chơi làm gì thêm.
 - Sử dụng CloudFormation để rollback nhanh về phiên bản ổn định trước đó.
 - CloudWatch Alarms gửi email khi Lambda errors hoặc DynamoDB throttle vượt ngưỡng.
 
@@ -158,7 +166,7 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 ### 8. Kết quả kỳ vọng
 
 **Cải tiến kỹ thuật**
-- Trải nghiệm game real-time mượt mà với độ trễ WebSocket dưới 100ms.
+- Trải nghiệm game real-time mượt mà với độ trễ WebSocket thấp (điển hình dưới 200ms cho kết nối đã warm trong cùng Region `ap-southeast-1`).
 - Khả năng mở rộng tự động theo nhu cầu thực tế nhờ kiến trúc Serverless — không cần can thiệp thủ công khi traffic tăng đột biến.
 - CI/CD hoàn chỉnh: mỗi lần push code lên `main` tự động deploy lên Production.
 

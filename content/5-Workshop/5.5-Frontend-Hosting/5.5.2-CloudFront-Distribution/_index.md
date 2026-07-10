@@ -45,3 +45,13 @@ Once stack status shows `CREATE_COMPLETE`:
 
 ![CloudFront Outputs](/images/5-Workshop/5.5-Frontend-Hosting/5.5.2-CloudFront-Distribution/cloudfront-domain-output.png)
 
+---
+
+{{% notice warning %}}
+**Required Action — Update Backend CORS**: You now have your CloudFront domain. Navigate back to the `BackEnd/` directory and redeploy SAM with the domain you just retrieved:
+```bash
+cd AWS_Cloud_Battleship_Arena/BackEnd
+sam deploy --parameter-overrides CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>
+```
+Skipping this step will cause the API to return CORS errors when the Frontend is served from CloudFront.
+{{% /notice %}}
