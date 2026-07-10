@@ -25,7 +25,7 @@ All Amazon CloudFront metrics are published exclusively to the **us-east-1 (N. V
 3. Select **Upload a template file** → choose `/Infra/cloudfront-monitoring.yaml`. Click **Next**.
 4. **Specify stack details**:
    - **Stack name**: `cloud-battleship-arena-monitoring`.
-   - **CloudFrontDistributionId**: `E2NO3LKHKC2CLD`.
+   - **CloudFrontDistributionId**: `<YOUR_CLOUDFRONT_DISTRIBUTION_ID>` (Enter the CloudFront Distribution ID you copied in step 5.5.2).
    - **MonitoringAlarmEmail**: Enter your personal email address.
    - Click **Next**.
 5. Click **Next** and then **Submit** to begin provisioning.

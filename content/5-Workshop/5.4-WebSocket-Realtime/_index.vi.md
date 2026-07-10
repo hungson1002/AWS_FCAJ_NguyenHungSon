@@ -8,7 +8,7 @@ pre : " <b> 5.4. </b> "
 
 ### Mục tiêu
 
-Cấu hình tích hợp API Gateway WebSocket để duy trì kênh giao tiếp hai chiều thời gian thực phục vụ quá trình ghép trận và bắn tàu.
+Xác nhận kênh WebSocket real-time hoạt động đúng bằng cách kiểm tra route cấu hình trên AWS Console và kiểm thử kết nối thực tế bằng công cụ `wscat` từ terminal.
 
 ---
 
@@ -34,3 +34,54 @@ Cấu hình tích hợp API Gateway WebSocket để duy trì kênh giao tiếp h
    - `$default` (trỏ về Lambda `wsMessage`)
 
 ![API Gateway WebSocket Routes](/images/5-Workshop/5.4-WebSocket-Realtime/api-gateway-websocket-routes.png)
+
+---
+
+#### Kiểm thử kết nối WebSocket bằng `wscat`
+
+`wscat` là công cụ CLI cho phép gửi/nhận tin nhắn WebSocket trực tiếp từ terminal mà không cần giao diện.
+
+**Bước 1: Cài đặt wscat**
+
+```bash
+npm install -g wscat
+```
+
+**Bước 2: Kết nối đến WebSocket API**
+
+Lấy giá trị `WebSocketUrl` từ Outputs của SAM ở bước 5.3 và chạy:
+
+```bash
+wscat -c wss://<YOUR_WEBSOCKET_API_ID>.execute-api.ap-southeast-1.amazonaws.com/prod
+```
+
+Nếu kết nối thành công, terminal hiển thị dấu nhắc:
+```
+Connected (press CTRL+C to quit)
+>
+```
+
+**Bước 3: Gửi một tin nhắn test**
+
+Trong cửa sổ `wscat`, gửi payload sau:
+
+```json
+{"action": "ping"}
+```
+
+Lambda `wsMessage` sẽ xử lý và trả về phản hồi (hoặc không trả nếu chưa có route `ping`). Điều quan trọng là kết nối không bị đứt và Lambda được gọi.
+
+{{% notice tip %}}
+Nếu nhận được lỗi `403 Forbidden`, kiểm tra lại cấu hình IAM của Lambda `wsConnect` — nó cần quyền `execute-api:ManageConnections` để gửi tin nhắn ngược về client.
+{{% /notice %}}
+
+---
+
+#### Xác nhận trong DynamoDB (ConnectionsTable)
+
+Sau khi `wscat` kết nối thành công, bảng `Connections` trong DynamoDB sẽ có một record mới:
+
+1. Mở **AWS Console → DynamoDB → Tables → Connections** (tên thực tế dạng `cloud-battleship-backend-dev-ConnectionsTable-...`).
+2. Chọn **Explore table items**.
+3. Xác nhận có một item với trường `connectionId` tương ứng với phiên `wscat` của bạn.
+4. Nhấn `Ctrl+C` để ngắt kết nối `wscat`, sau đó làm mới DynamoDB — xác nhận item đó đã bị xóa bởi Lambda `wsDisconnect`.

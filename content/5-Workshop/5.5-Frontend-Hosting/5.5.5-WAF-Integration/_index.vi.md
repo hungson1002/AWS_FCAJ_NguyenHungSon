@@ -32,7 +32,7 @@ Sau khi Web ACL `CloudBattleship-WAF` đã được tạo thành công, tiến h
 
 ![Quản lý tài nguyên bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_resource.png)
 
-4. Trong cửa sổ **Select resources to protect**, tích chọn CloudFront Distribution của Frontend của bạn (ví dụ: `E2NO3LHKC2CLD - d12bu86qwnw1gk.cloudfront.net - cloud-battleship-arena dev frontend`).
+4. Trong cửa sổ **Select resources to protect**, tích chọn CloudFront Distribution của Frontend của bạn (ví dụ: `<YOUR_CLOUDFRONT_DISTRIBUTION_ID> - <YOUR_CLOUDFRONT_DOMAIN_NAME> - cloud-battleship-arena dev frontend`).
 
 ![Chọn CloudFront để bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/select_resource.png)
 

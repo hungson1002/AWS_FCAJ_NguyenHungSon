@@ -31,7 +31,7 @@ Cloud Battleship Arena addresses these challenges with a fully **Serverless, eve
 - **AWS Lambda (Node.js 24.x)** executes all backend logic: connection management, message routing, matchmaking, and match history.
 - **Amazon DynamoDB** provides high-speed, ultra-low-latency storage for `Rooms`, `Connections`, `ChatMessages`, `User`, and `MatchHistory` tables.
 - **Amazon S3** securely stores player avatars via Pre-signed URLs and hosts the static frontend.
-- **Amazon CloudFront** distributes the frontend globally with low latency.
+- **Amazon CloudFront** acts as a Single Entry Point, distributing the static frontend globally with low latency and securing the entire application (HTTP & WebSocket APIs) via AWS WAF.
 - **AWS SAM (Serverless Application Model)** defines, packages, and deploys the entire infrastructure as code (IaC).
 
 **Benefits and Return on Investment**
@@ -64,7 +64,7 @@ The application follows a fully **Serverless, event-driven** architecture with t
 | **AWS Lambda (Node.js 24.x)** | Full game logic: connect/disconnect, fire, matchmaking, history |
 | **Amazon DynamoDB** | Stores `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory` with automatic TTL |
 | **Amazon S3** | Avatar storage via Pre-signed URL; static frontend hosting |
-| **Amazon CloudFront** | Global frontend distribution, HTTPS, optimized caching |
+| **Amazon CloudFront** | Single Entry Point, global frontend distribution, API and WebSocket traffic proxy/security via WAF |
 | **AWS SAM** | Infrastructure as Code — defines and deploys all backend resources |
 | **GitHub Actions + OIDC** | Automated CI/CD: build and deploy Frontend to S3/CloudFront |
 
@@ -111,13 +111,7 @@ The project is structured scientifically to align with the actual 9-week interns
 
 ### 5. Timeline & Milestones
 
-| Phase | Timeline | Content |
-|---|---|---|
-| Phase 1 | Weeks 1–4 | Research fundamental AWS services (S3, CloudFront, Backup, Migration, VPC, EC2) |
-| Phase 2 | Weeks 5–6 | Launch project, integrate Cognito, design API Gateway & Lambda, set up DynamoDB storage |
-| Phase 3 | Weeks 7–8 | Complete PvP WebSocket, S3 Avatar Upload URL, other functions, and Throttling |
-| Phase 4 | Week 9 | Enhance UI, deploy Frontend to S3/CloudFront, resolve Lambda Cold Starts, and draft architecture diagrams |
-| Operations | Ongoing | Monitor system with CloudWatch Dashboard, optimize costs and performance |
+Refer to the four implementation phases detailed in **Section 4 — Technical Implementation** above. Beyond the four main development phases, the system runs continuously post go-live with **CloudWatch Dashboard** monitoring for Lambda errors, DynamoDB throttling, and cost optimization based on real-world traffic.
 
 ---
 
@@ -155,7 +149,7 @@ The **pay-per-use** AWS Serverless model ensures extremely low costs at low traf
 
 #### Contingency Plans
 
-- If the WebSocket API fails: Temporarily fall back to HTTP API polling.
+- If a WebSocket connection drops: Client-side session reconnection logic will restore the gameplay state using the previous Connection ID without interrupting the match.
 - Use CloudFormation to quickly roll back to the last stable version.
 - CloudWatch Alarms send email notifications when Lambda errors or DynamoDB throttling exceeds thresholds.
 
@@ -165,7 +159,7 @@ The **pay-per-use** AWS Serverless model ensures extremely low costs at low traf
 
 **Technical Achievements**
 - Smooth real-time gameplay with WebSocket latency under 100ms.
-- System self-scales from 1 to thousands of concurrent players without manual intervention.
+- Automatic scaling in response to real-world demand thanks to the Serverless architecture — no manual intervention required during traffic spikes.
 - Complete CI/CD pipeline: every push to `main` automatically deploys to Production.
 
 **Academic & Professional Value**

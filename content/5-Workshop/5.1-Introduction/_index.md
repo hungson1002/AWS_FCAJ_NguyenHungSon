@@ -32,7 +32,7 @@ This diagram describes the complete flow from when users access the game client 
 | **Amazon DynamoDB** | Stores game lobbies, WebSocket connections, match history, and player rank stats. |
 | **Amazon Cognito** | Manages player registration, login, and provides JWT tokens to secure API calls. |
 | **Amazon S3** | Hosts compiled static web assets (HTML, CSS, JS) for the React 19 frontend. |
-| **Amazon CloudFront** | Global CDN for low-latency content delivery and secure S3 origin access via OAC. |
+| **Amazon CloudFront** | Single Entry Point, global content distribution, and API/WebSocket traffic proxy/security via WAF. |
 | **GitHub Actions + OIDC** | Automates frontend build and deploy when code is pushed to the `main` branch. |
 
 ---

@@ -25,7 +25,7 @@ Toàn bộ chỉ số (metrics) của Amazon CloudFront được AWS báo cáo v
 3. Chọn **Upload a template file** → chọn `/Infra/cloudfront-monitoring.yaml`. Nhấn **Next**.
 4. **Specify stack details**:
    - **Stack name**: `cloud-battleship-arena-monitoring`.
-   - **CloudFrontDistributionId**: `E2NO3LKHKC2CLD`.
+   - **CloudFrontDistributionId**: `<YOUR_CLOUDFRONT_DISTRIBUTION_ID>` (Nhập Distribution ID CloudFront của bạn đã copy ở bước 5.5.2).
    - **MonitoringAlarmEmail**: Nhập địa chỉ Email của bạn.
    - Nhấn **Next**.
 5. Nhấn **Next** và click **Submit** để deploy.

@@ -72,6 +72,10 @@ HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
 WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
+{{% notice warning %}}
+**CORS Note**: The `CorsOrigin = http://localhost:5173` value is for local development only. Once you complete **Step 5.5 (Frontend Hosting)** and have your CloudFront domain, you must re-run `sam deploy` with `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` — otherwise, the API will return CORS errors when the Frontend is served from CloudFront.
+{{% /notice %}}
+
 {{% notice tip %}}
 After running `sam deploy --guided` for the first time, SAM saves all parameters to `samconfig.toml`. Subsequent deployments only need `sam deploy` — no `--guided` flag required.
 {{% /notice %}}
@@ -103,7 +107,7 @@ To automatically persist registered user profiles to our DynamoDB table after th
 
 **DynamoDB Tables:**
 1. Navigate to **AWS Console → DynamoDB → Tables**.
-2. Verify that `Rooms`, `Connections`, and `User` tables are successfully provisioned.
+2. Verify that `Rooms`, `Connections`, and `ChatMessages` tables are successfully provisioned.
 
 ![DynamoDB database tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 

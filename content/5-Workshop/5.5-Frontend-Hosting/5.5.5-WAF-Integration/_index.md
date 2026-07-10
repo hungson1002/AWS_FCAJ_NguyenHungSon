@@ -32,7 +32,7 @@ Once the Web ACL `CloudBattleship-WAF` is successfully created, proceed to assoc
 
 ![Manage Protected Resources](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_resource.png)
 
-4. In the **Select resources to protect** window, check your frontend's CloudFront Distribution (e.g., `E2NO3LHKC2CLD - d12bu86qwnw1gk.cloudfront.net - cloud-battleship-arena dev frontend`).
+4. In the **Select resources to protect** window, check your frontend's CloudFront Distribution (e.g., `<YOUR_CLOUDFRONT_DISTRIBUTION_ID> - <YOUR_CLOUDFRONT_DOMAIN_NAME> - cloud-battleship-arena dev frontend`).
 
 ![Associate CloudFront Distribution](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/select_resource.png)
 

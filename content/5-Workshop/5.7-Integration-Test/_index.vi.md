@@ -12,7 +12,7 @@ Xác thực toàn bộ luồng hoạt động thực tế của game bằng các
 
 ---
 
-#### Method A - Kiểm thử qua giao diện Web (Web UI)
+#### Kiểm thử qua giao diện Web (Web UI)
 
 1. Mở trình duyệt và truy cập vào tên miền **CloudFrontDomainName** đã lấy từ Outputs ở bước 5.5.
 2. Click **Đăng ký (Sign Up)** để tạo 2 tài khoản người chơi.
