@@ -8,17 +8,17 @@ pre : " <b> 5.3. </b> "
 
 ### Goals
 
-Successfully deploy the entire Cloud Battleship Arena Backend on AWS — including **8 Lambda functions**, **2 API Gateways** (HTTP & WebSocket), and **5 DynamoDB tables** — using the `template.yaml` configuration.
+Successfully deploy the entire Cloud Battleship Arena Backend on AWS — including **19 Lambda functions**, **2 API Gateways** (HTTP & WebSocket), and **6 DynamoDB tables** — using the `template.yaml` configuration.
 
 ---
 
 #### Resource Structure in template.yaml
 
 The `BackEnd/template.yaml` file defines the complete Backend including:
-- **Globals**: Runtime `nodejs24.x`, 10s timeout, environment variables shared across all 8 Lambdas.
+- **Globals**: Runtime `nodejs24.x`, 10s timeout, environment variables shared across all Lambda functions.
 - **BattleshipHttpApi**: HTTP API Gateway with a JWT Authorizer tied to Cognito.
 - **BattleshipWebSocketApi**: WebSocket API Gateway with route selection based on the `action` field.
-- **RoomsTable / ConnectionsTable / ChatMessagesTable / UserTable / MatchHistoryTable**: 5 DynamoDB tables storing game rooms, active WebSocket connections, chat history, player profiles, and match history respectively (with TTL auto-expiry and GSI support).
+- **RoomsTable / ConnectionsTable / ChatMessagesTable / UserTable / EmailIndexTable / MatchHistoryTable**: 6 DynamoDB tables storing game rooms, active WebSocket connections, chat history, player profiles, email lookup mappings, and match history respectively (with TTL auto-expiry and GSI support).
 
 ---
 
@@ -110,7 +110,7 @@ To automatically persist registered user profiles to our DynamoDB table after th
 
 **DynamoDB Tables:**
 1. Navigate to **AWS Console → DynamoDB → Tables**.
-2. Verify that all **5 tables** are successfully provisioned: `Rooms`, `Connections`, `ChatMessages`, `User`, and `MatchHistory`.
+2. Verify that all **6 tables** are successfully provisioned: `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, and `MatchHistory`.
 
 ![DynamoDB database tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 

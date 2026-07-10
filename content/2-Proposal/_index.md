@@ -29,7 +29,7 @@ Cloud Battleship Arena addresses these challenges with a fully **Serverless, eve
 - **Amazon Cognito** handles secure user authentication.
 - **Amazon API Gateway (HTTP & WebSocket APIs)** provides RESTful endpoints for room management/matchmaking and a persistent two-way WebSocket channel for real-time gameplay.
 - **AWS Lambda (Node.js 24.x)** executes all backend logic: connection management, message routing, matchmaking, and match history.
-- **Amazon DynamoDB** provides high-speed, ultra-low-latency storage for `Rooms`, `Connections`, `ChatMessages`, `User`, and `MatchHistory` tables.
+- **Amazon DynamoDB** provides high-speed, ultra-low-latency storage for `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, and `MatchHistory` tables.
 - **Amazon S3** securely stores player avatars via Pre-signed URLs and hosts the static frontend.
 - **Amazon CloudFront** acts as a Single Entry Point, distributing the static frontend globally with low latency and securing the entire application (HTTP & WebSocket APIs) via AWS WAF.
 - **AWS SAM (Serverless Application Model)** defines, packages, and deploys the entire infrastructure as code (IaC).
@@ -62,7 +62,7 @@ The application follows a fully **Serverless, event-driven** architecture with t
 | **Amazon API Gateway (HTTP)** | RESTful endpoints: create room, matchmaking, user profile |
 | **Amazon API Gateway (WebSocket)** | Persistent two-way real-time channel during gameplay |
 | **AWS Lambda (Node.js 24.x)** | Full game logic: connect/disconnect, fire, matchmaking, history |
-| **Amazon DynamoDB** | Stores `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory` with automatic TTL |
+| **Amazon DynamoDB** | Stores `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, `MatchHistory` with automatic TTL |
 | **Amazon S3** | Avatar storage via Pre-signed URL; static frontend hosting |
 | **Amazon CloudFront** | Single Entry Point, global frontend distribution, API and WebSocket traffic proxy/security via WAF |
 | **AWS SAM** | Infrastructure as Code — defines and deploys all backend resources |

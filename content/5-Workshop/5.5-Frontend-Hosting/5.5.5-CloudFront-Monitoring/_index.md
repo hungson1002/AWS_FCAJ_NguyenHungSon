@@ -40,7 +40,7 @@ After the stack is created, AWS SNS sends a confirmation email:
 2. Find the email from **AWS Notifications** with subject `AWS Notification - Subscription Confirmation`.
 3. Click **Confirm subscription**.
 
-![SNS Email Subscription Confirmed](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/sns-confirm.png)
+![SNS Email Subscription Confirmed](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/sns-confirm.png)
 
 ---
 
@@ -48,12 +48,12 @@ After the stack is created, AWS SNS sends a confirmation email:
 
 **CloudWatch Alarms** (ensure region is set to `us-east-1`):
 
-![CloudWatch Alarms active list](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/cloudfront-alarms.png)
+![CloudWatch Alarms active list](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/cloudfront-alarms.png)
 
 Open **AWS Console → CloudWatch → Alarms**. Confirm 2 CloudFront error rate alarms are displayed.
 
 **CloudWatch Dashboard:**
 
-![CloudWatch Dashboard charts](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/cloudfront-dashboard.png)
+![CloudWatch Dashboard charts](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/cloudfront-dashboard.png)
 
 Open **CloudWatch → Dashboards** and select the newly created dashboard to view requests and traffic graphs.

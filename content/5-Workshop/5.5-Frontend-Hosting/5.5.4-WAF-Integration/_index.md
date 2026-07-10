@@ -30,11 +30,11 @@ Once the Web ACL `CloudBattleship-WAF` is successfully created, proceed to assoc
 2. Select the **Associated AWS resources** tab > Click the **Add global resources** button.
 3. Select **Add CloudFront or Amplify resources** from the dropdown menu.
 
-![Manage Protected Resources](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_resource.png)
+![Manage Protected Resources](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/manage_resource.png)
 
 4. In the **Select resources to protect** window, check your frontend's CloudFront Distribution (e.g., `<YOUR_CLOUDFRONT_DISTRIBUTION_ID> - <YOUR_CLOUDFRONT_DOMAIN_NAME> - cloud-battleship-arena dev frontend`).
 
-![Associate CloudFront Distribution](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/select_resource.png)
+![Associate CloudFront Distribution](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/select_resource.png)
 
 5. Click **Add** to complete the association.
 
@@ -45,7 +45,7 @@ To prevent request spamming from a single IP address:
 1. Inside the Web ACL details page for `CloudBattleship-WAF`, select the **Rules** tab > click **Add rules** > Select **Add my own rules and rule groups**.
 2. In the right pane "Add new rule", select **Custom rule** and click **Next**.
 
-![Select Custom Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_rule.png)
+![Select Custom Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/manage_rule.png)
 
 3. In the detail configuration screen, select the rule type and configure the following:
    - **Rule type**: Select **Rate-based rule**.
@@ -54,6 +54,6 @@ To prevent request spamming from a single IP address:
    - **IP address to use for rate limiting**: Select **Source IP address**.
    - **Action**: Select **Block** to block requests exceeding the threshold.
 
-![Configure Rate-based Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/set_based_limit.png)
+![Configure Rate-based Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/set_based_limit.png)
 
 4. Click **Add rule** at the bottom of the screen and save your changes.

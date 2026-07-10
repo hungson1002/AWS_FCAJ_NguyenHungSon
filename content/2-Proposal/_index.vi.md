@@ -29,7 +29,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 - **Amazon Cognito** xử lý xác thực người dùng an toàn.
 - **Amazon API Gateway (HTTP & WebSocket APIs)** cung cấp endpoint RESTful cho quản lý phòng/matchmaking và kênh WebSocket hai chiều cho game real-time.
 - **AWS Lambda (Node.js 24.x)** thực thi toàn bộ logic backend: quản lý kết nối, định tuyến tin nhắn, ghép trận, xử lý lịch sử đấu.
-- **Amazon DynamoDB** lưu trữ dữ liệu tốc độ cao (siêu thấp độ trễ) cho các bảng `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory`.
+- **Amazon DynamoDB** lưu trữ dữ liệu tốc độ cao (siêu thấp độ trễ) cho các bảng `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, `MatchHistory`.
 - **Amazon S3** lưu trữ Avatar người chơi thông qua Pre-signed URL.
 - **Amazon CloudFront** đóng vai trò là cổng vào duy nhất (Single Entry Point), phân phối Frontend tĩnh toàn cầu với độ trễ thấp và bảo vệ an toàn cho toàn bộ hệ thống (HTTP & WebSocket API) qua AWS WAF.
 - **AWS SAM (Serverless Application Model)** định nghĩa, đóng gói và triển khai toàn bộ hạ tầng dưới dạng mã (IaC).
@@ -62,7 +62,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 | **Amazon API Gateway (HTTP)** | Cung cấp RESTful endpoints: tạo phòng, ghép trận, hồ sơ |
 | **Amazon API Gateway (WebSocket)** | Kênh giao tiếp hai chiều real-time trong suốt trận đấu |
 | **AWS Lambda (Node.js 24.x)** | Toàn bộ logic game: connect/disconnect, fire, matchmaking, lịch sử |
-| **Amazon DynamoDB** | Lưu trữ `Rooms`, `Connections`, `ChatMessages`, `User`, `MatchHistory` với TTL tự động |
+| **Amazon DynamoDB** | Lưu trữ `Rooms`, `Connections`, `ChatMessages`, `User`, `EmailIndex`, `MatchHistory` với TTL tự động |
 | **Amazon S3** | Lưu trữ Avatar qua Pre-signed URL; host frontend tĩnh |
 | **Amazon CloudFront** | Cổng vào duy nhất (Single Entry Point), phân phối Frontend toàn cầu, proxy/security cho REST & WebSocket API qua WAF |
 | **AWS SAM** | Infrastructure as Code — định nghĩa và triển khai hạ tầng |

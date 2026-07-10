@@ -34,7 +34,7 @@ The S3 Avatar Bucket (e.g., `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlm
    - **Origin access**: Select **Origin access control settings (recommended)**.
    - **Origin access control**: Select the `battleship-arena-AvatarOAC` OAC created in the previous step (or click **Create new OAC** if you didn't create it beforehand).
 
-![Create Origin for Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-S3-Avatar-Bucket/create_origin.jpg)
+![Create Origin for Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-S3-Avatar-Bucket/create_origin.jpg)
 
 4. Click **Create origin** at the bottom of the page to save the origin.
 

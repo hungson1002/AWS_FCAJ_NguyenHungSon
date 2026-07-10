@@ -40,7 +40,7 @@ Sau khi stack tạo xong, AWS SNS gửi email xác nhận đến hòm thư của
 2. Tìm email từ **AWS Notifications** có tiêu đề `AWS Notification - Subscription Confirmation`.
 3. Click **Confirm subscription**.
 
-![Email xác nhận đăng ký SNS Alarm](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/sns-confirm.png)
+![Email xác nhận đăng ký SNS Alarm](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/sns-confirm.png)
 
 ---
 
@@ -48,12 +48,12 @@ Sau khi stack tạo xong, AWS SNS gửi email xác nhận đến hòm thư của
 
 **CloudWatch Alarms** (đảm bảo đang ở vùng `us-east-1`):
 
-![Danh sách CloudWatch Alarms đã được tạo](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/cloudfront-alarms.png)
+![Danh sách CloudWatch Alarms đã được tạo](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/cloudfront-alarms.png)
 
 Mở **AWS Console → CloudWatch → Alarms**. Xác nhận 2 Alarm giám sát lỗi CloudFront đang hiển thị.
 
 **CloudWatch Dashboard:**
 
-![Giao diện CloudWatch Dashboard](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-CloudFront-Monitoring/cloudfront-dashboard.png)
+![Giao diện CloudWatch Dashboard](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-CloudFront-Monitoring/cloudfront-dashboard.png)
 
 Mở **CloudWatch → Dashboards** và chọn dashboard vừa tạo để xem biểu đồ requests và traffic.

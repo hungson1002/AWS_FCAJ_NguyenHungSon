@@ -34,7 +34,7 @@ S3 Avatar Bucket (ví dụ: `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlm
    - **Origin access**: Tích chọn **Origin access control settings (recommended)**.
    - **Origin access control**: Chọn `battleship-arena-AvatarOAC` vừa tạo ở bước trên (hoặc nhấp **Create new OAC** nếu chưa tạo trước đó).
 
-![Tạo Origin cho Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-S3-Avatar-Bucket/create_origin.jpg)
+![Tạo Origin cho Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-S3-Avatar-Bucket/create_origin.jpg)
 
 4. Nhấp **Create origin** ở cuối trang để hoàn tất thêm Origin.
 
