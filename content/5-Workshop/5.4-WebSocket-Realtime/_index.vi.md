@@ -1,108 +1,36 @@
 ---
 title : "Tích hợp WebSocket real-time"
 date : 2024-01-01 
-weight : 4 
+weight : 4
 chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-#### Tổng quan về WebSocket trong game real-time
+### Mục tiêu
 
-**WebSocket** là giao thức kết nối hai chiều (bidirectional) liên tục giữa client và server. Khác với HTTP (request-response), WebSocket duy trì một kết nối mở để server có thể chủ động đẩy dữ liệu xuống client bất cứ lúc nào.
+Cấu hình tích hợp API Gateway WebSocket để duy trì kênh giao tiếp hai chiều thời gian thực phục vụ quá trình ghép trận và bắn tàu.
 
-Trong **Cloud Battleship Arena**, WebSocket được dùng để:
-+ **Đồng bộ xếp tàu**: Khi cả hai người chơi đã sẵn sàng (`LobbyReady`), server broadcast tín hiệu bắt đầu.
-+ **Truyền tọa độ bắn**: Người chơi gửi `FIRE` với tọa độ, server broadcast cho đối thủ để kiểm tra trúng/trượt.
-+ **Chat trong phòng**: Tin nhắn chat được relay qua WebSocket với độ trễ thấp.
-+ **Thông báo kết thúc trận**: Khi tàu cuối cùng bị chìm, server gửi `GAME_OVER` payload.
+---
 
-#### Tại sao dùng API Gateway WebSocket thay vì tự quản lý server?
+#### WebSocket vs HTTP — Sự khác biệt cốt lõi
 
-+ **Không cần quản lý kết nối**: API Gateway tự động xử lý handshake, giữ kết nối sống, và route message.
-+ **Tích hợp với Lambda**: Mỗi sự kiện WebSocket kích hoạt một hàm Lambda riêng biệt.
-+ **TTL tự động**: Các `connectionId` stale được dọn dẹp tự động qua DynamoDB TTL.
+| Đặc tính | HTTP | WebSocket |
+|---|---|---|
+| Kiểu kết nối | Request → Response (1 chiều) | Kết nối liên tục (2 chiều) |
+| Ai gửi trước | Luôn là Client | Cả Client lẫn Server |
+| Phù hợp cho | REST API, load data | Game real-time, chat, notifications |
+| Trong dự án | Tạo phòng, hồ sơ | Bắn đạn, chat, kết thúc trận |
 
-#### Luồng hoạt động WebSocket
+---
 
-```
-1. Client kết nối: wss://<WebSocketUrl>?token=<JWT>
-       ↓
-2. API Gateway kiểm tra token và kích hoạt wsConnect Lambda
-       ↓
-3. wsConnect lưu {connectionId, roomCode, userId} vào ConnectionsTable
-       ↓
-4. Client gửi message: {"action": "FIRE", "row": 3, "col": 5}
-       ↓
-5. API Gateway route theo "action" → kích hoạt wsMessage Lambda
-       ↓
-6. wsMessage truy vấn ConnectionsTable để tìm connectionId của đối thủ
-       ↓
-7. wsMessage gọi API Gateway Management API để gửi kết quả cho đối thủ
-       ↓
-8. Client ngắt kết nối → wsDisconnect Lambda dọn dẹp record trong ConnectionsTable
-```
+#### Kiểm tra kết quả (AWS Console)
 
-#### Cấu hình WebSocket trong template.yaml
+1. Mở **AWS Console → API Gateway → APIs**.
+2. Click chọn **cloud-battleship-backend-dev-WebSocketApi**.
+3. Chọn tab **Routes** ở thanh menu bên trái.
+4. Xác nhận hệ thống đã khởi tạo đủ 3 route mặc định:
+   - `$connect` (trỏ về Lambda `wsConnect`)
+   - `$disconnect` (trỏ về Lambda `wsDisconnect`)
+   - `$default` (trỏ về Lambda `wsMessage`)
 
-```yaml
-BattleshipWebSocketApi:
-  Type: AWS::ApiGatewayV2::Api
-  Properties:
-    Name: CloudBattleshipWebSocket
-    ProtocolType: WEBSOCKET
-    RouteSelectionExpression: "$request.body.action"
-
-WebSocketConnectFunction:
-  Type: AWS::Serverless::Function
-  Properties:
-    Handler: src/handlers/wsConnect.handler
-    Events:
-      Connect:
-        Type: HttpApi   # WebSocket $connect route
-```
-
-#### Bước 1: Kiểm thử WebSocket bằng wscat
-
-Cài đặt công cụ `wscat` để test WebSocket từ terminal:
-
-```bash
-npm install -g wscat
-```
-
-Kết nối tới WebSocket API:
-```bash
-wscat -c "wss://<WebSocketUrl>?roomCode=ABC123" \
-  -H "Authorization: Bearer <JWT_TOKEN>"
-```
-
-#### Bước 2: Gửi hành động game
-
-Sau khi kết nối thành công, gửi một message:
-```json
-{"action": "FIRE", "row": 3, "col": 5}
-```
-
-Đối thủ trong cùng phòng sẽ nhận được broadcast:
-```json
-{
-  "type": "OPPONENT_FIRE",
-  "row": 3,
-  "col": 5,
-  "result": "HIT"
-}
-```
-
-#### Bước 3: Kiểm tra ConnectionsTable trên DynamoDB Console
-
-Mở AWS Console → DynamoDB → Tables → `Connections`. Bạn sẽ thấy record của kết nối vừa tạo với các field:
-- `connectionId`: ID duy nhất được API Gateway cấp
-- `roomCode`: Mã phòng
-- `userId`: ID người chơi từ Cognito
-- `ttl`: Thời gian sống (Unix timestamp)
-
-#### Nội dung
-
-- [Chuẩn bị môi trường test WebSocket](5.4.1-WebSocket-Setup/)
-- [Tạo Interface WebSocket API](5.4.2-Create-WebSocket-API/)
-- [Kiểm thử kết nối real-time](5.4.3-Test-WebSocket/)
-- [Mô phỏng luồng game đầy đủ](5.4.4-Game-Flow/)
+![API Gateway WebSocket Routes](/images/5-Workshop/5.4-WebSocket-Realtime/api-gateway-websocket-routes.png)

@@ -6,23 +6,24 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Xây dựng Backend Serverless cho Cloud Battleship Arena
+# Thực hành triển khai Cloud Battleship Arena lên AWS
 
 #### Tổng quan
 
-**AWS Serverless** cho phép bạn chạy các ứng dụng mà không cần quản lý máy chủ — AWS tự động mở rộng theo nhu cầu và bạn chỉ trả tiền cho những gì thực sự sử dụng.
+Trong workshop này, chúng ta sẽ đi qua toàn bộ quy trình thực tế để tự tay đóng gói, cấu hình và triển khai dự án game bắn tàu **Cloud Battleship Arena** lên hạ tầng điện toán đám mây **Amazon Web Services (AWS)**. 
 
-Trong workshop này, chúng ta sẽ học cách thiết kế, triển khai và kiểm thử một hệ thống backend hoàn chỉnh cho trò chơi bắn tàu thời gian thực đa người chơi (**Cloud Battleship Arena**) bằng cách sử dụng **AWS SAM**, **AWS Lambda**, **Amazon API Gateway** (HTTP & WebSocket), **Amazon DynamoDB**, và **Amazon Cognito**.
+Bài thực hành mô phỏng 100% các bước triển khai thực tế mà bạn đã thực hiện trong quá trình phát triển sản phẩm:
++ **Triển khai Backend Serverless** bằng AWS SAM (Lambda, API Gateway HTTP/WebSocket, DynamoDB).
++ **Triển khai Frontend** lưu trữ tĩnh trên Amazon S3 và phân phối toàn cầu qua CDN Amazon CloudFront.
++ **Thiết lập CI/CD tự động hóa** bằng GitHub Actions thông qua kết nối bảo mật OIDC (không cần dùng AWS Access Key/Secret Key dài hạn).
 
-Chúng ta sẽ xây dựng hai loại API:
-+ **HTTP API (REST)** — Để quản lý phòng chơi, hồ sơ người dùng và matchmaking.
-+ **WebSocket API** — Để truyền tải trạng thái game theo thời gian thực giữa các người chơi.
+#### Nội dung bài thực hành
 
-#### Nội dung
-
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị môi trường](5.2-Prerequiste/)
+1. [Giới thiệu](5.1-Introduction/)
+2. [Chuẩn bị môi trường & Cognito](5.2-Prerequisite/)
 3. [Triển khai Backend với AWS SAM](5.3-SAM-Backend/)
 4. [Tích hợp WebSocket real-time](5.4-WebSocket-Realtime/)
-5. [Bảo mật API với Cognito (nâng cao)](5.5-Cognito-Security/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+5. [Lưu trữ Frontend tĩnh (S3 & CloudFront)](5.5-Frontend-Hosting/)
+6. [Tự động hóa CI/CD với GitHub Actions](5.6-CICD-Pipeline/)
+7. [Kiểm thử toàn trình](5.7-Integration-Test/)
+8. [Dọn dẹp tài nguyên](5.8-Cleanup/)

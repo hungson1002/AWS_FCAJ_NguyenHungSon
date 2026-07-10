@@ -66,7 +66,7 @@ The application follows a fully **Serverless, event-driven** architecture with t
 
 #### Component Design
 
-- **Frontend (React 19 + Vite)**: SPA with AWS Amplify for auth, Native WebSocket for real-time, Howler.js for audio, multilingual support (i18n), and responsive design.
+- **Frontend (React 19 + Vite)**: SPA with AWS Amplify for auth, Native WebSocket for real-time, Howler.js for audio, Phaser for animations, multilingual support (i18n), and responsive design.
 - **WebSocket Handlers**: `wsConnect`, `wsDisconnect`, `wsMessage` — manage connection lifecycle and broadcast game state to opponents.
 - **Room Management**: `createRoom`, `joinRoom`, `matchmakeRoom`, `getRoom`, `readyRoom`, `lobbyReadyRoom`, `rematchRoom`, `leaveRoom`.
 - **User Management**: `createUser`, `getUser`, `updateUsername`, `getAvatarUploadUrl`, `getMatchHistory`.
@@ -100,7 +100,7 @@ The project is divided into three major phases:
 #### Technical Requirements
 
 - **Backend**: Node.js 24.x, AWS SAM CLI, AWS CLI.
-- **Frontend**: Node.js v20+, React 19, Vite, AWS Amplify SDK, Native WebSocket, Howler.js.
+- **Frontend**: Node.js v20+, React 19, Vite, AWS Amplify SDK, Native WebSocket, Howler.js, Phaser (animations).
 - **Infrastructure**: AWS Account, GitHub repository with Actions enabled.
 
 ---

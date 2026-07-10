@@ -6,32 +6,30 @@ chapter : false
 pre : " <b> 5.3.1 </b> "
 ---
 
-#### Understanding the template.yaml Structure
+### Goals
 
-The `template.yaml` file is the heart of the Backend. Open it and review the main sections:
+Understand the `template.yaml` structure and successfully package the entire Backend into a deployment artifact ready for AWS.
 
-```yaml
-AWSTemplateFormatVersion: "2010-09-09"
-Transform: AWS::Serverless-2016-10-31
-Description: Cloud Battleship Arena serverless backend.
+---
 
-Globals:
-  Function:
-    Runtime: nodejs24.x
-    Timeout: 10
-    MemorySize: 256
-```
+#### Resource Structure in template.yaml
 
-**Globals** defines the default configuration for all Lambda functions — avoiding repeated configuration for each function.
+The `BackEnd/template.yaml` file defines the complete Backend including:
+- **Globals**: Runtime `nodejs24.x`, 10s timeout, environment variables shared across all 8 Lambdas.
+- **BattleshipHttpApi**: HTTP API Gateway with a JWT Authorizer tied to Cognito.
+- **BattleshipWebSocketApi**: WebSocket API Gateway with route selection based on the `action` field.
+- **RoomsTable / ConnectionsTable / ChatMessagesTable**: 3 DynamoDB tables with TTL and GSI.
+
+---
 
 #### Step 1: Install Dependencies
-
-Navigate to the `BackEnd/` directory:
 
 ```bash
 cd AWS_Cloud_Battleship_Arena/BackEnd
 npm install
 ```
+
+---
 
 #### Step 2: Build SAM Artifact
 
@@ -39,26 +37,9 @@ npm install
 sam build
 ```
 
-The build process will:
-1. Read `template.yaml` and identify all Lambda functions.
-2. Run `npm install` for each function.
-3. Package artifacts into the `.aws-sam/build/` directory.
+SAM reads `template.yaml`, runs `npm install` for each Lambda, and packages them into `.aws-sam/build/`.
 
-After a successful build, you'll see:
-
-```
-Build Succeeded
-
-Built Artifacts  : .aws-sam/build
-Built Template   : .aws-sam/build/template.yaml
-
-Commands you can use next
-=========================
-[*] Validate SAM template: sam validate
-[*] Invoke Function: sam local invoke
-[*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
-[*] Deploy: sam deploy --guided
-```
+---
 
 #### Step 3: Validate Template (Optional)
 
@@ -66,16 +47,17 @@ Commands you can use next
 sam validate --lint
 ```
 
-This command checks the syntax and logic of `template.yaml` to catch errors before deployment.
+---
 
-#### Step 4: Preview Changeset Before Deploying
+#### Verify Build Output
 
 ```bash
-sam deploy --guided --no-execute-changeset
+ls .aws-sam/build/
+# Expected: CreateRoomFunction/ JoinRoomFunction/ WebSocketConnectFunction/ ...
 ```
 
-This shows what changes would be created without actually deploying. Useful for reviewing before applying.
+Each directory corresponds to one independently packaged Lambda function.
 
 {{% notice tip %}}
-After the first `sam deploy --guided` run, SAM automatically saves your parameters to `samconfig.toml`. Subsequent deployments only need `sam deploy` — no `--guided` flag required.
+After running `sam deploy --guided` for the first time, SAM saves all parameters to `samconfig.toml`. Subsequent deployments only need `sam deploy` — no `--guided` flag required.
 {{% /notice %}}

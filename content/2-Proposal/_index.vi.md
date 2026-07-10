@@ -66,7 +66,7 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 
 #### Thiết kế thành phần
 
-- **Frontend (React 19 + Vite)**: SPA với AWS Amplify cho auth, WebSocket Native cho real-time, Howler.js cho âm thanh, hỗ trợ đa ngôn ngữ (i18n) và responsive design.
+- **Frontend (React 19 + Vite)**: SPA với AWS Amplify cho auth, WebSocket Native cho real-time, Howler.js cho âm thanh, Phaser cho hiệu ứng động, hỗ trợ đa ngôn ngữ (i18n) và responsive design.
 - **WebSocket Handlers**: `wsConnect`, `wsDisconnect`, `wsMessage` — quản lý vòng đời kết nối và phát sóng (broadcast) trạng thái game.
 - **Room Management**: `createRoom`, `joinRoom`, `matchmakeRoom`, `getRoom`, `readyRoom`, `lobbyReadyRoom`, `rematchRoom`, `leaveRoom`.
 - **User Management**: `createUser`, `getUser`, `updateUsername`, `getAvatarUploadUrl`, `getMatchHistory`.
@@ -100,7 +100,7 @@ Dự án được chia làm 3 giai đoạn lớn:
 #### Yêu cầu kỹ thuật
 
 - **Backend**: Node.js 24.x, AWS SAM CLI, AWS CLI.
-- **Frontend**: Node.js v20+, React 19, Vite, AWS Amplify SDK, WebSocket Native, Howler.js.
+- **Frontend**: Node.js v20+, React 19, Vite, AWS Amplify SDK, WebSocket Native, Howler.js, Phaser (hiệu ứng động).
 - **Hạ tầng**: AWS Account, GitHub repository với Actions enabled.
 
 ---

@@ -1,112 +1,73 @@
 ---
 title : "Deploy Backend with AWS SAM"
-date : 2024-01-01
+date : 2024-01-01 
 weight : 3
 chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Introduction to AWS SAM
+### Goals
 
-**AWS SAM (Serverless Application Model)** is an IaC framework that lets you define an entire Serverless infrastructure in a single YAML file (`template.yaml`). SAM automatically creates AWS resources like Lambda, API Gateway, DynamoDB, IAM Roles, and more.
+Successfully deploy the entire Cloud Battleship Arena Backend on AWS — including **8 Lambda functions**, **2 API Gateways** (HTTP & WebSocket), and **3 DynamoDB tables** — using the `template.yaml` configuration.
 
-#### template.yaml Structure
+---
 
-The `BackEnd/template.yaml` file for Cloud Battleship Arena defines:
-
-**DynamoDB Resources:**
-- `RoomsTable` — Stores game room state with TTL for automatic cleanup of expired rooms.
-- `ConnectionsTable` — Maps `connectionId` ↔ `roomCode` for WebSocket, with a `byRoomCode` GSI.
-- `ChatMessagesTable` — Stores chat message history per room with TTL.
-
-**API Gateway Resources:**
-- `BattleshipHttpApi` — HTTP API with CORS and Cognito JWT Authorizer.
-- `BattleshipWebSocketApi` — WebSocket API with route selection via `$request.body.action`.
-
-**Lambda Resource example:**
-```yaml
-CreateRoomFunction:
-  Type: AWS::Serverless::Function
-  Properties:
-    FunctionName: CreateRoom
-    Handler: src/handlers/createRoom.handler
-    Runtime: nodejs24.x
-    Policies:
-      - DynamoDBCrudPolicy:
-          TableName: !Ref RoomsTable
-    Events:
-      CreateRoom:
-        Type: HttpApi
-        Properties:
-          ApiId: !Ref BattleshipHttpApi
-          Path: /api/rooms
-          Method: POST
-```
-
-#### Step 1: Build the Backend
-
-Navigate to the `BackEnd/` directory and run the build command:
+#### Step 1: Build the Backend Stack
 
 ```bash
 cd BackEnd
 sam build
 ```
 
-SAM will install Node.js dependencies and package each Lambda function into a separate deployment artifact.
+---
 
-#### Step 2: First Deploy (Interactive Mode)
+#### Step 2: Deploy to AWS
 
 ```bash
 sam deploy --guided
 ```
 
-SAM CLI will prompt for the following parameters:
+Configure parameters when prompted:
+
+| Parameter | Value |
+|---|---|
+| Stack Name | `cloud-battleship-backend-dev` |
+| AWS Region | `ap-southeast-1` |
+| CognitoUserPoolId | `ap-southeast-1_VV7CeCaWL` |
+| CognitoUserPoolClientId | `1vmsoep8dq5nlr1qvf8hpgsvs2` |
+| CorsOrigin | `http://localhost:5173` |
+
+After 3–5 minutes, the deployment completes successfully.
+
+---
+
+#### Step 3: Save Output Values
+
+Copy the two URLs from the SAM **Outputs** section:
 
 ```
-Stack Name [sam-app]: cloud-battleship-backend
-AWS Region [us-east-1]: ap-southeast-1
-Parameter CognitoUserPoolId []: <USER_POOL_ID_from_step_5.2>
-Parameter CognitoUserPoolClientId []: <CLIENT_ID_from_step_5.2>
-Parameter CorsOrigin [http://localhost:5173]: http://localhost:5173
-Confirm changes before deploy [y/N]: y
-Allow SAM CLI IAM role creation [Y/n]: Y
-Save arguments to configuration file [Y/n]: Y
+HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
+WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
-After approximately 3–5 minutes, the stack will be created successfully.
+---
 
-#### Step 3: Retrieve Output Values
+#### Verify Resources (AWS Console)
 
-After deployment, the terminal displays the **Outputs** section. Note the following values:
+**CloudFormation Stack:**
+1. Navigate to **AWS Console → CloudFormation → Stacks**.
+2. Confirm the stack `cloud-battleship-backend-dev` shows a status of `CREATE_COMPLETE`.
 
-```
-Key                 HttpApiUrl
-Value               https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com
+![CloudFormation stack CREATE_COMPLETE](/images/5-Workshop/5.3-SAM-Backend/cloudformation-stack.png)
 
-Key                 WebSocketUrl
-Value               wss://yyyyyyyyyy.execute-api.ap-southeast-1.amazonaws.com/Prod
-```
+**DynamoDB Tables:**
+1. Navigate to **AWS Console → DynamoDB → Tables**.
+2. Verify that `Rooms`, `Connections`, and `User` tables are successfully provisioned.
 
-#### Step 4: Test the API
+![DynamoDB database tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
 
-Try calling the HTTP API using `curl` or a tool like Postman:
-
-```bash
-# Create a new room (requires JWT token from Cognito)
-curl -X POST https://<HttpApiUrl>/api/rooms \
-  -H "Authorization: Bearer <JWT_TOKEN>" \
-  -H "Content-Type: application/json"
-```
-
-Expected response:
-```json
-{
-  "roomCode": "ABC123",
-  "createdAt": "2026-07-09T06:00:00.000Z"
-}
-```
+---
 
 #### Content
 
-- [Create and configure SAM stack](5.3.1-SAM-Build/)
-- [Test the HTTP API](5.3.2-Test-HTTP-API/)
+- [Configure and Build SAM Stack](5.3.1-SAM-Build/)

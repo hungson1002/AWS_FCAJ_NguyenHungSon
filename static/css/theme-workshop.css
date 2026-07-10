@@ -226,3 +226,7 @@ div.notices.info p {
   border-top: 30px solid #fd9827;
   background: #fff2db;
 }
+
+#body img {
+  max-width: 100% !important;
+}
