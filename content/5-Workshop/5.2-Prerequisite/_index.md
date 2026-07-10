@@ -72,7 +72,7 @@ cd AWS_Cloud_Battleship_Arena
 <img src="/images/5-Workshop/5.2-Prerequisite/cognito-user-pool.png" width="100%">
 
 Navigate inside your newly created pool and save these two values:
-- **User Pool ID** (e.g., `ap-southeast-1_VV7CeCaWL`)
-- **Client ID** (e.g., `1vmsoep8dq5nlr1qvf8hpgsvs2`)
+- **User Pool ID** (formatted as `<YOUR_COGNITO_USER_POOL_ID>`)
+- **Client ID** (formatted as `<YOUR_COGNITO_USER_POOL_CLIENT_ID>`)
 
 <img src="/images/5-Workshop/5.2-Prerequisite/cognito-app-client.png" width="100%">

@@ -7,7 +7,7 @@ pre: " <b> 2. </b> "
 ---
 
 # Cloud Battleship Arena
-## Nền tảng Game Bắn Tàu Thời Gian Thực Đa Người Chơi trên AWS Serverless
+## Nền tảng Game Bắn Tàu Thời Giang Thực Đa Người Chơi trên AWS Serverless
 
 ### 1. Tóm tắt điều hành
 **Cloud Battleship Arena** là một phiên bản hiện đại, hỗ trợ nhiều người chơi theo thời gian thực (Real-time Multiplayer) của tựa game bắn tàu kinh điển (Battleship). Dự án sử dụng kiến trúc **Serverless** hoàn toàn trên **Amazon Web Services (AWS)** để đảm bảo khả năng mở rộng cực cao và độ trễ thấp nhất, kết hợp với giao diện người dùng sống động, phản hồi nhanh được xây dựng bằng **React 19 + Vite**.
@@ -50,6 +50,10 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 2. **Real-time Engine**: Trong quá trình chơi game, thiết bị người chơi duy trì kết nối liên tục qua **WebSocket API** để đồng bộ trạng thái trò chơi (bắn đạn, xếp tàu, chat, kết thúc trận).
 3. **Backend Serverless**: Các hàm **AWS Lambda** xử lý tính toán, truy cập an toàn vào **DynamoDB** để lưu trạng thái và thực thi logic game — không cần quản lý bất kỳ máy chủ nào.
 
+#### Sơ đồ kiến trúc hệ thống
+
+![Kiến trúc tổng quan hệ thống Cloud Battleship Arena](/images/5-Workshop/5.2-Prerequisite/AWS_Architecture.png)
+
 #### Dịch vụ AWS sử dụng
 
 | Dịch vụ | Vai trò |
@@ -78,24 +82,24 @@ Cloud Battleship Arena giải quyết vấn đề này bằng kiến trúc **Ser
 
 #### Các giai đoạn triển khai
 
-Dự án được chia làm 3 giai đoạn lớn:
+Dự án được phân bổ khoa học song hành cùng lộ trình thực tập thực tế gồm 9 tuần:
 
-1. **Nghiên cứu & Thiết kế kiến trúc** *(Trước thực tập)*:
-   - Nghiên cứu kiến trúc Serverless trên AWS.
-   - Thiết kế luồng WebSocket cho game real-time.
-   - Xác định các bảng DynamoDB và lược đồ dữ liệu.
+1. **Đào tạo LAB & Kiến thức nền tảng** *(Tuần 1–4)*:
+   - **Tuần 1**: Làm quen với AWS và các dịch vụ cơ bản trong AWS.
+   - **Tuần 2**: Tìm hiểu Amazon S3, CloudFront và Static Website Hosting.
+   - **Tuần 3**: Tìm hiểu AWS Backup và Migrate Virtual Machines lên AWS.
+   - **Tuần 4**: Tìm hiểu AWS Networking, EC2 và Lên kế hoạch dự án thực tập.
 
-2. **Phát triển Backend & Frontend** *(Tháng 1–2)*:
-   - Lập trình các hàm Lambda cho WebSocket, Room, User Management.
-   - Định nghĩa toàn bộ hạ tầng bằng AWS SAM (`template.yaml`).
-   - Xây dựng giao diện React 19 với đầy đủ tính năng game.
-   - Tích hợp AWS Amplify cho luồng xác thực Cognito.
+2. **Khởi động dự án & Phát triển Core Backend** *(Tuần 5–6)*:
+   - **Tuần 5**: Tìm hiểu IAM User/Policy/Role, thảo luận đặc tả dự án Battleship và khởi tạo Frontend.
+   - **Tuần 6**: Tích hợp AWS Cognito xác thực người dùng, thiết kế API Gateway & Lambda, lưu trữ DynamoDB và lên kế hoạch PvP WebSocket.
 
-3. **Kiểm thử, CI/CD & Triển khai** *(Tháng 2–3)*:
-   - Thiết lập GitHub Actions với OIDC để tự động deploy Frontend.
-   - Cấu hình CloudFront, S3 Bucket Policy, CloudWatch Alarms.
-   - Kiểm thử end-to-end: luồng WebSocket, matchmaking, lịch sử đấu.
-   - Đưa vào vận hành thực tế.
+3. **Phát triển PvP, Game Logic & Tính năng nâng cao** *(Tuần 7–8)*:
+   - **Tuần 7**: Hoàn thiện chơi PvP thời gian thực bằng WebSocket, tích hợp S3 Presigned URL tải avatar, hoàn thiện Profile và hiệu ứng âm thanh.
+   - **Tuần 8**: Phát triển các chức năng khác và cấu hình Throttling trên API Gateway.
+
+4. **Tối ưu hóa, Triển khai & Hoàn thiện tài liệu** *(Tuần 9)*:
+   - **Tuần 9**: Cải tiến giao diện người dùng, Deploy Frontend bằng S3 & CloudFront, khắc phục lỗi Lambda Cold Start và vẽ sơ đồ kiến trúc AWS.
 
 #### Yêu cầu kỹ thuật
 
@@ -109,17 +113,17 @@ Dự án được chia làm 3 giai đoạn lớn:
 
 | Giai đoạn | Thời gian | Nội dung |
 |---|---|---|
-| Trước thực tập | Tháng 0 | Nghiên cứu Serverless, thiết kế kiến trúc, vẽ luồng WebSocket |
-| Tháng 1 | Tuần 1–4 | Phát triển Backend Lambda + SAM, kết nối DynamoDB |
-| Tháng 2 | Tuần 5–8 | Phát triển Frontend React, tích hợp Cognito + WebSocket |
-| Tháng 3 | Tuần 9–12 | CI/CD GitHub Actions, CloudFront, kiểm thử, launch |
-| Sau triển khai | Liên tục | Theo dõi CloudWatch, tối ưu chi phí, thêm tính năng |
+| Giai đoạn 1 | Tuần 1–4 | Nghiên cứu kiến thức nền tảng AWS (S3, CloudFront, Backup, Migration, VPC, EC2) |
+| Giai đoạn 2 | Tuần 5–6 | Khởi động dự án, tích hợp Cognito, thiết kế API Gateway & Lambda, lưu trữ DynamoDB |
+| Giai đoạn 3 | Tuần 7–8 | Hoàn thiện PvP WebSocket, S3 Avatar Upload URL, các chức năng khác và Throttling |
+| Giai đoạn 4 | Tuần 9 | Cải tiến UI, deploy Frontend lên S3/CloudFront, khắc phục Lambda Cold Start và hoàn thiện sơ đồ kiến trúc |
+| Vận hành | Liên tục | Giám sát qua CloudWatch Dashboard, tối ưu hóa chi phí và hiệu năng hệ thống |
 
 ---
 
 ### 6. Ước tính ngân sách
 
-Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấp khi lưu lượng ít:
+Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấp khi lưu lượng ít, ngoại trừ phí cấu hình bảo mật cố định từ AWS WAF:
 
 | Dịch vụ | Ước tính/tháng |
 |---|---|
@@ -130,9 +134,10 @@ Mô hình **Pay-per-use** của AWS Serverless đảm bảo chi phí cực thấ
 | Amazon S3 (Avatar + Frontend) | ~$0.05 |
 | Amazon CloudFront | ~$0.01 (Free Tier: 1 TB/tháng) |
 | Amazon Cognito | ~$0.00 (Free Tier: 50,000 MAU) |
-| **Tổng** | **~$0.10–$0.20/tháng** |
+| AWS WAF | ~$6.00 (Không thuộc Free Tier: $5/Web ACL + $1/Rule) |
+| **Tổng** | **~$6.10–$6.20/tháng** |
 
-> Chi phí thực tế có thể gần như $0 nhờ AWS Free Tier trong 12 tháng đầu.
+> *Lưu ý: AWS WAF có chi phí cơ sở cố định khoảng $6.00/tháng ($5 cho mỗi Web ACL và $1 cho mỗi Rule). Trong môi trường thực hành hoặc thử nghiệm, khuyến khích học viên xóa Web ACL khi kết thúc lab để tránh phát sinh chi phí duy trì.*
 
 ---
 

@@ -25,3 +25,6 @@ Triển khai hạ tầng phân phối giao diện Frontend cho game **Cloud Batt
 - [Khởi tạo S3 Bucket & Cấu hình OAC](5.5.1-S3-Bucket/)
 - [Thiết lập CloudFront Distribution](5.5.2-CloudFront-Distribution/)
 - [Giám sát CDN CloudFront](5.5.3-CloudFront-Monitoring/)
+- [Thiết lập Lưu trữ Avatar bảo mật (S3 & CloudFront OAC)](5.5.4-S3-Avatar-Bucket/)
+- [Tích hợp AWS WAF bảo mật biên](5.5.5-WAF-Integration/)
+

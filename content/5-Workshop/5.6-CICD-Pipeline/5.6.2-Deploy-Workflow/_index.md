@@ -98,9 +98,9 @@ JS/CSS files in `/assets/` contain content hashes in their filenames → cache p
    - `AWS_REGION`: `ap-southeast-1`
    - `FRONTEND_BUCKET`: `cloud-battleship-frontend-hosting-d-frontendbucket-41a7wzdtapv0`
    - `CLOUDFRONT_DISTRIBUTION_ID`: `E2NO3LKHKC2CLD`
-   - Additional environment configurations (like `VITE_AWS_REGION` as `ap-southeast-1`, `VITE_AWS_USER_POOL_ID` as `ap-southeast-1_VV7CeCaWL`, etc.).
+   - Additional environment configurations (like `VITE_AWS_REGION` as `ap-southeast-1`, `VITE_AWS_USER_POOL_ID` as `<YOUR_COGNITO_USER_POOL_ID>`, etc.).
 3. Create the following **Repository secret**:
-   - `AWS_DEPLOY_ROLE_ARN`: `arn:aws:iam::670516425271:role/cloud-battleship-arena-dev-frontend-github-deploy`
+   - `AWS_DEPLOY_ROLE_ARN`: `arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/cloud-battleship-arena-dev-frontend-github-deploy`
 
 **Repository Secrets:**
 
