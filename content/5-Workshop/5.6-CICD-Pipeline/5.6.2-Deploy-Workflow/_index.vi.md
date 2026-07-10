@@ -136,9 +136,9 @@ Tệp JS/CSS trong `/assets/` có hash ngẫu nhiên trong tên → cache vĩnh 
    - `AWS_REGION`: `ap-southeast-1`
    - `FRONTEND_BUCKET`: `cloud-battleship-frontend-hosting-d-frontendbucket-41a7wzdtapv0`
    - `CLOUDFRONT_DISTRIBUTION_ID`: `E2NO3LKHKC2CLD`
-   - Các biến cấu hình Frontend (ví dụ: `VITE_AWS_REGION` là `ap-southeast-1`, `VITE_AWS_USER_POOL_ID` là `ap-southeast-1_VV7CeCaWL`, v.v.).
+   - Các biến cấu hình Frontend (ví dụ: `VITE_AWS_REGION` là `ap-southeast-1`, `VITE_AWS_USER_POOL_ID` là `<YOUR_COGNITO_USER_POOL_ID>`, v.v.).
 3. Thêm một **Repository secret**:
-   - `AWS_DEPLOY_ROLE_ARN`: `arn:aws:iam::670516425271:role/cloud-battleship-arena-dev-frontend-github-deploy`
+   - `AWS_DEPLOY_ROLE_ARN`: `arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/cloud-battleship-arena-dev-frontend-github-deploy`
 
 **Repository Secrets:**
 
