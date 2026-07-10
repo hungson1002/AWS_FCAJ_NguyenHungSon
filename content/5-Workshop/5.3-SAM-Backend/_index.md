@@ -12,16 +12,44 @@ Successfully deploy the entire Cloud Battleship Arena Backend on AWS — includi
 
 ---
 
-#### Step 1: Build the Backend Stack
+#### Resource Structure in template.yaml
+
+The `BackEnd/template.yaml` file defines the complete Backend including:
+- **Globals**: Runtime `nodejs24.x`, 10s timeout, environment variables shared across all 8 Lambdas.
+- **BattleshipHttpApi**: HTTP API Gateway with a JWT Authorizer tied to Cognito.
+- **BattleshipWebSocketApi**: WebSocket API Gateway with route selection based on the `action` field.
+- **RoomsTable / ConnectionsTable / ChatMessagesTable**: 3 DynamoDB tables with TTL and GSI.
+
+---
+
+#### Step 1: Install Dependencies
 
 ```bash
-cd BackEnd
-sam build
+cd AWS_Cloud_Battleship_Arena/BackEnd
+npm install
 ```
 
 ---
 
-#### Step 2: Deploy to AWS
+#### Step 2: Build SAM Artifact
+
+```bash
+sam build
+```
+
+SAM reads `template.yaml`, runs `npm install` for each Lambda, and packages them into `.aws-sam/build/`.
+
+---
+
+#### Step 3: Validate Template (Optional)
+
+```bash
+sam validate --lint
+```
+
+---
+
+#### Step 4: Deploy to AWS
 
 ```bash
 sam deploy --guided
@@ -33,31 +61,29 @@ Configure parameters when prompted:
 |---|---|
 | Stack Name | `cloud-battleship-backend-dev` |
 | AWS Region | `ap-southeast-1` |
-| CognitoUserPoolId | `ap-southeast-1_VV7CeCaWL` |
-| CognitoUserPoolClientId | `1vmsoep8dq5nlr1qvf8hpgsvs2` |
+| CognitoUserPoolId | `<YOUR_COGNITO_USER_POOL_ID>` |
+| CognitoUserPoolClientId | `<YOUR_COGNITO_USER_POOL_CLIENT_ID>` |
 | CorsOrigin | `http://localhost:5173` |
 
-After 3–5 minutes, the deployment completes successfully.
-
----
-
-#### Step 3: Save Output Values
-
-Copy the two URLs from the SAM **Outputs** section:
+After 3–5 minutes, the deployment completes successfully. Save the two URLs from the SAM **Outputs** section:
 
 ```
 HttpApiUrl    → https://elh9fh33rd.execute-api.ap-southeast-1.amazonaws.com
 WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 ```
 
+{{% notice tip %}}
+After running `sam deploy --guided` for the first time, SAM saves all parameters to `samconfig.toml`. Subsequent deployments only need `sam deploy` — no `--guided` flag required.
+{{% /notice %}}
+
 ---
 
-#### Step 4: Configure Cognito Post-Confirmation Trigger
+#### Step 5: Configure Cognito Post-Confirmation Trigger
 
 To automatically persist registered user profiles to our DynamoDB table after they verify their account, we need to bind the Cognito SignUp event to our `CreateUser` Lambda function:
 
 1. Navigate to the **Amazon Cognito Console** > Select your `Battleship-Arena` User Pool.
-2. Select the **User pool properties** tab.
+2. Navigate to the **User pool properties** tab.
 3. Scroll down to the **Lambda triggers** section and click **Add Lambda trigger**.
 4. Configure trigger details:
    - **Trigger type**: Select **Sign-up** > Check **Post confirmation trigger** (Triggers after signup verification succeeds).
@@ -80,9 +106,3 @@ To automatically persist registered user profiles to our DynamoDB table after th
 2. Verify that `Rooms`, `Connections`, and `User` tables are successfully provisioned.
 
 ![DynamoDB database tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
-
----
-
-#### Content
-
-- [Configure and Build SAM Stack](5.3.1-SAM-Build/)

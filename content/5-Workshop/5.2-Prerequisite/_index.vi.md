@@ -72,7 +72,7 @@ cd AWS_Cloud_Battleship_Arena
 <img src="/images/5-Workshop/5.2-Prerequisite/cognito-user-pool.png" width="100%">
 
 Sau khi tạo xong, lưu lại hai giá trị trong trang chi tiết User Pool:
-- **User Pool ID** (ví dụ: `ap-southeast-1_VV7CeCaWL`)
-- **Client ID** (ví dụ: `1vmsoep8dq5nlr1qvf8hpgsvs2`)
+- **User Pool ID** (dạng `<YOUR_COGNITO_USER_POOL_ID>`)
+- **Client ID** (dạng `<YOUR_COGNITO_USER_POOL_CLIENT_ID>`)
 
 <img src="/images/5-Workshop/5.2-Prerequisite/cognito-app-client.png" width="100%">
