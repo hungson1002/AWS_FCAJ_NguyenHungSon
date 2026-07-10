@@ -52,6 +52,21 @@ WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 
 ---
 
+#### Bước 4: Cấu hình Cognito Post-Confirmation Trigger
+
+Để hệ thống tự động lưu thông tin người chơi vào bảng DynamoDB sau khi họ xác nhận tài khoản (đăng ký thành công), chúng ta cần liên kết sự kiện đăng ký của Cognito với Lambda function `CreateUser`:
+
+1. Truy cập **Amazon Cognito Console** > Chọn User Pool `Battleship-Arena` của bạn.
+2. Chọn tab **User pool properties**.
+3. Cuộn xuống phần **Lambda triggers** và chọn **Add Lambda trigger**.
+4. Cấu hình các thông tin trigger:
+   - **Trigger type**: Chọn **Sign-up** > Tích chọn **Post confirmation trigger** (Kích hoạt sau khi xác nhận đăng ký thành công).
+   - **Assign Lambda function**: Chọn **Choose an existing Lambda function**.
+   - **Lambda function**: Chọn hàm Lambda `CreateUser`.
+5. Nhấp **Add Lambda trigger** để lưu cấu hình.
+
+---
+
 #### Kiểm tra kết quả (AWS Console)
 
 **CloudFormation Stack:**

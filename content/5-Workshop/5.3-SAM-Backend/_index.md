@@ -52,6 +52,21 @@ WebSocketUrl  → wss://b9mxr6sqg6.execute-api.ap-southeast-1.amazonaws.com/prod
 
 ---
 
+#### Step 4: Configure Cognito Post-Confirmation Trigger
+
+To automatically persist registered user profiles to our DynamoDB table after they verify their account, we need to bind the Cognito SignUp event to our `CreateUser` Lambda function:
+
+1. Navigate to the **Amazon Cognito Console** > Select your `Battleship-Arena` User Pool.
+2. Select the **User pool properties** tab.
+3. Scroll down to the **Lambda triggers** section and click **Add Lambda trigger**.
+4. Configure trigger details:
+   - **Trigger type**: Select **Sign-up** > Check **Post confirmation trigger** (Triggers after signup verification succeeds).
+   - **Assign Lambda function**: Select **Choose an existing Lambda function**.
+   - **Lambda function**: Select our project's `CreateUser` function (its name will match `cloud-battleship-backend-dev-CreateUserFunction-xxxxxx`).
+5. Click **Add Lambda trigger** to save the binding.
+
+---
+
 #### Verify Resources (AWS Console)
 
 **CloudFormation Stack:**
