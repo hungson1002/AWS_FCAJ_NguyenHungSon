@@ -106,3 +106,16 @@ Sau lần đầu chạy `sam deploy --guided`, SAM tự lưu tham số vào `sam
 2. Xác nhận 3 bảng `Rooms`, `Connections`, và `User` đã được khởi tạo thành công.
 
 ![DynamoDB 3 tables](/images/5-Workshop/5.3-SAM-Backend/dynamodb-tables.png)
+
+**API Gateway Routes:**
+1. Mở **AWS Console → API Gateway → APIs**.
+2. Chọn HTTP API của dự án (ví dụ: `cloud-battleship-backend-dev`).
+3. Chọn **Routes** ở menu bên trái. Xác nhận tất cả các endpoint của HTTP API đều hiển thị đúng cấu trúc bên dưới route `/api`.
+
+![Cấu trúc routes của API Gateway](/images/5-Workshop/5.3-SAM-Backend/AllAPI.jpg)
+
+**Lambda Functions:**
+1. Mở **AWS Console → Lambda → Functions**.
+2. Xác nhận tất cả các Lambda functions của dự án đã được khởi tạo đầy đủ và sử dụng runtime `Node.js 24.x`.
+
+![Danh sách các Lambda function](/images/5-Workshop/5.3-SAM-Backend/AllLambda.jpg)

@@ -50,6 +50,10 @@ The application follows a fully **Serverless, event-driven** architecture with t
 2. **Real-time Engine**: During gameplay, each player's client maintains a persistent **WebSocket API** connection to synchronize game state in real time (firing shots, placing ships, chat, game-over events).
 3. **Serverless Backend**: **AWS Lambda** functions handle all computation, accessing **DynamoDB** securely to store state and enforce game logic — with zero server management.
 
+#### System Architecture Diagram
+
+![Overall Cloud Battleship Arena AWS Architecture](/images/5-Workshop/5.2-Prerequisite/AWS_Architecture.png)
+
 #### AWS Services Used
 
 | Service | Role |
@@ -78,24 +82,24 @@ The application follows a fully **Serverless, event-driven** architecture with t
 
 #### Implementation Phases
 
-The project is divided into three major phases:
+The project is structured scientifically to align with the actual 9-week internship roadmap:
 
-1. **Research & Architecture Design** *(Pre-internship)*:
-   - Study AWS Serverless architecture patterns.
-   - Design the WebSocket flow for real-time gameplay.
-   - Define DynamoDB tables and data schemas.
+1. **LAB Training & Foundational Knowledge** *(Weeks 1–4)*:
+   - **Week 1**: Get familiar with AWS and basic AWS services.
+   - **Week 2**: Study Amazon S3, CloudFront, and Static Website Hosting.
+   - **Week 3**: Study AWS Backup and Virtual Machine migration to AWS.
+   - **Week 4**: Study AWS Networking, EC2, and plan the internship project.
 
-2. **Backend & Frontend Development** *(Months 1–2)*:
-   - Develop Lambda functions for WebSocket, Room, and User Management.
-   - Define all infrastructure using AWS SAM (`template.yaml`).
-   - Build the React 19 UI with full game features.
-   - Integrate AWS Amplify for Cognito authentication flow.
+2. **Project Initiation & Core Backend Development** *(Weeks 5–6)*:
+   - **Week 5**: Study IAM User/Policy/Role, discuss Battleship project specifications, and initialize Frontend.
+   - **Week 6**: Integrate AWS Cognito for user authentication, design API Gateway & Lambda, set up DynamoDB storage, and plan PvP WebSockets.
 
-3. **Testing, CI/CD & Deployment** *(Months 2–3)*:
-   - Set up GitHub Actions with OIDC for automated Frontend deployment.
-   - Configure CloudFront, S3 Bucket Policy, and CloudWatch Alarms.
-   - End-to-end testing: WebSocket flow, matchmaking, match history.
-   - Launch to production.
+3. **PvP, Game Logic & Advanced Features Development** *(Weeks 7–8)*:
+   - **Week 7**: Complete real-time PvP gameplay via WebSockets, integrate S3 Pre-signed URLs for avatar uploads, finish user Profile profiles, and integrate sound effects.
+   - **Week 8**: Develop other functions and configure API Gateway Throttling.
+
+4. **Optimization, Deployment & Documentation Handoff** *(Week 9)*:
+   - **Week 9**: Enhance UI/UX, deploy the Frontend using S3 & CloudFront, resolve Lambda Cold Starts, and complete the AWS architecture diagrams.
 
 #### Technical Requirements
 
@@ -109,17 +113,17 @@ The project is divided into three major phases:
 
 | Phase | Timeline | Content |
 |---|---|---|
-| Pre-internship | Month 0 | Serverless research, architecture design, WebSocket flow design |
-| Month 1 | Weeks 1–4 | Backend Lambda development + SAM, DynamoDB integration |
-| Month 2 | Weeks 5–8 | Frontend React development, Cognito + WebSocket integration |
-| Month 3 | Weeks 9–12 | GitHub Actions CI/CD, CloudFront, testing, production launch |
-| Post-launch | Ongoing | CloudWatch monitoring, cost optimization, feature additions |
+| Phase 1 | Weeks 1–4 | Research fundamental AWS services (S3, CloudFront, Backup, Migration, VPC, EC2) |
+| Phase 2 | Weeks 5–6 | Launch project, integrate Cognito, design API Gateway & Lambda, set up DynamoDB storage |
+| Phase 3 | Weeks 7–8 | Complete PvP WebSocket, S3 Avatar Upload URL, other functions, and Throttling |
+| Phase 4 | Week 9 | Enhance UI, deploy Frontend to S3/CloudFront, resolve Lambda Cold Starts, and draft architecture diagrams |
+| Operations | Ongoing | Monitor system with CloudWatch Dashboard, optimize costs and performance |
 
 ---
 
 ### 6. Budget Estimation
 
-The **pay-per-use** AWS Serverless model ensures extremely low costs at low traffic:
+The **pay-per-use** AWS Serverless model ensures extremely low costs at low traffic, with the exception of the fixed base cost for AWS WAF:
 
 | Service | Estimated/month |
 |---|---|
@@ -130,9 +134,10 @@ The **pay-per-use** AWS Serverless model ensures extremely low costs at low traf
 | Amazon S3 (Avatar + Frontend) | ~$0.05 |
 | Amazon CloudFront | ~$0.01 (Free Tier: 1 TB/month) |
 | Amazon Cognito | ~$0.00 (Free Tier: 50,000 MAU) |
-| **Total** | **~$0.10–$0.20/month** |
+| AWS WAF | ~$6.00 (Not covered by Free Tier: $5/Web ACL + $1/Rule) |
+| **Total** | **~$6.10–$6.20/month** |
 
-> Actual costs may be near $0 thanks to the AWS Free Tier in the first 12 months.
+> *Note: AWS WAF has a fixed base cost of approximately $6.00/month ($5 per Web ACL + $1 per Rule). In testing or workshop environments, it is recommended for students to delete the Web ACL after completing the lab to avoid ongoing charges.*
 
 ---
 
