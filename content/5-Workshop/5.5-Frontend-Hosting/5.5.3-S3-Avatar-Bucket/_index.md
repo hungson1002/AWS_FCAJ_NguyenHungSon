@@ -1,9 +1,9 @@
 ---
 title : "Secure Avatar Storage Setup (S3 & CloudFront OAC)"
 date : 2024-01-01
-weight : 4
+weight : 3
 chapter : false
-pre : " <b> 5.5.4 </b> "
+pre : " <b> 5.5.3 </b> "
 ---
 
 ### Goals
@@ -34,13 +34,28 @@ The S3 Avatar Bucket (e.g., `cloud-battleship-backend-dev-avatarbucket-vp9oxrrlm
    - **Origin access**: Select **Origin access control settings (recommended)**.
    - **Origin access control**: Select the `battleship-arena-AvatarOAC` OAC created in the previous step (or click **Create new OAC** if you didn't create it beforehand).
 
-![Create Origin for Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-S3-Avatar-Bucket/create_origin.jpg)
+![Create Origin for Avatar Bucket](/images/5-Workshop/5.5-Frontend-Hosting/5.5.3-S3-Avatar-Bucket/create_origin.jpg)
 
 4. Click **Create origin** at the bottom of the page to save the origin.
 
 ---
 
-#### 3. Update S3 Bucket Policy
+#### 3. Create a Cache Behavior for the Avatar Path
+
+Adding the Origin alone is not enough — you must also create a **Cache Behavior** so that CloudFront knows to use the Avatar Origin for requests matching `/avatars/*`:
+1. Inside your CloudFront Distribution (`BattleshipArena`), select the **Behaviors** tab > Click **Create behavior**.
+2. Configure the following settings:
+   - **Path pattern**: `/avatars/*`
+   - **Origin and origin groups**: Select the Avatar S3 Origin you created in the previous step (named like `cloud-battleship-backend-dev-avatarbucket-...`).
+   - **Viewer protocol policy**: Select **Redirect HTTP to HTTPS**.
+   - **Cache policy**: Select **CachingOptimized** (default).
+3. Click **Create behavior** to save.
+
+> **Why is this step required?** Without a dedicated Cache Behavior for `/avatars/*`, CloudFront will use the default behavior (`*`) for all avatar requests — but the default behavior points to the S3 Frontend Bucket, not the Avatar Bucket. As a result, avatar images will fail to load.
+
+---
+
+#### 4. Update S3 Bucket Policy
 To grant CloudFront OAC permission to read files from the S3 Bucket, update the S3 Bucket Policy:
 1. Go to the **Amazon S3 Console** > Select your bucket (e.g., `cloud-battleship-backend-dev-avatarbucket-YOUR_UNIQUE_SUFFIX`).
 2. Select the **Permissions** tab > Scroll to **Bucket policy** and click **Edit**.
@@ -71,7 +86,7 @@ To grant CloudFront OAC permission to read files from the S3 Bucket, update the 
 
 ---
 
-#### 4. Manually Configure CloudFront Cache Invalidation
+#### 5. Manually Configure CloudFront Cache Invalidation
 When players upload a new avatar overwriting their old one (with the same filename e.g. `avatars/userId.jpg`), CloudFront might still serve the cached old image. We must manually create an Invalidation path:
 1. Go to the **CloudFront Console** > Select your S3 Avatar Distribution (`BattleshipArena`).
 2. Go to the **Invalidations** tab > Click **Create invalidation**.

@@ -12,6 +12,18 @@ Validate the entire application flow by registering user accounts, establishing 
 
 ---
 
+#### Pre-check List Before Testing
+
+{{% notice warning %}}
+Before opening the browser, confirm all of the following conditions are met. Skipping any item will result in CORS errors or a blank game screen.
+{{% /notice %}}
+
+- [ ] Have you redeployed SAM with `CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>` at step 5.5.2?
+- [ ] Has the Frontend been built and uploaded to the S3 Bucket? (via CI/CD in 5.6 or manually with `aws s3 sync dist/ s3://<BUCKET>/`)
+- [ ] Does navigating to your CloudFront domain in a browser show the game UI (not a blank page)?
+
+---
+
 #### Web UI Verification
 
 1. Open your browser and navigate to the **CloudFrontDomainName** obtained from the Outputs in step 5.5.

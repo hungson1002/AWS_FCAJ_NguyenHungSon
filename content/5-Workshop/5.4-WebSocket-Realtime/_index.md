@@ -72,7 +72,7 @@ Type and send the following payload:
 The `wsMessage` Lambda will handle the event. The key confirmation is that the connection stays open and Lambda is invoked — visible in CloudWatch Logs.
 
 {{% notice tip %}}
-If you receive a `403 Forbidden` error, check the IAM policy of the `wsConnect` Lambda — it requires `execute-api:ManageConnections` permission to send messages back to the client.
+If you receive a `403 Forbidden` error when `wscat` tries to connect, check the Authorization setting on the `$connect` route in API Gateway — it may have IAM Authorization enabled unnecessarily. Ensure the Authorization for the `$connect` route is set to **NONE**. (Note: `execute-api:ManageConnections` is the permission Lambda needs to **send messages back to connected clients**, not a prerequisite for clients connecting in.)
 {{% /notice %}}
 
 ---

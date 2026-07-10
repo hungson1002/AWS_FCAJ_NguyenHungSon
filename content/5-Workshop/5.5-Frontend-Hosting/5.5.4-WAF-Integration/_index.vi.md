@@ -1,9 +1,9 @@
 ---
 title : "Tích hợp AWS WAF bảo mật biên"
 date : 2024-01-01
-weight : 5
+weight : 4
 chapter : false
-pre : " <b> 5.5.5 </b> "
+pre : " <b> 5.5.4 </b> "
 ---
 
 ### Mục tiêu
@@ -30,11 +30,11 @@ Sau khi Web ACL `CloudBattleship-WAF` đã được tạo thành công, tiến h
 2. Chọn tab **Associated AWS resources** > Nhấp nút **Add global resources**.
 3. Từ menu thả xuống, chọn **Add CloudFront or Amplify resources**.
 
-![Quản lý tài nguyên bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_resource.png)
+![Quản lý tài nguyên bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/manage_resource.png)
 
 4. Trong cửa sổ **Select resources to protect**, tích chọn CloudFront Distribution của Frontend của bạn (ví dụ: `<YOUR_CLOUDFRONT_DISTRIBUTION_ID> - <YOUR_CLOUDFRONT_DOMAIN_NAME> - cloud-battleship-arena dev frontend`).
 
-![Chọn CloudFront để bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/select_resource.png)
+![Chọn CloudFront để bảo vệ](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/select_resource.png)
 
 5. Nhấp **Add** để hoàn tất liên kết.
 
@@ -45,7 +45,7 @@ Sau khi Web ACL `CloudBattleship-WAF` đã được tạo thành công, tiến h
 1. Trong giao diện chi tiết của Web ACL `CloudBattleship-WAF`, chọn tab **Rules** > click **Add rules** > Chọn **Add my own rules and rule groups**.
 2. Trong bảng bên phải "Add new rule", tích chọn **Custom rule** và chọn **Next**.
 
-![Chọn Custom rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/manage_rule.png)
+![Chọn Custom rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/manage_rule.png)
 
 3. Tại màn hình cấu hình chi tiết, chọn loại rule và thiết lập các thông tin sau:
    - **Rule type**: Chọn **Rate-based rule**.
@@ -54,6 +54,6 @@ Sau khi Web ACL `CloudBattleship-WAF` đã được tạo thành công, tiến h
    - **IP address to use for rate limiting**: Chọn **Source IP address**.
    - **Action**: Chọn **Block** để chặn các request vượt ngưỡng.
 
-![Cấu hình Rate-based Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.5-WAF-Integration/set_based_limit.png)
+![Cấu hình Rate-based Rule](/images/5-Workshop/5.5-Frontend-Hosting/5.5.4-WAF-Integration/set_based_limit.png)
 
 4. Nhấn **Add rule** ở cuối màn hình và lưu thay đổi.

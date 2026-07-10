@@ -45,3 +45,13 @@ Sau khi stack chuyển sang trạng thái `CREATE_COMPLETE`:
 
 ![CloudFront Outputs](/images/5-Workshop/5.5-Frontend-Hosting/5.5.2-CloudFront-Distribution/cloudfront-domain-output.png)
 
+---
+
+{{% notice warning %}}
+**Hành động bắt buộc — Cập nhật CORS cho Backend**: Bạn đã có CloudFront domain. Hãy quay lại thư mục `BackEnd/` và chạy lại SAM deploy với domain vừa lấy:
+```bash
+cd AWS_Cloud_Battleship_Arena/BackEnd
+sam deploy --parameter-overrides CorsOrigin=https://<YOUR_CLOUDFRONT_DOMAIN>
+```
+Không thực hiện bước này sẽ khiến API trả về lỗi CORS khi Frontend chạy từ CloudFront.
+{{% /notice %}}

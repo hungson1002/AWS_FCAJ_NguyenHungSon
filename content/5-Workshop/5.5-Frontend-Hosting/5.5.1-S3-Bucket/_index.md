@@ -26,6 +26,10 @@ All 3 resources are created automatically when the CloudFormation stack is deplo
 
 #### Verify Configuration After Deployment
 
+{{% notice warning %}}
+This section requires the CloudFormation stack to **already exist**. Complete **step 5.5.2 (Deploy the Stack)** first, then return here to verify.
+{{% /notice %}}
+
 After the `cloud-battleship-frontend-hosting-dev` stack is successfully created, confirm S3 blocks are active:
 
 ```bash

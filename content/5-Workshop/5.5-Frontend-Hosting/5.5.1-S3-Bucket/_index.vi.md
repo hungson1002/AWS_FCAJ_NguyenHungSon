@@ -26,6 +26,10 @@ Tất cả 3 tài nguyên này được tạo tự động khi deploy stack Clou
 
 #### Kiểm tra cấu hình sau khi deploy
 
+{{% notice warning %}}
+Bước này yêu cầu stack CloudFormation phải **đã tồn tại**. Hãy thực hiện **bước 5.5.2 (Deploy Stack)** trước, sau đó quay lại đây để xác nhận.
+{{% /notice %}}
+
 Sau khi stack `cloud-battleship-frontend-hosting-dev` được tạo thành công, xác nhận S3 Bucket chặn đúng:
 
 ```bash
