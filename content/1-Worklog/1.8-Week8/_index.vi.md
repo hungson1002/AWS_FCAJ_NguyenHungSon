@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 8"
-date: 2026-06-27
+date: 2026-06-28
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
@@ -16,14 +16,14 @@ pre: " <b> 1.8. </b> "
 
 ### Công việc thực hiện trong tuần:
 
-| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
-| ---- | --------- | ------------ | --------------- |
-| 2 | - **Tìm hiểu:** Tìm hiểu cách phối màu, tinh chỉnh bố cục CSS để làm đẹp giao diện trang chủ, sảnh chờ và phòng game <br> - **Thực hành:** Chỉnh sửa giao diện toàn bộ dự án, làm mới các nút bấm, khung viền và màu nền giúp dự án trông đẹp mắt hơn | 22/06/2026 | 22/06/2026 |
-| 3 | - **Tìm hiểu:** Tìm hiểu kích thước ảnh và cách chuẩn bị hình ảnh cho 6 loại tàu chiến mới phù hợp với lưới tọa độ game <br> - **Thực hành:** Tạo hình ảnh cho 6 chiếc tàu chiến mới; thêm các ảnh tàu này vào danh sách lựa chọn của người chơi trước khi bắt đầu trận đấu | 23/06/2026 | 23/06/2026 |
-| 4 | - **Tìm hiểu:** Tìm hiểu cách phát nhạc và điều khiển âm thanh thông qua các thư viện hỗ trợ âm thanh trong game (như Howler.js) <br> - **Thực hành:** Viết dịch vụ âm thanh `soundService.js` để tích hợp nhạc nền cho sảnh chờ (`menuMusic`) và nhạc nền khi chiến đấu (`battleMusic`) thông qua hàm `syncBackgroundMusic`; cài đặt các hiệu ứng tiếng bắn trượt, bắn trúng và nổ tàu bằng hàm `playSound` | 24/06/2026 | 24/06/2026 |
-| 5 | - **Tìm hiểu:** Tìm hiểu cách làm thanh trượt điều chỉnh âm lượng và quản lý trạng thái bật/tắt âm thanh trong React <br> - **Thực hành:** Làm tính năng cài đặt (Settings); tạo khung điều chỉnh âm lượng thanh trượt cho nhạc nền và âm thanh hiệu ứng game thông qua hàm `setSoundSettings` và `getSoundSettings` | 25/06/2026 | 25/06/2026 |
-| 6 | - **Tìm hiểu:** Tìm hiểu cách bố trí thông tin người chơi khoa học trên màn hình thi đấu PvP <br> - **Thực hành:** Làm lại giao diện phòng đấu PvP, bổ sung các khu vực hiển thị thông tin chi tiết của hai bên (tên, cấp bậc rank, ảnh đại diện, tỷ số thắng thua) | 26/06/2026 | 26/06/2026 |
-| 7 | - **Tìm hiểu:** Tìm hiểu cách gửi nhận dữ liệu tin nhắn chat thời gian thực qua kết nối Socket giữa các người chơi <br> - **Thực hành:** Tích hợp khung chat `PvpBattlePanels.jsx` và viết tính năng chat trực tiếp trong phòng đấu bằng cách phát tín hiệu Socket (`sendPvpSignal`) và cập nhật danh sách tin nhắn (`appendChatMessage`); chạy thử toàn bộ hệ thống | 27/06/2026 | 27/06/2026 |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| ---- | --------- | ------------ | --------------- | -------------- |
+| 2 | - Điều chỉnh màu sắc và bố cục CSS để làm đẹp giao diện trang chủ, sảnh chờ và phòng game <br> - Chỉnh sửa giao diện toàn bộ dự án, làm mới các nút bấm, khung viền và màu nền giúp dự án trông đẹp mắt hơn | 22/06/2026 | 22/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Chuẩn bị hình ảnh cho 6 loại tàu chiến mới phù hợp với lưới tọa độ game <br> - Tạo hình ảnh cho 6 chiếc tàu chiến mới; thêm các ảnh tàu này vào danh sách lựa chọn của người chơi trước khi bắt đầu trận đấu | 23/06/2026 | 23/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Tích hợp và điều khiển âm thanh thông qua các thư viện hỗ trợ (như Howler.js) <br> - Viết dịch vụ âm thanh `soundService.js` để tích hợp nhạc nền cho sảnh chờ (`menuMusic`) và nhạc nền khi chiến đấu (`battleMusic`) thông qua hàm `syncBackgroundMusic`; cài đặt các hiệu ứng tiếng bắn trượt, bắn trúng và nổ tàu bằng hàm `playSound` | 24/06/2026 | 24/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Xây dựng thanh trượt điều chỉnh âm lượng và quản lý trạng thái bật/tắt âm thanh trong React <br> - Làm tính năng cài đặt (Settings); tạo khung điều chỉnh âm lượng thanh trượt cho nhạc nền và âm thanh hiệu ứng game thông qua hàm `setSoundSettings` và `getSoundSettings` | 25/06/2026 | 25/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Thiết lập khu vực hiển thị thông tin người chơi trên màn hình thi đấu PvP <br> - Làm lại giao diện phòng đấu PvP, bổ sung các khu vực hiển thị thông tin chi tiết của hai bên (tên, cấp bậc rank, ảnh đại diện, tỷ số thắng thua) | 26/06/2026 | 26/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Cấu hình truyền nhận tin nhắn chat thời gian thực qua kết nối Socket giữa các người chơi <br> - Tích hợp khung chat `PvpBattlePanels.jsx` và viết tính năng chat trực tiếp trong phòng đấu bằng cách phát tín hiệu Socket (`sendPvpSignal`) và cập nhật danh sách tin nhắn (`appendChatMessage`); chạy thử toàn bộ hệ thống | 27/06/2026 | 28/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được:
 

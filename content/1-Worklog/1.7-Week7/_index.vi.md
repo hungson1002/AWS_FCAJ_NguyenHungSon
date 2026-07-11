@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 7"
-date: 2026-06-20
+date: 2026-06-21
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
@@ -17,14 +17,14 @@ pre: " <b> 1.7. </b> "
 
 ### Công việc thực hiện trong tuần:
 
-| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
-| ---- | --------- | ------------ | --------------- |
-| 2 | - **Tìm hiểu:** Tìm hiểu cách hoạt động của kết nối Socket để truyền dữ liệu thời gian thực giữa hai người chơi <br> - **Thực hành:** Tạo các hàm quản lý phòng trên backend (`createRoom.js`, `joinRoom.js`); viết tính năng phòng tự chọn đơn giản (Custom Room), cho phép tạo mã phòng và nhập mã phòng để hai máy kết nối chơi với nhau | 15/06/2026 | 15/06/2026 |
-| 3 | - **Tìm hiểu:** Tìm hiểu cách sắp xếp và phối màu các thành phần trên màn hình để làm lại bản đồ đặt tàu đẹp mắt hơn <br> - **Thực hành:** Viết lại giao diện xếp tàu, căn chỉnh màu sắc, lưới ô và các nút bấm trên màn hình đặt tàu để dễ nhìn hơn | 16/06/2026 | 16/06/2026 |
-| 4 | - **Tìm hiểu:** Tìm hiểu cách ghép trận tự động và cách phân chia hàng chờ cho hai chế độ chơi: Đấu thường (casual) và Đấu hạng (ranked) <br> - **Thực hành:** Viết hàm tìm trận tự động ở backend (`matchmakeRoom.js`); kết nối Socket ở phía client để ghép cặp người chơi vào hàng chờ phù hợp | 17/06/2026 | 17/06/2026 |
-| 5 | - **Tìm hiểu:** Tìm hiểu cách tính điểm đấu hạng (Rank Points - RP) và thiết lập 7 mức rank: Đồng (200 RP), Bạc (500 RP), Vàng (950 RP), Bạch kim (1500 RP), Kim cương (2200 RP), Cao thủ (3100 RP), Đô đốc (4000 RP) <br> - **Thực hành:** Tạo 7 hình ảnh huy hiệu (badge) tương ứng cho các mức rank; viết các hàm tính điểm trên backend (`calculateRankDelta`, `buildRankUpdate`) trong dịch vụ `rankService.js`; tích hợp hiệu ứng chuyển động khi lên rank | 18/06/2026 | 18/06/2026 |
-| 6 | - **Tìm hiểu:** Tìm hiểu cách hiển thị danh sách các mức rank trên giao diện trang cá nhân <br> - **Thực hành:** Tạo popup `RankDetails` trong trang cá nhân (`Profile.jsx`) để người chơi bấm vào xem danh sách 7 mức rank, điều kiện điểm số và xem rank hiện tại của bản thân | 19/06/2026 | 19/06/2026 |
-| 7 | - **Tìm hiểu:** Tìm hiểu cách vẽ hiệu ứng chuyển động bằng thư viện Phaser <br> - **Thực hành:** Viết các hiệu ứng động bằng Phaser trong `BattleEffectsLayer.jsx` cho các hành động: bắn hụt (`playMiss`), bắn trúng (`playHit`), nổ tàu (`playSunkFinisher`) và hiệu ứng lên rank (`RankUpScene`) trong `RankUpAnimation.jsx` | 20/06/2026 | 21/06/2026 |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| ---- | --------- | ------------ | --------------- | -------------- |
+| 2 | - Triển khai kết nối Socket phục vụ truyền dữ liệu thời gian thực giữa hai người chơi <br> - Tạo các hàm quản lý phòng trên backend (`createRoom.js`, `joinRoom.js`); viết tính năng phòng tự chọn đơn giản (Custom Room), cho phép tạo mã phòng và nhập mã phòng để hai máy kết nối chơi với nhau | 15/06/2026 | 15/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Cải thiện bố cục và phối màu giao diện bản đồ đặt tàu <br> - Viết lại giao diện xếp tàu, căn chỉnh màu sắc, lưới ô và các nút bấm trên màn hình đặt tàu để dễ nhìn hơn | 16/06/2026 | 16/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Triển khai hệ thống ghép trận tự động và chia hàng chờ: Đấu thường (casual) và Đấu hạng (ranked) <br> - Viết hàm tìm trận tự động ở backend (`matchmakeRoom.js`); kết nối Socket ở phía client để ghép cặp người chơi vào hàng chờ phù hợp | 17/06/2026 | 17/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Cấu hình cơ chế tính điểm đấu hạng (Rank Points - RP) và 7 mức rank từ Đồng đến Đô đốc <br> - Tạo 7 hình ảnh huy hiệu (badge) tương ứng cho các mức rank; viết các hàm tính điểm trên backend (`calculateRankDelta`, `buildRankUpdate`) trong dịch vụ `rankService.js`; tích hợp hiệu ứng chuyển động khi lên rank | 18/06/2026 | 18/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Xây dựng giao diện hiển thị danh sách các mức rank trên trang cá nhân <br> - Tạo popup `RankDetails` trong trang cá nhân (`Profile.jsx`) để người chơi bấm vào xem danh sách 7 mức rank, điều kiện điểm số và xem rank hiện tại của bản thân | 19/06/2026 | 19/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Thiết lập hiệu ứng chuyển động trong trận đấu bằng thư viện Phaser <br> - Viết các hiệu ứng động bằng Phaser trong `BattleEffectsLayer.jsx` cho các hành động: bắn hụt (`playMiss`), bắn trúng (`playHit`), nổ tàu (`playSunkFinisher`) và hiệu ứng lên rank (`RankUpScene`) trong `RankUpAnimation.jsx` | 20/06/2026 | 21/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được:
 

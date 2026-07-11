@@ -22,7 +22,7 @@ pre: " <b> 1.1. </b> "
 | 4   | - Thực hành tạo EC2 Instance <br> - Tìm hiểu Elastic IP <br> - Thực hành SSH vào EC2 bằng PuTTY và MobaXterm                                          | 06/05/2026   | 06/05/2026      | https://cloudjourney.awsstudygroup.com/                                             |
 | 5   | - Tìm hiểu Amazon VPC: <br>  + Subnet <br>  + Route Table <br>  + Internet Gateway <br>  + NAT Gateway                                                | 07/05/2026   | 08/05/2026      | https://cloudjourney.awsstudygroup.com/                                             |
 | 6   | - Thực hành VPC Peering <br> - Cấu hình Route Table giữa các VPC <br> - Tìm hiểu Security Group trong môi trường nhiều VPC                            | 09/05/2026   | 09/05/2026      | https://cloudjourney.awsstudygroup.com/                                             |
-| 7   | - Tìm hiểu AWS Transit Gateway <br> - Thực hành tạo Transit Gateway Attachment và Route Table <br> - Thực hành triển khai hạ tầng bằng CloudFormation | 10/05/2026   | 11/05/2026      | https://www.youtube.com/watch?v=AWXCQAd4_qM&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
+| 7   | - Tìm hiểu AWS Transit Gateway <br> - Thực hành tạo Transit Gateway Attachment và Route Table <br> - Thực hành triển khai hạ tầng bằng CloudFormation | 10/05/2026   | 10/05/2026      | https://www.youtube.com/watch?v=AWXCQAd4_qM&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 
 ### Kết quả đạt được tuần 1:
 
@@ -92,7 +92,7 @@ pre: " <b> 1.1. </b> "
 | 4   | - Tìm hiểu Amazon VPC: <br>  + Kiến trúc VPC <br>  + Subnet (Public/Private) <br>  + Route Table <br>  + Internet Gateway <br>  + NAT Gateway <br> - Tìm hiểu bảo mật mạng (Security Group, NACL)                | 06/05/2026   | 06/05/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 | 5   | - Thực hành xây dựng môi trường VPC: <br>  + Tạo VPC và Subnet <br>  + Cấu hình Route Table và Internet Gateway <br>  + Triển khai NAT Gateway <br>  + Cấu hình Security Group và NACL <br>  + Tạo EC2 Instance   | 07/05/2026   | 08/05/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 | 6   | - Tìm hiểu Hybrid DNS với Amazon Route 53 Resolver <br>  + Inbound Endpoint <br>  + Outbound Endpoint <br>  + Forwarding Rule <br> - Thực hành phân giải DNS giữa VPC và môi trường On-premises                    | 09/05/2026   | 09/05/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
-| 7   | - Tìm hiểu VPC Peering <br> - Thực hành tạo kết nối VPC Peering <br> - Cấu hình Route Table cho phép giao tiếp giữa các VPC <br> - Kiểm tra kết nối giữa EC2 Instance ở các VPC khác nhau                          | 10/05/2026   | 11/05/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
+| 7   | - Tìm hiểu VPC Peering <br> - Thực hành tạo kết nối VPC Peering <br> - Cấu hình Route Table cho phép giao tiếp giữa các VPC <br> - Kiểm tra kết nối giữa EC2 Instance ở các VPC khác nhau                          | 10/05/2026   | 10/05/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 
 ### Kết quả đạt được tuần 1:
 

@@ -22,7 +22,7 @@ pre: " <b> 1.1. </b> "
 | 4   | - Practice launching EC2 Instances <br> - Learn about Elastic IP <br> - Practice SSH connection using PuTTY and MobaXterm                                            | 05/06/2026 | 05/06/2026      | https://cloudjourney.awsstudygroup.com/                                             |
 | 5   | - Learn Amazon VPC concepts: <br>  + Subnet <br>  + Route Table <br>  + Internet Gateway <br>  + NAT Gateway                                                         | 05/07/2026 | 05/08/2026      | https://cloudjourney.awsstudygroup.com/                                             |
 | 6   | - Practice VPC Peering <br> - Configure Route Tables between VPCs <br> - Learn Security Group configuration in multi-VPC environments                                | 05/09/2026 | 05/09/2026      | https://cloudjourney.awsstudygroup.com/                                             |
-| 7   | - Learn AWS Transit Gateway <br> - Practice creating Transit Gateway Attachments and Route Tables <br> - Practice infrastructure deployment using AWS CloudFormation | 05/10/2026 | 05/11/2026      | https://www.youtube.com/watch?v=AWXCQAd4_qM&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
+| 7   | - Learn AWS Transit Gateway <br> - Practice creating Transit Gateway Attachments and Route Tables <br> - Practice infrastructure deployment using AWS CloudFormation | 05/10/2026 | 05/10/2026      | https://www.youtube.com/watch?v=AWXCQAd4_qM&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 
 ### Week 1 Achievements:
 
@@ -92,7 +92,7 @@ pre: " <b> 1.1. </b> "
 | 4   | - Learn Amazon VPC concepts: <br>  + VPC architecture <br>  + Subnets (Public/Private) <br>  + Route Tables <br>  + Internet Gateway <br>  + NAT Gateway <br> - Study AWS Security in networking (Security Groups, NACLs)    | 05/06/2026 | 05/06/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 | 5   | - Practice building VPC environment: <br>  + Create VPC and Subnets <br>  + Configure Route Tables and Internet Gateway <br>  + Deploy NAT Gateway <br>  + Configure Security Groups and NACLs <br>  + Launch EC2 Instances  | 05/07/2026 | 05/08/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 | 6   | - Learn Hybrid DNS with Amazon Route 53 Resolver <br>  + Inbound Endpoints <br>  + Outbound Endpoints <br>  + Forwarding Rules <br> - Practice DNS resolution between VPC and on-premises environments                        | 05/09/2026 | 05/09/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
-| 7   | - Learn VPC Peering concepts <br> - Practice creating VPC Peering connections <br> - Configure Route Tables to enable inter-VPC communication <br> - Test cross-VPC connectivity between EC2 instances                        | 05/10/2026 | 05/11/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
+| 7   | - Learn VPC Peering concepts <br> - Practice creating VPC Peering connections <br> - Configure Route Tables to enable inter-VPC communication <br> - Test cross-VPC connectivity between EC2 instances                        | 05/10/2026 | 05/10/2026      | https://www.youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
 
 ### Week 1 Achievements:
 
