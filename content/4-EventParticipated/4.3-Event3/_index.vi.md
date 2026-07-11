@@ -6,69 +6,62 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Bài thu hoạch FCAJ Community Day
+# Báo cáo thu hoạch: FCAJ Community Day
 
-### Mục Đích Sự Kiện
+### Mục tiêu tham gia
 
-* Tìm hiểu về AgenticOps Platform và câu chuyện khởi nghiệp tại CloudThinker.
-* Nắm bắt điểm mấu chốt và kỹ thuật xây dựng Voice Agent ở quy mô lớn (speech-to-speech, AI detect giới tính, ngắt lời, training context thực tế).
-* Tiếp cận giải pháp DevOps AI Agent tự động hóa, nghiên cứu và chiết xuất từ Cloud Kinetics.
-* Tìm hiểu ứng dụng AI-Powered Productivity Workforce Planning cho bộ phận HR sử dụng Amazon Quick.
-* Giải pháp xây dựng Secure Private MCP cho Amazon Quick, kết nối an toàn không cần Internet qua bên thứ ba.
+* Nghiên cứu khái niệm AgenticOps và mô hình startup công nghệ của CloudThinker.
+* Tìm hiểu quy trình thiết kế Voice AI Agent quy mô lớn (speech-to-speech, nhận diện giới tính, ngắt lời và xử lý ngữ cảnh).
+* Khám phá giải pháp DevOps AI Agent giúp tự động hóa vận hành từ Cloud Kinetics.
+* Tìm hiểu cách ứng dụng Amazon Quick phục vụ quản trị và lập kế hoạch nhân sự (Workforce Planning).
+* Phân tích kiến trúc bảo mật MCP (Model Context Protocol) riêng tư cho Amazon Quick.
 
-### Danh Sách Diễn Giả
+### Diễn giả chương trình
 
 * **Steve Tran** - Founder CloudThinker
-* **Trung Vu** - Speaker
-* **Nghi Danh** - Speaker
-* **Kiet Tran** - Speaker
+* **Trung Vu**
+* **Nghi Danh**
+* **Kiet Tran**
 * **Chị Bảo Phan** - Cloud Engineer Cloud Kinetics
 * **Anh Nguyên Nguyễn** - Cloud Engineer Cloud Kinetics
 * **Anh Truong** - Noventiq
 * **Chị Minh Anh** - Noventiq
-* **Anh Nghị** - Speaker
-* **Anh Toàn** - Speaker
+* **Anh Nghị**
+* **Anh Toàn**
 
-### Nội Dung Nổi Bật
+### Ghi nhận nội dung chia sẻ
 
-#### AgenticOps for your Cloud - Steve Tran (Founder CloudThinker)
-* Chia sẻ hành trình từ lúc học Đại học đến khi làm việc và sáng lập CloudThinker (công ty startup giải quyết bài toán vận hành hệ thống).
-* Câu chuyện thực tế khi anh học và thi chứng chỉ Azure Cloud bị trượt nhiều lần, sau đó chuyển hướng sang AWS Cloud thành công.
-* Chia sẻ về giai đoạn điện toán đám mây (Cloud) bùng nổ, phát triển mạnh mẽ trong thời điểm đại dịch Covid-19.
-* Giới thiệu chi tiết về AgenticOps Platform phục vụ cho việc vận hành.
+#### Khởi nghiệp với AgenticOps
+* Hành trình vượt qua khó khăn khi học thi chứng chỉ đám mây, hướng đi từ kỹ sư hệ thống lên nhà sáng lập CloudThinker của diễn giả Steve Tran.
+* Giới thiệu nền tảng AgenticOps tối ưu hóa vận hành trên đám mây bằng AI và xu hướng phát triển dịch vụ trong thời kỳ chuyển đổi số.
 
-#### Building Voice Agent at Scale - Trung Vu, Nghi Danh, Kiet Tran
-* Phân tích những điểm mấu chốt cốt lõi để xây dựng một Voice AI Agent thành công.
-* Nghi Danh giới thiệu tổng quan về buổi thuyết trình và các thách thức của Voice AI.
-* Kiet Tran chia sẻ về quá trình phát triển sản phẩm Hera và cách xử lý khi gặp một chút lỗi kỹ thuật nhỏ trong buổi demo.
-* Trung Vu giới thiệu bản thân và đi sâu vào công nghệ Speech-to-Speech.
-* Thảo luận về các tính năng AI nâng cao như nhận diện giới tính (AI Detect giới tính) và khả năng ngắt lời tự nhiên. Nhấn mạnh tầm quan trọng của việc training model để thấu hiểu context (ngữ cảnh) thực tế của cuộc hội thoại.
+#### Xây dựng Voice Agent quy mô lớn
+* Phân tích các thách thức kỹ thuật của Voice AI bao gồm độ trễ truyền tải âm thanh, kỹ thuật chuyển đổi Speech-to-Speech trực tiếp, thuật toán nhận diện giới tính và khả năng ngắt lời tự nhiên (interruption handling).
+* Demo trực tiếp sản phẩm Hera và chia sẻ kinh nghiệm xử lý sự cố kỹ thuật phát sinh ngay trong lúc thuyết trình.
 
-#### DevOps AI Agent - Chị Bảo Phan & Anh Nguyên Nguyễn (Cloud Kinetics)
-* Giới thiệu cách DevOps AI Agent giúp giải quyết các bài toán về tự động hóa quy trình, nghiên cứu tài liệu và chiết xuất dữ liệu (extraction).
-* Phân tích điểm khác biệt độc đáo làm nên sự vượt trội của DevOps Agent so với các phương pháp truyền thống.
-* Trình bày Live Demo thực tế về AWS DevOps Agent.
+#### DevOps AI Agent
+* Cách AI Agent hỗ trợ đắc lực cho kỹ sư DevOps trong việc tự động hóa các tác vụ lặp đi lặp lại, nghiên cứu tài liệu kỹ thuật tự động và trích xuất dữ liệu cấu trúc thông minh.
+* So sánh ưu thế của giải pháp tích hợp Agent so với các script tự động hóa truyền thống.
 
-#### AI-Powered Productivity Workforce Planning For Enterprise - Anh Truong & Chị Minh Anh (Noventiq)
-* Trình bày về những khó khăn, thách thức thực tế mà bộ phận Nhân sự (HR) phải đối mặt trong kỷ nguyên trí tuệ nhân tạo (AI).
-* Giới thiệu công cụ hỗ trợ tối ưu hóa hiệu suất làm việc và giải quyết các bài toán của HR bằng Amazon Quick.
-* Thực hiện Live Demo trực tiếp về Amazon Quick để trực quan hóa dữ liệu nhân sự.
+#### Workforce Planning với Amazon Quick
+* Giải quyết các bài toán tối ưu hiệu suất và lập kế hoạch nhân sự bằng trực quan hóa dữ liệu trên Amazon Quick.
+* Thực hiện xây dựng dashboard phân tích dữ liệu nhân sự doanh nghiệp thời gian thực.
 
-#### Building Secure Private MCP for Quick - Anh Nghị & Anh Toàn
-* Tiếp tục chủ đề về Amazon Quick nhưng tiếp cận dưới góc độ bảo mật cao: xây dựng một Private MCP (Model Context Protocol).
-* Giải pháp kết nối an toàn, đảm bảo tính riêng tư mà không cần kết nối Internet trực tiếp, trong khi vẫn có thể giao tiếp an toàn thông qua các dịch vụ bên thứ ba.
+#### Secure Private MCP cho Amazon Quick
+* Giải pháp kết nối bảo mật sử dụng giao thức Model Context Protocol (MCP) riêng tư.
+* Thiết lập hệ thống trao đổi thông tin với LLM một cách an toàn mà không cần mở kết nối Internet trực tiếp ra ngoài, giúp bảo vệ dữ liệu nhạy cảm của doanh nghiệp.
 
-### Những Gì Học Được
+### Thu hoạch cá nhân
 
-* Nắm rõ khái niệm AgenticOps và tiềm năng ứng dụng AI trong quản trị vận hành hạ tầng đám mây.
-* Hiểu rõ các thách thức kỹ thuật khi triển khai Voice AI (Speech-to-Speech, ngắt lời, nhận diện ngữ cảnh thực tế) và tầm quan trọng của việc tối ưu hóa mô hình AI.
-* Biết thêm cách ứng dụng DevOps AI Agent để tự động hóa và tăng tốc các quy trình nghiên cứu, chiết xuất thông tin kỹ thuật.
-* Nhận thức được xu thế chuyển đổi số trong quản trị nhân sự (HR) thông qua các công cụ phân tích mạnh mẽ như Amazon Quick.
-* Hiểu về kiến trúc bảo mật MCP riêng tư (Private MCP) để bảo vệ dữ liệu nhạy cảm khi tích hợp AI với các hệ thống bên thứ ba không cần Internet.
+* Tiếp cận khái niệm AgenticOps - xu hướng vận hành hệ thống đám mây bằng AI Agents trong tương lai.
+* Hiểu cách tối ưu hóa trải nghiệm người dùng đối với các dịch vụ AI tương tác thời gian thực (như xử lý độ trễ và ngữ cảnh hội thoại).
+* Biết cách ứng dụng AI Agents để hỗ trợ các tác vụ tự động hóa hạ tầng (DevOps).
+* Biết cách sử dụng Amazon Quick để tạo báo cáo trực quan từ các nguồn dữ liệu thô.
+* Nắm vững nguyên lý bảo mật dữ liệu nhạy cảm thông qua kiến trúc Private MCP khi tích hợp AI với bên thứ ba.
 
-### Trải nghiệm trong event
+### Cảm nhận cá nhân
 
-Sự kiện mang lại những góc nhìn công nghệ vô cùng đa dạng, từ ứng dụng AI Agent trong quản trị đám mây, hội thoại giọng nói đến việc tối ưu hóa quy trình HR và bảo mật dữ liệu. Các bài chia sẻ thực tế và những buổi live demo giúp người nghe dễ dàng hình dung cách vận hành của các giải pháp trong doanh nghiệp. Đây là những kiến thức thực tiễn và vô cùng quý giá cho định hướng phát triển của bản thân trong tương lai.
+Buổi workshop cung cấp những góc nhìn công nghệ rất hiện đại, đặc biệt là các giải pháp liên quan đến AI Agent và bảo mật dữ liệu. Các phiên live demo thực tế giúp em dễ dàng liên hệ lý thuyết với thực tiễn ứng dụng trong doanh nghiệp. Đây là nguồn kiến thức bổ ích để em định hình các công nghệ mới cho định hướng nghề nghiệp của mình.
 
 ### Hình ảnh tham gia sự kiện
 

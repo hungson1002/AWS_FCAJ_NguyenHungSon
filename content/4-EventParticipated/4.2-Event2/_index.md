@@ -10,15 +10,15 @@ pre: " <b> 4.2. </b> "
 
 ### Event Objectives
 
-* Network and participate in a Q&A session with AWS Global AI Expert.
-* Learn about connecting Godot with AWS and analyze network architectures (UDP, WebSocket, HTTP Polling).
-* Master Docker fundamentals and cross-platform virtualization techniques.
-* Understand RAG concepts and how to deploy GraphRAG on AWS.
-* Gain career guidance and a roadmap to progress from IT Helpdesk to Senior Sysadmin.
+* Learn AI development insights from AWS Global AI Expert Slavik Dimitrovic.
+* Study integration methods for Godot game engine with AWS, comparing UDP, WebSocket, and HTTP Polling protocols.
+* Gain fundamental knowledge of Docker and cross-platform virtualization environment synchronization.
+* Explore RAG and GraphRAG architectures on AWS to optimize LLMs.
+* Understand the career progression path for system administrators from Mr. Tran Trung Vinh.
 
 ### Speakers
 
-* **Slavik Dimitrovic** - AWS Global AI Expert (Guest speaker)
+* **Slavik Dimitrovic** - AWS Global AI Expert
 * **Mr. Long**
 * **Nguyen Quoc Bao** - Swinburne University Student
 * **Huynh Nguyen Quoc Bao**
@@ -29,39 +29,36 @@ pre: " <b> 4.2. </b> "
 ### Key Highlights
 
 #### Q&A Session with Slavik Dimitrovic
-* An interactive Q&A session with the AWS Global AI Expert focused on AI trends, developments, and the future of artificial intelligence.
+* An interactive dialogue discussing the future of GenAI, practical business applications of AI, and advice for young developers.
 
 #### Connecting Godot with AWS
-* Nguyen Quoc Bao shared methods for integrating the Godot game engine with the AWS cloud ecosystem.
-* A detailed analysis of choosing the right network architecture for game projects: UDP, WebSocket, and HTTP Polling.
+* Integration strategies for connecting the Godot game engine with AWS cloud resources.
+* Performance comparisons of UDP (fast, packet-loss prone), WebSocket (persistent bidirectional communication, ideal for PvP/strategy games), and HTTP Polling (resource-intensive, high latency).
 
-#### Talk about Docker and Virtualization
-* Huynh Nguyen Quoc Bao presented the core concepts of Docker technology.
-* Explanation of practical virtualization mechanisms: how to run Linux environments on Windows and vice versa to sync development environments.
+#### Docker and Cross-Platform Virtualization
+* Core concepts of containerization and virtual machines.
+* Demonstrating Docker setup to maintain consistent dev environments across Windows, MacOS, and Linux, eliminating environment-specific bugs during deployment.
 
-#### Sharing GraphRAG on AWS
-* Mr. Viet Phat explained foundational concepts of Retrieval-Augmented Generation (RAG).
-* A deeper look into implementing GraphRAG architectures directly on AWS to improve AI accuracy.
+#### GraphRAG on AWS
+* Basic concepts of Retrieval-Augmented Generation (RAG).
+* Integrating graph databases with RAG on AWS to provide LLMs with structured, contextually rich data for smarter responses.
 
-#### Insights from AWS STUDY GROUP
-* Insights and technology articles summarized and shared from the FCJ AWS STUDY GROUP community by Le Hoang Gia Dai.
-
-#### From IT Helpdesk To Senior Sysadmin
-* Mr. Tran Trung Vinh shared his inspiring journey of rising to a successful Sysadmin from a modest starting point as an IT Helpdesk technician.
-* Discussed highly valuable real-world troubleshooting case studies from system administration.
-* Outlined a detailed career roadmap for professional growth in system administration.
+#### Transitioning from IT Helpdesk to Senior Sysadmin
+* An inspiring real-world career path sharing the journey from technical support to administering large enterprise systems.
+* Practical case studies on resolving system outages and handling high-pressure downtime incidents.
+* Strategic roadmap and certificate path recommendations for aspiring Sysadmins.
 
 ### Key Takeaways
 
-* Understood network protocols (UDP, WebSocket, HTTP Polling) better, learning to select the optimal network architecture for real-world projects.
-* Gained a deeper understanding of Docker and how to configure virtualization environments, directly aiding the structure and deployment of monorepos containing frontend and backend services for my graduation project.
-* Expanded knowledge on RAG, GraphRAG, and modern GenAI application trends on the AWS cloud platform.
-* Developed systematic system troubleshooting skills through real-world enterprise case studies.
-* Obtained clear career guidance and professional motivation through the Sysadmin roadmap.
+* Deepened understanding of networking protocols, justifying the choice of WebSocket for the Battleship Arena game project.
+* Mastered Docker basics to containerize application code, ensuring smooth frontend-backend local synchronization.
+* Learned about emerging RAG technologies and the potential of integrating AI services on AWS.
+* Acquired a structured mindset for troubleshooting system issues by analyzing logs systematically.
+* Obtained a clear self-study roadmap for system administration and operations.
 
 ### Event Experience
 
-The event offered highly practical tech insights that align closely with software engineering practices. The sessions covered everything from network architecture and virtualization to hands-on system operations, giving me a well-rounded view. I was particularly impressed by the sessions on Docker and network protocols, which are extremely useful tools I can apply immediately to optimize code and deploy my final year graduation project.
+The community meetup offered highly practical, real-world knowledge. I gathered many valuable insights from the experiences shared by the speakers. The Docker demonstration and Sysadmin roadmap sessions were particularly useful, providing inspiration to refine and improve my internship project.
 
 ### Event Photos
 

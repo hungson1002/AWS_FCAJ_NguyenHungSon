@@ -10,70 +10,63 @@ pre: " <b> 4.3. </b> "
 
 ### Event Objectives
 
-* Understand the AgenticOps Platform and the startup journey at CloudThinker.
-* Learn the core keys and technical foundations to build Voice Agents at scale (speech-to-speech, gender detection, interruptions, and training with real contexts).
-* Explore DevOps AI Agent solutions for automation, research, and extraction from Cloud Kinetics.
-* Learn about AI-Powered Productivity Workforce Planning for HR using Amazon Quick.
-* Explore building a Secure Private MCP for Amazon Quick, enabling private connection with third parties without direct Internet access.
+* Study AgenticOps concepts and the startup journey of tech company CloudThinker.
+* Understand voice agent system design at scale, including speech-to-speech conversion, gender detection, and real-time interruption handling.
+* Investigate DevOps AI Agent solutions from Cloud Kinetics for automated operations.
+* Explore workforce productivity planning and data visualization using Amazon Quick.
+* Analyze secure integration architectures for Amazon Quick using Private Model Context Protocol (MCP).
 
 ### Speakers
 
 * **Steve Tran** - Founder CloudThinker
-* **Trung Vu** - Speaker
-* **Nghi Danh** - Speaker
-* **Kiet Tran** - Speaker
-* **Ms. Bao Phan** - Cloud Engineer at Cloud Kinetics
-* **Mr. Nguyen Nguyen** - Cloud Engineer at Cloud Kinetics
+* **Trung Vu**
+* **Nghi Danh**
+* **Kiet Tran**
+* **Ms. Bao Phan** - Cloud Engineer Cloud Kinetics
+* **Mr. Nguyen Nguyen** - Cloud Engineer Cloud Kinetics
 * **Mr. Truong** - Noventiq
 * **Ms. Minh Anh** - Noventiq
-* **Mr. Nghi** - Speaker
-* **Mr. Toan** - Speaker
+* **Mr. Nghi**
+* **Mr. Toan**
 
 ### Key Highlights
 
-#### AgenticOps for your Cloud - Steve Tran (Founder CloudThinker)
-* Shared his personal journey from university days to working at and founding CloudThinker (a startup resolving cloud operations challenges).
-* Practical story of failing the Azure Cloud exam multiple times before shifting focus to AWS Cloud successfully.
-* Shared how Cloud technology experienced a massive growth boom during the Covid-19 pandemic.
-* Introduced the AgenticOps Platform and its operational advantages.
+#### Entrepreneurship with AgenticOps
+* Sharing challenges of earning cloud certifications, transitioning from system engineering to founding startup CloudThinker.
+* An overview of the AgenticOps platform designed to optimize cloud infrastructure operations using AI agents.
 
-#### Building Voice Agent at Scale - Trung Vu, Nghi Danh, Kiet Tran
-* Analyzed the key elements required to successfully build and scale Voice AI.
-* Nghi Danh gave a basic introduction to the presentation and Voice AI challenges.
-* Kiet Tran discussed the development of their Hera product and how they handled a minor technical issue during the demo.
-* Trung Vu introduced himself and went deep into speech-to-speech technology.
-* Talked about AI capabilities like detecting gender, interruptions, and the necessity of training models to understand real-world conversational context.
+#### Building Voice Agents at Scale
+* Technical challenges in voice assistant design: latency mitigation, direct speech-to-speech conversion, gender identification, and smart user interruption algorithms.
+* Live demonstration of the assistant product Hera, sharing tips on troubleshooting technical issues on stage.
 
-#### DevOps AI Agent - Ms. Bao Phan & Mr. Nguyen Nguyen (Cloud Kinetics)
-* Introduced how DevOps AI Agents solve tasks related to workflow automation, research, and data extraction.
-* Discussed what sets the DevOps Agent apart from traditional automation tools.
-* Conducted a live demo of the AWS DevOps Agent.
+#### DevOps AI Agent
+* Streamlining operations with AI agents designed to automate repetitive scripting tasks, parse documentation, and extract structured technical configurations.
+* Comparing agentic execution frameworks against traditional static automation scripts.
 
-#### AI-Powered Productivity Workforce Planning For Enterprise - Mr. Truong & Ms. Minh Anh (Noventiq)
-* Addressed the problems and challenges HR departments face in the era of AI.
-* Introduced tools using Amazon Quick to optimize HR operations and planning.
-* Performed a live demo using Amazon Quick to visualize HR statistics.
+#### Workforce Planning with Amazon Quick
+* Using BI dashboards on Amazon Quick to solve enterprise human resource planning and productivity monitoring challenges.
+* Live demonstration of creating automated visual reporting dashboards for HR metrics.
 
-#### Building Secure Private MCP for Quick - Mr. Nghi & Mr. Toan
-* Shared insights on Amazon Quick but focused on a secure, private approach by establishing a Private MCP (Model Context Protocol).
-* Showcased how to run a private connection with third parties without requiring direct Internet access.
+#### Secure Private MCP for Amazon Quick
+* Designing high-security environments using a private Model Context Protocol (MCP).
+* Establishing secure, internet-free integration channels with external LLMs to protect sensitive organizational data.
 
 ### Key Takeaways
 
-* Learned the concept of AgenticOps and the potential of AI in cloud infrastructure management.
-* Understood technical hurdles in Voice AI (speech-to-speech, interruptions, real context handling) and model training requirements.
-* Discovered how DevOps AI Agents automate and expedite technical research and extraction.
-* Realized digital transformation trends in HR using powerful data tools like Amazon Quick.
-* Learned about the architecture of Private MCP to protect sensitive data while integrating AI with third-party systems without Internet exposure.
+* Explored AgenticOps as the future paradigm of AI-driven cloud infrastructure management.
+* Gained insights on optimizing user experience for real-time interactive AI services (latency, turn-taking, and context handling).
+* Learned to deploy specialized AI agents to automate typical developer and infrastructure tasks.
+* Acquired data visualization skills using Amazon Quick to build reports from raw data sources.
+* Mastered security practices like Private MCP to establish secure interfaces with third-party AI APIs.
 
 ### Event Experience
 
-The event provided a diverse set of technology perspectives, ranging from AI Agents in Cloud management and voice interactions to HR planning and data security. The real-world insights and live demos made it easy to visualize how these solutions operate in enterprise environments. This knowledge is highly practical and valuable for my future career direction.
+The workshop offered modern technological perspectives, specifically regarding AI agent orchestration and secure integrations. The live demos simplified the connection between academic theories and practical business deployment. These insights are highly valuable for identifying future career directions.
 
 ### Event Photos
 
-![Photo 1: General view of FCAJ Community Day Event 3](/images/4-Event/Event-3/pic1.jpg)
+![Photo 1: General view of the FCAJ Community Day Event 3](/images/4-Event/Event-3/pic1.jpg)
 
-![Photo 2: Speakers sharing about Voice AI and Cloud AI Agent solutions](/images/4-Event/Event-3/pic2.jpg)
+![Photo 2: Speakers sharing about Voice AI and AI Agent solutions on Cloud](/images/4-Event/Event-3/pic2.jpg)
 
-![Photo 3: Demo and sharing about secure solutions with Amazon Quick](/images/4-Event/Event-3/pic3.jpg)
+![Photo 3: Demo and sharing about security solutions with Amazon Quick](/images/4-Event/Event-3/pic3.jpg)

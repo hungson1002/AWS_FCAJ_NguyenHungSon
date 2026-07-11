@@ -6,19 +6,19 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch FCAJ Community Day
+# Báo cáo thu hoạch: FCAJ Community Day
 
-### Mục Đích Sự Kiện
+### Mục tiêu tham gia
 
-* Giao lưu và giải đáp các thắc mắc cùng Chuyên gia AI toàn cầu AWS.
-* Tìm hiểu cách kết nối Godot với AWS và phân tích các kiến trúc mạng (UDP, WebSocket, HTTP Polling).
-* Nắm bắt kiến thức về Docker và kỹ thuật ảo hóa đa nền tảng.
-* Tìm hiểu khái niệm RAG và cách triển khai GraphRAG trên AWS.
-* Định hướng nghề nghiệp và lộ trình phát triển từ IT Helpdesk lên Senior Sysadmin.
+* Học hỏi kinh nghiệm phát triển AI từ chuyên gia Slavik Dimitrovic của AWS.
+* Nghiên cứu giải pháp kết nối game engine Godot lên đám mây AWS và so sánh các giao thức mạng (WebSocket, UDP, HTTP Polling).
+* Tìm hiểu cơ bản về Docker và cách ảo hóa đồng bộ môi trường phát triển (Windows - Linux).
+* Khám phá mô hình RAG/GraphRAG trên AWS giúp tối ưu AI.
+* Định hướng phát triển sự nghiệp trong mảng Sysadmin từ câu chuyện của anh Trần Trung Vinh.
 
-### Danh Sách Diễn Giả
+### Diễn giả chương trình
 
-* **Slavik Dimitrovic** - Chuyên Gia AI toàn cầu AWS (Khách mời giao lưu)
+* **Slavik Dimitrovic** - Chuyên Gia AI toàn cầu AWS
 * **Anh Long**
 * **Nguyễn Quốc Bảo** - Sinh viên Đại học Swinburne
 * **Huỳnh Nguyễn Quốc Bảo**
@@ -26,42 +26,39 @@ pre: " <b> 4.2. </b> "
 * **Lê Hoàng Gia Đại**
 * **Anh Trần Trung Vinh** - Senior Sysadmin
 
-### Nội Dung Nổi Bật
+### Ghi nhận nội dung chia sẻ
 
-#### 3 Câu hỏi dành cho bác Slavik Dimitrovic
-* Phần giao lưu và đặt câu hỏi trực tiếp với chuyên gia AI toàn cầu đến từ AWS xoay quanh xu hướng phát triển và tương lai của trí tuệ nhân tạo.
+#### Q&A với Slavik Dimitrovic
+* Thảo luận về tương lai của GenAI, cách các doanh nghiệp ứng dụng AI vào vận hành thực tế và cơ hội cho các lập trình viên trẻ.
 
-#### Connecting Godot with AWS
-* Nguyễn Quốc Bảo chia sẻ về phương pháp kết nối game engine Godot với hệ sinh thái điện toán đám mây AWS.
-* Phân tích chi tiết cách lựa chọn kiến trúc mạng phù hợp cho dự án game: UDP, WebSocket, và HTTP Polling.
+#### Kết nối Godot với AWS
+* Chia sẻ phương pháp tích hợp công cụ làm game Godot với hạ tầng Cloud của AWS.
+* Phân tích ưu nhược điểm của các giao thức mạng: UDP (tốc độ cao, phù hợp game bắn súng), WebSocket (kết nối hai chiều liên tục, phù hợp game chiến thuật/PvP) và HTTP Polling (truy vấn định kỳ, tốn tài nguyên và độ trễ cao).
 
-#### Nói về Docker và Ảo hóa
-* Huỳnh Nguyễn Quốc Bảo trình bày các kiến thức cốt lõi về công nghệ Docker.
-* Giải thích cơ chế ảo hóa thực tế: Cách chạy môi trường Linux trên Windows và ngược lại để đồng bộ hóa môi trường phát triển.
+#### Docker và ảo hóa đa nền tảng
+* Giới thiệu các khái niệm cốt lõi của Containerization.
+* Demo cách thiết lập Docker để chạy môi trường phát triển đồng bộ giữa các hệ điều hành khác nhau (Windows, MacOS, Linux), giải quyết triệt để lỗi "chạy được ở local nhưng lỗi khi deploy".
 
-#### Chia sẻ về GraphRAG trên AWS
-* Anh Việt Phát giải thích những khái niệm nền tảng về công nghệ RAG (Retrieval-Augmented Generation).
-* Phân tích sâu hơn cách triển khai kiến trúc GraphRAG trực tiếp trên AWS để nâng cao độ chính xác của AI.
+#### GraphRAG trên AWS
+* Khái niệm cơ bản về RAG (Retrieval-Augmented Generation).
+* Cách tích hợp cơ sở dữ liệu đồ thị (Graph Database) với RAG trên AWS nhằm giúp các mô hình ngôn ngữ lớn (LLM) truy xuất thông tin ngữ cảnh chính xác và thông minh hơn.
 
-#### Nội dung từ AWS STUDY GROUP
-* Phần thông tin và các bài viết công nghệ hữu ích được Lê Hoàng Gia Đại đúc kết và chia sẻ từ cộng đồng AWS STUDY GROUP FCJ.
+#### Hành trình từ IT Helpdesk lên Senior Sysadmin
+* Câu chuyện thực tế đầy cảm hứng của diễn giả từ công việc hỗ trợ kỹ thuật ban đầu đến khi vận hành hệ thống lớn.
+* Chia sẻ các trường hợp sự cố hệ thống thực tế (downtime, nghẽn mạng) và tư duy xử lý nhanh dưới áp lực công việc.
+* Lộ trình học tập các chứng chỉ và công nghệ cần thiết để thăng tiến trong ngành Sysadmin.
 
-#### From IT Helpdesk To Senior Sysadmin
-* Anh Trần Trung Vinh chia sẻ quá trình nỗ lực vươn lên thành Sysadmin xuất sắc từ một xuất phát điểm không thuận lợi (bắt đầu với vị trí IT Helpdesk).
-* Chia sẻ các tình huống (case study) thực tế cực kỳ giá trị từng gặp phải trong quá trình vận hành hệ thống thực tế.
-* Vạch ra lộ trình (roadmap) chi tiết để phát triển sự nghiệp vững chắc trong mảng Sysadmin.
+### Thu hoạch cá nhân
 
-### Những Gì Học Được
+* Hiểu sâu hơn về các giao thức mạng để lựa chọn WebSocket làm kênh truyền tải dữ liệu thời gian thực cho dự án Battleship Arena của mình.
+* Nắm bắt cách sử dụng Docker để đóng gói mã nguồn, giúp việc đồng bộ code Frontend và Backend khi phát triển dễ dàng hơn.
+* Tiếp cận kiến thức mới về RAG và ứng dụng AI trên Cloud.
+* Rút ra tư duy bình tĩnh phân tích log để tìm nguyên nhân gốc rễ khi hệ thống gặp sự cố.
+* Nhận được lộ trình tự học rõ ràng cho mảng vận hành hệ thống.
 
-* Hiểu rõ hơn về các giao thức kết nối (UDP, WebSocket, HTTP Polling), từ đó biết cách lựa chọn kiến trúc mạng tối ưu cho các dự án ứng dụng thực tế.
-* Nắm bắt sâu hơn về Docker và cách cấu hình môi trường ảo hóa, hỗ trợ trực tiếp cho việc cấu trúc và triển khai monorepo gồm các dịch vụ backend và frontend cho đồ án tốt nghiệp.
-* Bổ sung kiến thức về RAG, GraphRAG và các xu hướng ứng dụng AI trên nền tảng đám mây AWS.
-* Học được tư duy giải quyết sự cố hệ thống thông qua các case study thực tế từ doanh nghiệp.
-* Có thêm định hướng rõ ràng và động lực phát triển chuyên môn nhờ vào roadmap của vị trí Sysadmin.
+### Cảm nhận cá nhân
 
-### Trải nghiệm trong event
-
-Sự kiện mang lại những kiến thức công nghệ thực chiến rất bám sát với định hướng kỹ thuật phần mềm. Các phần chia sẻ đi từ tổng quan kiến trúc mạng, ảo hóa, đến các tình huống vận hành hệ thống thực tế giúp bản thân có cái nhìn toàn diện hơn. Đặc biệt ấn tượng với các kiến thức về Docker và giao thức kết nối mạng, đây là những công cụ vô cùng thiết thực để áp dụng ngay vào việc tối ưu mã nguồn và triển khai sản phẩm trong giai đoạn năm cuối.
+Buổi sinh hoạt cộng đồng mang lại những kiến thức thực chiến vô cùng quý báu. Bản thân em học hỏi được rất nhiều từ các case study thực tế của các anh đi trước. Ấn tượng nhất là lộ trình Sysadmin và kỹ thuật Docker - những kiến thức cực kỳ thực tế giúp truyền cảm hứng cho em hoàn thiện dự án thực tập của mình tốt hơn.
 
 ### Hình ảnh tham gia sự kiện
 

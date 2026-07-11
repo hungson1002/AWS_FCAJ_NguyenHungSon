@@ -73,5 +73,3 @@ Tham gia workshop lần thứ 2 trong chuỗi ngày thực tập tại FCAJ AWS.
 ![Hình 1: Checkin văn phòng AWS ở tầng 26 tòa nhà Bitexco](/images/4-Event/Event-1/pic1.jpg)
 
 ![Hình 2: QR Dev Post và Github của team UTMorpho](/images/4-Event/Event-1/pic2.jpg)
-
-![Hình 3: Keywords cuối cùng của chị Vy sau khi laptop hết pin](/images/4-Event/Event-1/pic3.jpg)

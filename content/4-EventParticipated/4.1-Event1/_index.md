@@ -73,5 +73,3 @@ Attended the second workshop in my internship series at FCAJ AWS. Found the shar
 ![Photo 1: Checking in at the AWS office on the 26th floor of Bitexco Tower](/images/4-Event/Event-1/pic1.jpg)
 
 ![Photo 2: Dev Post QR and Github of team UTMorpho](/images/4-Event/Event-1/pic2.jpg)
-
-![Photo 3: Ms. Vy's final keywords after her laptop ran out of battery](/images/4-Event/Event-1/pic3.jpg)
