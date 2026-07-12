@@ -20,7 +20,7 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 | 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
 | 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
 | 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
+| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ✅    | ☐    | ☐       |
 | 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
 | 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
 | 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
@@ -31,6 +31,6 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 ### Areas for Improvement
 
-* **Discipline:** Improve punctuality and limit unexcused leaves to make the most of the structured training program.
+* **Time Management:** Need to manage study and coding tasks more efficiently to optimize the internship timeline.
 * **Technical Troubleshooting:** Avoid relying solely on immediate solutions; practice exploring alternative system architecture designs for backup recovery.
 * **Communication Confidence:** Build more confidence when presenting technical blueprints to a wider group and seek feedback from mentors earlier in the process.
