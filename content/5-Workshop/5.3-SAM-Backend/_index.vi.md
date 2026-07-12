@@ -1,6 +1,6 @@
 ---
 title : "Triển khai Backend với AWS SAM"
-date : 2024-01-01 
+date : 2026-07-10 
 weight : 3
 chapter : false
 pre : " <b> 5.3. </b> "
@@ -9,6 +9,13 @@ pre : " <b> 5.3. </b> "
 ### Mục tiêu
 
 Triển khai thành công toàn bộ Backend của Cloud Battleship Arena lên AWS — bao gồm **19 Lambda functions**, **2 API Gateways** (HTTP + WebSocket) và **6 DynamoDB tables** — sử dụng mẫu cấu hình `template.yaml`.
+
+---
+
+### Mã nguồn dự án
+
+Kho lưu trữ GitHub chứa toàn bộ mã nguồn của dự án:
+* **Link GitHub:** [AWS Cloud Battleship Arena](https://github.com/HaoAboutMe/AWS_Cloud_Battleship_Arena)
 
 ---
 
@@ -22,10 +29,18 @@ File `BackEnd/template.yaml` định nghĩa toàn bộ tài nguyên Backend bao 
 
 ---
 
-#### Bước 1: Cài đặt dependencies
+#### Bước 1: Clone mã nguồn từ GitHub và cài đặt dependencies
+
+Để bắt đầu, trước tiên bạn cần sao chép (clone) mã nguồn dự án từ repository GitHub về máy cục bộ của mình. Mở terminal của bạn và thực hiện các lệnh sau:
 
 ```bash
+# Clone repository của dự án
+git clone https://github.com/HaoAboutMe/AWS_Cloud_Battleship_Arena.git
+
+# Di chuyển vào thư mục Backend của dự án
 cd AWS_Cloud_Battleship_Arena/BackEnd
+
+# Cài đặt các gói thư viện phụ thuộc (dependencies)
 npm install
 ```
 

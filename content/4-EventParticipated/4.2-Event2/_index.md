@@ -10,11 +10,11 @@ pre: " <b> 4.2. </b> "
 
 ### Event Objectives
 
-* Learn AI development insights from AWS Global AI Expert Slavik Dimitrovic.
-* Study integration methods for Godot game engine with AWS, comparing UDP, WebSocket, and HTTP Polling protocols.
-* Gain fundamental knowledge of Docker and cross-platform virtualization environment synchronization.
-* Explore RAG and GraphRAG architectures on AWS to optimize LLMs.
-* Understand the career progression path for system administrators from Mr. Tran Trung Vinh.
+* Chat and ask questions with AWS AI Expert Slavik Dimitrovic.
+* Learn how to connect Godot game engine to AWS and compare WebSocket, UDP, and HTTP protocols.
+* Learn Docker basics to run code on both Windows and Linux without setup issues.
+* Learn about RAG and GraphRAG to make AI answer questions better.
+* Listen to a career roadmap from IT Helpdesk to Sysadmin.
 
 ### Speakers
 
@@ -28,37 +28,36 @@ pre: " <b> 4.2. </b> "
 
 ### Key Highlights
 
-#### Q&A Session with Slavik Dimitrovic
-* An interactive dialogue discussing the future of GenAI, practical business applications of AI, and advice for young developers.
+#### Q&A with Slavik Dimitrovic
+* A friendly discussion about the future of AI, how companies use AI, and advice for students.
 
 #### Connecting Godot with AWS
-* Integration strategies for connecting the Godot game engine with AWS cloud resources.
-* Performance comparisons of UDP (fast, packet-loss prone), WebSocket (persistent bidirectional communication, ideal for PvP/strategy games), and HTTP Polling (resource-intensive, high latency).
+* How to link the Godot game engine with AWS cloud resources.
+* Comparing connection types: UDP (fast, can lose packets), WebSocket (persistent connection, great for PvP games), and HTTP Polling (constant requests, resource-heavy).
 
-#### Docker and Cross-Platform Virtualization
-* Core concepts of containerization and virtual machines.
-* Demonstrating Docker setup to maintain consistent dev environments across Windows, MacOS, and Linux, eliminating environment-specific bugs during deployment.
+#### Docker and Virtualization
+* Basic concepts of containers and virtual machines.
+* Demo showing how to use Docker to run code smoothly on Windows, MacOS, and Linux without environment errors.
 
 #### GraphRAG on AWS
-* Basic concepts of Retrieval-Augmented Generation (RAG).
-* Integrating graph databases with RAG on AWS to provide LLMs with structured, contextually rich data for smarter responses.
+* Basic concepts of RAG (finding extra info to help AI).
+* How to combine graph databases with AI to get more accurate answers.
 
-#### Transitioning from IT Helpdesk to Senior Sysadmin
-* An inspiring real-world career path sharing the journey from technical support to administering large enterprise systems.
-* Practical case studies on resolving system outages and handling high-pressure downtime incidents.
-* Strategic roadmap and certificate path recommendations for aspiring Sysadmins.
+#### From IT Helpdesk to Senior Sysadmin
+* A real-life story of starting as tech support and growing into a senior system administrator.
+* How to handle big issues (network crashes, downtime) under work pressure.
+* Recommended study path and AWS certifications.
 
 ### Key Takeaways
 
-* Deepened understanding of networking protocols, justifying the choice of WebSocket for the Battleship Arena game project.
-* Mastered Docker basics to containerize application code, ensuring smooth frontend-backend local synchronization.
-* Learned about emerging RAG technologies and the potential of integrating AI services on AWS.
-* Acquired a structured mindset for troubleshooting system issues by analyzing logs systematically.
-* Obtained a clear self-study roadmap for system administration and operations.
+* Understood network protocols better to apply WebSocket in my Battleship game project.
+* Learned how to use Docker to pack code, making it easier to sync backend and frontend.
+* Learned new things about RAG and AI on AWS.
+* Learned how to look at logs calmly to find errors when things go wrong.
 
 ### Event Experience
 
-The community meetup offered highly practical, real-world knowledge. I gathered many valuable insights from the experiences shared by the speakers. The Docker demonstration and Sysadmin roadmap sessions were particularly useful, providing inspiration to refine and improve my internship project.
+The meetup was very practical and helpful. I learned a lot of real-world tips from the speakers, especially from the Docker demo and the Sysadmin roadmap. This gives me more ideas and motivation to improve my internship project.
 
 ### Event Photos
 

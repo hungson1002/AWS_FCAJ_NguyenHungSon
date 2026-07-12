@@ -8,15 +8,15 @@ pre: " <b> 4.3. </b> "
 
 # Báo cáo thu hoạch: FCAJ Community Day
 
-### Mục tiêu tham gia
+### Mục Đích Sự Kiện
 
-* Nghiên cứu khái niệm AgenticOps và mô hình startup công nghệ của CloudThinker.
-* Tìm hiểu quy trình thiết kế Voice AI Agent quy mô lớn (speech-to-speech, nhận diện giới tính, ngắt lời và xử lý ngữ cảnh).
-* Khám phá giải pháp DevOps AI Agent giúp tự động hóa vận hành từ Cloud Kinetics.
-* Tìm hiểu cách ứng dụng Amazon Quick phục vụ quản trị và lập kế hoạch nhân sự (Workforce Planning).
-* Phân tích kiến trúc bảo mật MCP (Model Context Protocol) riêng tư cho Amazon Quick.
+* Tìm hiểu về AgenticOps và câu chuyện khởi nghiệp tại CloudThinker.
+* Tìm hiểu cách làm Voice AI Agent (gọi điện thoại tự động, ngắt lời tự nhiên).
+* Tìm hiểu cách dùng AI Agent để tự động hóa các công việc của DevOps.
+* Học cách vẽ biểu đồ quản lý nhân sự bằng Amazon Quick.
+* Tìm hiểu cách kết nối an toàn với AI thông qua giao thức MCP (Model Context Protocol).
 
-### Diễn giả chương trình
+### Danh Sách Diễn Giả
 
 * **Steve Tran** - Founder CloudThinker
 * **Trung Vu**
@@ -29,39 +29,38 @@ pre: " <b> 4.3. </b> "
 * **Anh Nghị**
 * **Anh Toàn**
 
-### Ghi nhận nội dung chia sẻ
+### Nội Dung Nổi Bật
 
 #### Khởi nghiệp với AgenticOps
-* Hành trình vượt qua khó khăn khi học thi chứng chỉ đám mây, hướng đi từ kỹ sư hệ thống lên nhà sáng lập CloudThinker của diễn giả Steve Tran.
-* Giới thiệu nền tảng AgenticOps tối ưu hóa vận hành trên đám mây bằng AI và xu hướng phát triển dịch vụ trong thời kỳ chuyển đổi số.
+* Hành trình tự học thi chứng chỉ và đi lên từ kỹ sư hệ thống của anh Steve Tran.
+* Giới thiệu nền tảng AgenticOps dùng AI để hỗ trợ quản lý hệ thống đám mây tốt hơn.
 
 #### Xây dựng Voice Agent quy mô lớn
-* Phân tích các thách thức kỹ thuật của Voice AI bao gồm độ trễ truyền tải âm thanh, kỹ thuật chuyển đổi Speech-to-Speech trực tiếp, thuật toán nhận diện giới tính và khả năng ngắt lời tự nhiên (interruption handling).
-* Demo trực tiếp sản phẩm Hera và chia sẻ kinh nghiệm xử lý sự cố kỹ thuật phát sinh ngay trong lúc thuyết trình.
+* Các khó khăn khi làm trợ lý giọng nói: độ trễ âm thanh, chuyển trực tiếp giọng nói sang giọng nói, nhận diện giới tính và cách xử lý khi khách hàng nói xen vào (ngắt lời).
+* Demo gọi điện thực tế sản phẩm Hera và cách xử lý bình tĩnh khi gặp lỗi nhỏ lúc demo.
 
 #### DevOps AI Agent
-* Cách AI Agent hỗ trợ đắc lực cho kỹ sư DevOps trong việc tự động hóa các tác vụ lặp đi lặp lại, nghiên cứu tài liệu kỹ thuật tự động và trích xuất dữ liệu cấu trúc thông minh.
-* So sánh ưu thế của giải pháp tích hợp Agent so với các script tự động hóa truyền thống.
+* Cách dùng AI để giúp kỹ sư DevOps làm các việc lặp lại, đọc tài liệu hệ thống và trích xuất dữ liệu nhanh hơn.
+* So sánh lợi ích của AI Agent so với việc viết code chạy tự động (script) thông thường.
 
 #### Workforce Planning với Amazon Quick
-* Giải quyết các bài toán tối ưu hiệu suất và lập kế hoạch nhân sự bằng trực quan hóa dữ liệu trên Amazon Quick.
-* Thực hiện xây dựng dashboard phân tích dữ liệu nhân sự doanh nghiệp thời gian thực.
+* Cách vẽ các biểu đồ phân tích và tối ưu hóa nhân sự bằng Amazon Quick.
+* Demo thiết lập các dashboard (bảng theo dõi) dữ liệu thực tế cho công ty.
 
 #### Secure Private MCP cho Amazon Quick
-* Giải pháp kết nối bảo mật sử dụng giao thức Model Context Protocol (MCP) riêng tư.
-* Thiết lập hệ thống trao đổi thông tin với LLM một cách an toàn mà không cần mở kết nối Internet trực tiếp ra ngoài, giúp bảo vệ dữ liệu nhạy cảm của doanh nghiệp.
+* Cách kết nối an toàn giữa Amazon Quick với các mô hình AI (LLM).
+* Thiết lập đường truyền nội bộ riêng tư, không cần mở internet công khai để bảo vệ dữ liệu nhạy cảm của doanh nghiệp.
 
-### Thu hoạch cá nhân
+### Những Gì Học Được
 
-* Tiếp cận khái niệm AgenticOps - xu hướng vận hành hệ thống đám mây bằng AI Agents trong tương lai.
-* Hiểu cách tối ưu hóa trải nghiệm người dùng đối với các dịch vụ AI tương tác thời gian thực (như xử lý độ trễ và ngữ cảnh hội thoại).
-* Biết cách ứng dụng AI Agents để hỗ trợ các tác vụ tự động hóa hạ tầng (DevOps).
-* Biết cách sử dụng Amazon Quick để tạo báo cáo trực quan từ các nguồn dữ liệu thô.
-* Nắm vững nguyên lý bảo mật dữ liệu nhạy cảm thông qua kiến trúc Private MCP khi tích hợp AI với bên thứ ba.
+* Biết thêm về xu hướng dùng AI Agent để hỗ trợ quản lý cloud (AgenticOps) trong tương lai.
+* Hiểu cách xử lý cuộc gọi tự động bằng AI (độ trễ và ngữ cảnh đối thoại).
+* Học được cách dùng Amazon Quick để vẽ các biểu đồ báo cáo từ dữ liệu có sẵn.
+* Biết về nguyên lý bảo mật dữ liệu khi kết nối ứng dụng với các bên AI thứ ba.
 
-### Cảm nhận cá nhân
+### Trải nghiệm trong event
 
-Buổi workshop cung cấp những góc nhìn công nghệ rất hiện đại, đặc biệt là các giải pháp liên quan đến AI Agent và bảo mật dữ liệu. Các phiên live demo thực tế giúp em dễ dàng liên hệ lý thuyết với thực tiễn ứng dụng trong doanh nghiệp. Đây là nguồn kiến thức bổ ích để em định hình các công nghệ mới cho định hướng nghề nghiệp của mình.
+Buổi workshop giới thiệu nhiều công nghệ rất mới về AI Agent và bảo mật dữ liệu. Các phần demo gọi điện và vẽ biểu đồ rất trực quan, giúp em dễ hình dung cách áp dụng vào thực tế. Đây là những kiến thức rất bổ ích cho định hướng học tập tiếp theo của em.
 
 ### Hình ảnh tham gia sự kiện
 

@@ -10,11 +10,11 @@ pre: " <b> 4.3. </b> "
 
 ### Event Objectives
 
-* Study AgenticOps concepts and the startup journey of tech company CloudThinker.
-* Understand voice agent system design at scale, including speech-to-speech conversion, gender detection, and real-time interruption handling.
-* Investigate DevOps AI Agent solutions from Cloud Kinetics for automated operations.
-* Explore workforce productivity planning and data visualization using Amazon Quick.
-* Analyze secure integration architectures for Amazon Quick using Private Model Context Protocol (MCP).
+* Learn about AgenticOps and the startup story at CloudThinker.
+* Find out how to build a Voice AI Agent (automated calls, handle interruptions).
+* Learn how to use AI Agents to automate DevOps tasks.
+* Learn how to draw HR charts using Amazon Quick.
+* Understand how to connect to AI safely using Private MCP (Model Context Protocol).
 
 ### Speakers
 
@@ -31,37 +31,36 @@ pre: " <b> 4.3. </b> "
 
 ### Key Highlights
 
-#### Entrepreneurship with AgenticOps
-* Sharing challenges of earning cloud certifications, transitioning from system engineering to founding startup CloudThinker.
-* An overview of the AgenticOps platform designed to optimize cloud infrastructure operations using AI agents.
+#### Startup with AgenticOps
+* Career journey of Mr. Steve Tran starting from a system engineer.
+* Introduction to the AgenticOps platform using AI to manage cloud systems.
 
 #### Building Voice Agents at Scale
-* Technical challenges in voice assistant design: latency mitigation, direct speech-to-speech conversion, gender identification, and smart user interruption algorithms.
-* Live demonstration of the assistant product Hera, sharing tips on troubleshooting technical issues on stage.
+* Key issues with voice AI: network latency, direct speech-to-speech, gender detection, and handling client interruptions.
+* A live phone call demo with Hera assistant and how they fixed minor bugs calmly on stage.
 
 #### DevOps AI Agent
-* Streamlining operations with AI agents designed to automate repetitive scripting tasks, parse documentation, and extract structured technical configurations.
-* Comparing agentic execution frameworks against traditional static automation scripts.
+* How AI Agents assist DevOps engineers in daily repetitive tasks, reading system files, and extracting data.
+* Comparing AI Agent benefits against traditional automation scripts.
 
 #### Workforce Planning with Amazon Quick
-* Using BI dashboards on Amazon Quick to solve enterprise human resource planning and productivity monitoring challenges.
-* Live demonstration of creating automated visual reporting dashboards for HR metrics.
+* How to design analysis charts for HR optimization using Amazon Quick.
+* Demo showing how to create dashboards for company metrics.
 
 #### Secure Private MCP for Amazon Quick
-* Designing high-security environments using a private Model Context Protocol (MCP).
-* Establishing secure, internet-free integration channels with external LLMs to protect sensitive organizational data.
+* How to build a safe connection between Amazon Quick and AI models (LLMs).
+* Setting up private internal links without public internet access to protect sensitive company data.
 
 ### Key Takeaways
 
-* Explored AgenticOps as the future paradigm of AI-driven cloud infrastructure management.
-* Gained insights on optimizing user experience for real-time interactive AI services (latency, turn-taking, and context handling).
-* Learned to deploy specialized AI agents to automate typical developer and infrastructure tasks.
-* Acquired data visualization skills using Amazon Quick to build reports from raw data sources.
-* Mastered security practices like Private MCP to establish secure interfaces with third-party AI APIs.
+* Discovered the trend of using AI Agents for cloud management (AgenticOps).
+* Got a basic understanding of voice AI calls (latency and conversation turns).
+* Learned how to use Amazon Quick to build reporting dashboards from raw tables.
+* Learned basic security concepts when linking web tools to external AI services.
 
 ### Event Experience
 
-The workshop offered modern technological perspectives, specifically regarding AI agent orchestration and secure integrations. The live demos simplified the connection between academic theories and practical business deployment. These insights are highly valuable for identifying future career directions.
+The workshop showed many new technologies about AI Agents and data security. The phone call and chart demos were very clear and easy to understand. These topics are very helpful for my future career plans.
 
 ### Event Photos
 

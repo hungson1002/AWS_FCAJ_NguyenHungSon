@@ -6,14 +6,11 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+During my internship at **Amazon Web Services Viet Nam Company Limited** from **05/04/2026** to **07/30/2026**, I had the valuable opportunity to apply my academic knowledge to real-world cloud applications.  
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+I participated in designing and developing the **Cloud Battleship Arena** project — a real-time multiplayer serverless battleship game. This hands-on experience helped me improve my skills in serverless architecture (Cognito, API Gateway, Lambda, DynamoDB, S3, CloudFront), local environment synchronization, automated deployment pipelines (CI/CD), and team collaboration.  
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+Throughout the program, I maintained a proactive learning attitude, respected company rules, and consistently communicated with mentors to deliver a high-quality product.
 
 To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
 
@@ -32,8 +29,8 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 | 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
 | 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
 
-### Needs Improvement
+### Areas for Improvement
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+* **Discipline:** Improve punctuality and limit unexcused leaves to make the most of the structured training program.
+* **Technical Troubleshooting:** Avoid relying solely on immediate solutions; practice exploring alternative system architecture designs for backup recovery.
+* **Communication Confidence:** Build more confidence when presenting technical blueprints to a wider group and seek feedback from mentors earlier in the process.

@@ -1,6 +1,6 @@
 ---
 title : "Kiểm thử toàn trình"
-date : 2024-01-01
+date : 2026-07-10
 weight : 7
 chapter : false
 pre : " <b> 5.7. </b> "
@@ -9,6 +9,11 @@ pre : " <b> 5.7. </b> "
 ### Mục tiêu
 
 Xác thực toàn bộ luồng hoạt động thực tế của game bằng cách tạo tài khoản qua Cognito, kết nối phòng đấu và tiến hành chơi game trực tiếp trên trình duyệt web.
+
+{{% notice info %}}
+**Trải nghiệm Demo trực tiếp:** Cloud Battleship Arena đã được triển khai hoàn chỉnh tại:
+> [https://d12bu86qwnw1gk.cloudfront.net/](https://d12bu86qwnw1gk.cloudfront.net/)
+{{% /notice %}}
 
 ---
 
