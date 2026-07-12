@@ -14,18 +14,14 @@ pre: " <b> 1. </b> "
 
 **Week 4:** [Learning AWS Networking, EC2 and Planning Final Project](1.4-week4/)
 
-**Week 5:** [Doing task D...](1.5-week5/)
+**Week 5:** [Learning AWS Cognito, creating IAM Users, designing testing UI, and brainstorming the Battleship game](1.5-week5/)
 
-**Week 6:** [Doing task E...](1.6-week6/)
+**Week 6:** [Configuring AWS Cognito for Google/Facebook auth, developing Serverless backend (Lambda, API Gateway), and setting up DynamoDB](1.6-week6/)
 
-**Week 7:** [Doing task G...](1.7-week7/)
+**Week 7:** [Developing WebSocket for real-time PvP, building matching systems for casual/ranked modes, and adding Phaser animations](1.7-week7/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 8:** [Improving game UI, integrating battle sounds, developing game settings, and adding in-game real-time chat](1.8-week8/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
+**Week 9:** [Deploying website to Amazon S3 & CloudFront, configuring GitHub Actions CI/CD pipeline, and upgrading UI layouts](1.9-week9/)
 
-**Week 10:** [Doing task L...](1.10-week10/)
-
-**Week 11:** [Doing task M...](1.11-week11/)
-
-**Week 12:** [Doing task N...](1.12-week12/)
+**Week 10:** [Finalizing UI designs, mapping AWS system architectures, writing Project Proposal, and preparing Workshop materials](1.10-week10/)

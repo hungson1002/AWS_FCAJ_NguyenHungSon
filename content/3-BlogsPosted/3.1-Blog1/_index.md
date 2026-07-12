@@ -1,30 +1,36 @@
 ---
-
 title: "Blog 1"
-date: 2026-06-10
+date: 2026-07-07
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
-----------------------
+---
 
-# Personal Experience: Moving from Another Cloud Platform to AWS
+# AWS Lambda MicroVMs: When Serverless No Longer Means Stateless
 
-When joining the FCAJ program, some people asked whether it is necessary to complete all the labs if they already have previous experience with Cloud Computing.
+This post shares information and personal perspectives on the new **AWS Lambda MicroVMs** feature launched by AWS in late June 2026. This is a major breakthrough addressing stateful workloads for Serverless applications, particularly useful for AI Coding Assistants, Data Analytics platforms, and online learning sandboxes.
 
-Based on my personal experience as someone who worked with Microsoft Azure before joining this program, my answer is still **yes**.
+Key Highlights:
 
-Some key takeaways from my experience:
+* **The Problem Solved:** Satisfying the need to run untrusted user code in a safe, fast, and cost-effective sandbox environment (which traditional EC2, Containers, or stateless Lambda functions cannot perfectly optimize).
+* **How It Works:** Each MicroVM runs as a separate Firecracker virtual machine. The key difference is that instead of being destroyed, MicroVMs are *suspended* when a session is idle, and quickly *resumed* with RAM and disk state preserved, keeping installed libraries and data intact without boot delay.
+* **Developer Control:** Developers can actively control the MicroVM lifecycle (initiate, suspend, resume, terminate) and get a dedicated HTTPS endpoint supporting HTTP/2, gRPC, and WebSockets without configuring load balancers.
+* **AI Agent Integration:** Establishes execution boundaries to isolate LLM-generated code from the main agent environment, protecting sensitive credentials.
+* **Cost Efficiency:** Customers only pay for compute resources when the MicroVM is active. During suspension, they only pay for a very cheap storage state compared to running an EC2 VM 24/7.
+* **Personal Perspective:** AWS has packaged a complex infrastructure pattern that top engineering teams had to build manually into a fully managed service, expanding Serverless boundaries into heavy stateful use cases.
 
-* After using AWS, I learned how to work with a wide variety of AWS services.
-* Previously, when using Azure, I mainly focused on renting Virtual Machines and deploying everything directly on those VMs.
-* I had the opportunity to learn about new database services such as Amazon RDS, Amazon DynamoDB, and many other AWS services.
-* I also gained a basic understanding of important AWS concepts such as VPC and IAM.
-
-Since this is a personal experience, there may be inaccuracies due to my limited time working with AWS. You may find additional useful insights in the comments section of the original post.
+Since this is a technology update and personal sharing, you can view the detailed post and participate in the community discussion at the original link below.
 
 > Original post: [Link][Link_Original]
 
-[Link_Original]: https://www.facebook.com/groups/awsstudygroupfcj/posts/2175264609905166
+[Link_Original]: https://www.facebook.com/groups/awsstudygroupfcj/permalink/2202883497143277
 
-> Post image
-> ![Your profile picture](/images/3-Blogpost/z7920142534500_ed3e8f3a5057e024d8cbdb0391a49ec9.jpg)
+> Post images
+>
+> ![Screenshot of the Lambda MicroVMs post part 1](/images/3-Blogpost/Blog3.1.png)
+>
+> ![Screenshot of the Lambda MicroVMs post part 2](/images/3-Blogpost/Blog3.2.png)
+>
+> ![Screenshot of the Lambda MicroVMs post part 3](/images/3-Blogpost/Blog3.3.png)
+>
+> ![Architecture diagram of AWS Lambda MicroVMs](/images/3-Blogpost/Blog3.4.png)
