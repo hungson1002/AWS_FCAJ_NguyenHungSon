@@ -10,68 +10,61 @@ pre: " <b> 4.1. </b> "
 
 ### Event Objectives
 
-- Share about how to use AI and build a second brain
-- Introduce Amazon Quick
-- Share about CloudFront
-- Non-Determinism of “Determinstic” LLM Settings
-- Share the 36-hour journey of participating in the LotusHack hackathon
-- Share real-world enterprise cases and situations encountered
+* Learn how to use AI to support daily work and how to organize personal notes.
+* Find out about Amazon Q (Amazon Quick) tool for quick Q&A.
+* Learn about CloudFront and how to set up cost limits.
+* Learn why AI (LLMs) sometimes gives different answers to the same question.
+* Hear about the 36-hour hackathon experience from the LotusHack team.
+* Listen to real-world stories and issues from people working in companies.
 
 ### Speakers
 
-- **Tinh Truong** - Platform Engineer at GoTymeX
-- **Anh Pham** - CloudConsultant at G-AsiaPacific VietNam
-- **Mr. Nguyen Tuan Thinh** - DevOps/Cloud Engineer at FCAJ
-- **Mr. DucDao** - Solutions Architect at Cloud Kinetics
-- **Ms. Thao Nguyen, Mai Nguyen, Uyen Le** - GenAI Engineers at VIB
-- **Ms. Vy Lam** - Senior Bussiness Systems Analyst at VPBank
+* **Tinh Truong** - Platform Engineer at GoTymeX
+* **Anh Pham** - Cloud Consultant at G-AsiaPacific VietNam
+* **Mr. Nguyen Tuan Thinh** - DevOps/Cloud Engineer at FCAJ
+* **Mr. DucDao** - Solutions Architect at Cloud Kinetics
+* **Ms. Thao Nguyen, Mai Nguyen, Uyen Le** - GenAI Engineers at VIB
+* **Ms. Vy Lam** - Senior Business Systems Analyst at VPBank
 
 ### Key Highlights
 
-#### Share about how to use AI and build a second brain
-- Understand context better
-- How to use AI effectively
+#### Using AI and Building a Second Brain
+* How to input enough context so that AI can understand and answer better.
+* Simple note-taking tips to organize information for long-term study.
 
-#### Introduce Amazon Quick
-- Introduce Amazon Quick Agent
-- Demo Amazon Quick with multiple tasks
+#### Discovering Amazon Q (Amazon Quick)
+* An introduction to how the Amazon Q assistant works.
+* A live demo showing how to use Amazon Q to search for database information.
 
-#### Share about CloudFront
-- Today he spoke Vietnamese
-- Did not share pure theory about CloudFront in the traditional way
-- Introduced paid plans to limit costs and avoid overnight cost spikes
+#### Optimizing Amazon CloudFront
+* How to use CloudFront to make websites load faster.
+* How to set cost limits on AWS services to avoid unexpected bills.
 
-#### Non-Determinism of “Determinstic” LLM Settings
-- Talked more about AI and LLMs
-- How AI provides the same or different answers based on a demo
+#### Non-Determinism in LLM Settings
+* Understanding why AI sometimes answers differently even with the same question.
+* A quick demo showing AI answers under different settings.
 
-#### Share the 36-hour journey of participating in the LotusHack hackathon
-- Team UTMorpho shared their journey of participating in the LotusHack hackathon
-- Demoed an auto-generated UI product that can be edited by drag-and-drop, created within 16/36 hours of the hackathon
-- Other moments: 12 hours brainstorming topics, running out of AI tokens, etc.
+#### The 36-Hour LotusHack Hackathon Experience
+* Team UTMorpho sharing how they built a drag-and-drop UI generator in just 16 coding hours.
+* Funny situations like running out of AI credits, changing ideas halfway, and working under time pressure.
 
-#### Share real-world enterprise cases and situations encountered
-- Fun real-world sharing
-- Common cases in enterprises that no one tells you about
-- Shared keywords for working: Securely, Reliably, Scalable
+#### Real Stories from Companies
+* Common mistakes when setting up systems that books do not teach.
+* Three important terms to remember: Security, Reliability, and Scalability.
 
 ### Key Takeaways
 
-- Grasped how to use AI better by making it understand context clearly
-- Learned about a great new tool like Amazon Quick
-- Learned about paid plans to limit service consumption costs
-- Learned more about Hackathons and an useful product by the UTMorpho team
-- Learned more about enterprise cases and worst-case scenarios
-- Understood why to use multi-agent AI instead of single-agent AI
+* Learned to write better prompts to ask AI for help in my Battleship game project.
+* Learned how to set up cost alerts to manage my AWS account.
+* Got a basic understanding of why we should use Multi-Agent AI instead of just one AI.
+* Learned about teamwork and quick problem-solving from the speakers.
 
 ### Event Experience
 
-Attended the second workshop in my internship series at FCAJ AWS. Found the sharing sessions very interesting, especially impressed by team UTMorpho and Ms. Vy Lam. Although the schedule was delayed due to many parts, it was still very captivating. Learned more about Amazon Quick and the UTMorpho product from the LotusHack competitors.
+This was the first workshop I attended in the FCAJ AWS internship. The talks were very easy to follow and interesting, especially the stories from team UTMorpho and Ms. Vy Lam. These real-world shares help me understand what working in the tech industry looks like.
 
 ### Event Photos
 
 ![Photo 1: Checking in at the AWS office on the 26th floor of Bitexco Tower](/images/4-Event/Event-1/pic1.jpg)
 
 ![Photo 2: Dev Post QR and Github of team UTMorpho](/images/4-Event/Event-1/pic2.jpg)
-
-![Photo 3: Ms. Vy's final keywords after her laptop ran out of battery](/images/4-Event/Event-1/pic3.jpg)

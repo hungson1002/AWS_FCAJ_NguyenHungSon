@@ -1,6 +1,6 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-10
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
@@ -16,6 +16,11 @@ This lab simulates 100% of the actual deployment steps you performed during the 
 + **Serverless Backend Deployment** using AWS SAM (Lambda, API Gateway HTTP/WebSocket, DynamoDB).
 + **Static Frontend Hosting** using Amazon S3 and global content delivery via CDN Amazon CloudFront.
 + **Automated CI/CD Pipelines** using GitHub Actions via secure IAM OIDC Federation (eliminating long-lived access keys).
+
+{{% notice info %}}
+**Live Demo:** You can try the fully deployed project right now before starting the workshop!
+> **[https://d12bu86qwnw1gk.cloudfront.net/](https://d12bu86qwnw1gk.cloudfront.net/)**
+{{% /notice %}}
 
 #### Workshop Content
 

@@ -1,6 +1,6 @@
 ---
 title: "Week 8 Worklog"
-date: 2026-06-27
+date: 2026-06-28
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
@@ -16,14 +16,14 @@ pre: " <b> 1.8. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | ---- | ---------- | --------------- |
-| 2 | - **Research:** Learn how to arrange colors and tweak CSS layouts to beautify the homepage, lobby, and battle screens <br> - **Implementation:** Edit the entire project's interface, updating buttons, borders, and backgrounds to make the app look much better | 06/22/2026 | 06/22/2026 |
-| 3 | - **Research:** Learn about image dimensions and how to prepare images for 6 new warships to fit the game grid <br> - **Implementation:** Create images for 6 new warships; add these ship images to the player's selection list before matches | 06/23/2026 | 06/23/2026 |
-| 4 | - **Research:** Learn how to play audio and control game sounds using helper libraries (such as Howler.js) <br> - **Implementation:** Write `soundService.js` to integrate background music for the lobby (`menuMusic`) and battle phase (`battleMusic`) via `syncBackgroundMusic`; add sound effects for miss, hit, and ship explosion using `playSound` | 06/24/2026 | 06/24/2026 |
-| 5 | - **Research:** Learn how to build volume adjustment sliders and manage audio toggle states in React <br> - **Implementation:** Create the Settings feature; build volume sliders for adjusting background music and game sound effects using `setSoundSettings` and `getSoundSettings` | 06/25/2026 | 06/25/2026 |
-| 6 | - **Research:** Learn how to display player information neatly on the PvP combat screen <br> - **Implementation:** Redesign the PvP battle room, adding areas to show detailed info for both sides (name, rank tier, avatar, wins/losses) | 06/26/2026 | 06/26/2026 |
-| 7 | - **Research:** Learn how to send and receive real-time chat messages via socket connections between players <br> - **Implementation:** Integrate `PvpBattlePanels.jsx` chat component and implement in-game chat in the PvP room by sending socket signals (`sendPvpSignal`) and updating the chat logs (`appendChatMessage`); test the whole system | 06/27/2026 | 06/27/2026 |
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Redecorate CSS layouts for homepage, lobby, and battle screens <br> - Edit the entire project's interface, updating buttons, borders, and backgrounds to make the app look much better | 06/22/2026 | 06/22/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Create and size assets for 6 new warships to fit the game grid <br> - Create images for 6 new warships; add these ship images to the player's selection list before matches | 06/23/2026 | 06/23/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Configure game audio controls using helper libraries (such as Howler.js) <br> - Write `soundService.js` to integrate background music for the lobby (`menuMusic`) and battle phase (`battleMusic`) via `syncBackgroundMusic`; add sound effects for miss, hit, and ship explosion using `playSound` | 06/24/2026 | 06/24/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Construct volume adjustment sliders and audio toggles in React <br> - Create the Settings feature; build volume sliders for adjusting background music and game sound effects using `setSoundSettings` and `getSoundSettings` | 06/25/2026 | 06/25/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Optimize player information display layouts on the PvP combat screen <br> - Redesign the PvP battle room, adding areas to show detailed info for both sides (name, rank tier, avatar, wins/losses) | 06/26/2026 | 06/26/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Implement real-time chat functionality via socket connections <br> - Integrate `PvpBattlePanels.jsx` chat component and implement in-game chat in the PvP room by sending socket signals (`sendPvpSignal`) and updating the chat logs (`appendChatMessage`); test the whole system | 06/27/2026 | 06/28/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Week 8 Achievements:
 

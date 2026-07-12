@@ -1,6 +1,6 @@
 ---
 title : "Integration Test"
-date : 2024-01-01
+date : 2026-07-10
 weight : 7
 chapter : false
 pre : " <b> 5.7. </b> "
@@ -9,6 +9,14 @@ pre : " <b> 5.7. </b> "
 ### Goals
 
 Validate the entire application flow by registering user accounts, establishing game lobbies, and playing a live match directly inside the web browser.
+
+{{% notice info %}}
+**Try the Live Demo:** The fully deployed Cloud Battleship Arena is accessible at:
+>
+> ## [https://d12bu86qwnw1gk.cloudfront.net/](https://d12bu86qwnw1gk.cloudfront.net/)
+>
+> Use this URL to follow along with the integration test steps below, or to verify your own deployment produces an identical result.
+{{% /notice %}}
 
 ---
 

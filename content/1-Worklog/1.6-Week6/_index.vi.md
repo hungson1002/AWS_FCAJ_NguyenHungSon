@@ -17,14 +17,14 @@ pre: " <b> 1.6. </b> "
 
 ### Công việc thực hiện trong tuần:
 
-| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
-| ---- | --------- | ------------ | --------------- |
-| 2 | - **Tìm hiểu:** Tìm hiểu cách hoạt động của dịch vụ AWS Cognito (User Pools) để quản lý tài khoản người chơi <br> - **Thực hành:** Tạo và cấu hình Cognito User Pool; thiết kế các màn hình Đăng ký (`Register.jsx`) và Đăng nhập (`Login.jsx`); cài đặt Amplify SDK để kết nối giao diện với Cognito và gọi các hàm xác thực (`registerUser`, `confirmRegister`, `loginUser`) | 08/06/2026 | 08/06/2026 |
-| 3 | - **Tìm hiểu:** Tìm hiểu cách đăng nhập bằng Google và Facebook thông qua Cognito <br> - **Thực hành:** Thiết lập App Registration trên Google Cloud Console và Facebook Developers; cấu hình Identity Providers trên Cognito và gọi hàm `loginWithSocialProvider` để bật đăng nhập Google và Facebook | 09/06/2026 | 09/06/2026 |
-| 4 | - **Tìm hiểu:** Tìm hiểu cách dùng Lambda và API Gateway để làm serverless backend <br> - **Thực hành:** Tạo API Gateway (REST API); viết và cấu hình hàm Lambda để xử lý thông tin người chơi (`getUser.js`) phục vụ cho phía Frontend | 10/06/2026 | 10/06/2026 |
-| 5 | - **Tìm hiểu:** Tìm hiểu cách lưu trữ và quản lý dữ liệu người dùng trong DynamoDB <br> - **Thực hành:** Tạo bảng DynamoDB để lưu thông tin người chơi; viết Lambda Function (`createUser.js`) kết nối với DynamoDB để tự động đồng bộ và lưu thông tin người dùng ngay sau khi xác thực thành công | 11/06/2026 | 11/06/2026 |
-| 6 | - **Tìm hiểu:** Tìm hiểu cách vẽ và chuẩn bị hình ảnh các tàu chiến cho phù hợp với game <br> - **Thực hành:** Tạo hình ảnh cho 4 chiếc tàu chiến đầu tiên; thêm các ảnh tàu này vào code và hiển thị trên màn hình đấu với máy (Player vs AI) | 12/06/2026 | 12/06/2026 |
-| 7 | - **Tìm hiểu:** Tìm hiểu cách xử lý tọa độ trên lưới đấu và cơ chế kéo thả hình ảnh (Drag and Drop) <br> - **Thực hành:** Chạy thử và sửa lỗi các phần: xoay tàu (`rotateShip` / `handleRotate`), kéo thả tàu (`dragStart`, `dragOver`, `drop`) và đặt tàu vào ô lưới (`isValidPlacement`), giúp việc đặt tàu mượt mà hơn | 13/06/2026 | 14/06/2026 |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| ---- | --------- | ------------ | --------------- | -------------- |
+| 2 | - Thiết lập quản lý tài khoản bằng dịch vụ AWS Cognito (User Pools) <br> - Tạo và cấu hình Cognito User Pool; thiết kế các màn hình Đăng ký (`Register.jsx`) và Đăng nhập (`Login.jsx`); cài đặt Amplify SDK để kết nối giao diện với Cognito và gọi các hàm xác thực (`registerUser`, `confirmRegister`, `loginUser`) | 08/06/2026 | 08/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Tích hợp đăng nhập bằng Google và Facebook thông qua Cognito <br> - Thiết lập App Registration trên Google Cloud Console và Facebook Developers; cấu hình Identity Providers trên Cognito và gọi hàm `loginWithSocialProvider` để bật đăng nhập Google và Facebook | 09/06/2026 | 09/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Triển khai serverless backend sử dụng Lambda và API Gateway <br> - Tạo API Gateway (REST API); viết và cấu hình hàm Lambda để xử lý thông tin người chơi (`getUser.js`) phục vụ cho phía Frontend | 10/06/2026 | 10/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Thiết lập cơ sở dữ liệu DynamoDB để lưu trữ và quản lý dữ liệu người dùng <br> - Tạo bảng DynamoDB để lưu thông tin người chơi; viết Lambda Function (`createUser.js`) kết nối với DynamoDB để tự động đồng bộ và lưu thông tin người dùng ngay sau khi xác thực thành công | 11/06/2026 | 11/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Thiết kế và xử lý hình ảnh các tàu chiến phù hợp với kích thước game <br> - Tạo hình ảnh cho 4 chiếc tàu chiến đầu tiên; thêm các ảnh tàu này vào code và hiển thị trên màn hình đấu với máy (Player vs AI) | 12/06/2026 | 12/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Cấu hình xử lý tọa độ lưới đấu và cơ chế kéo thả hình ảnh (Drag and Drop) <br> - Chạy thử và sửa lỗi các phần: xoay tàu (`rotateShip` / `handleRotate`), kéo thả tàu (`dragStart`, `dragOver`, `drop`) và đặt tàu vào ô lưới (`isValidPlacement`), giúp việc đặt tàu mượt mà hơn | 13/06/2026 | 14/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được:
 

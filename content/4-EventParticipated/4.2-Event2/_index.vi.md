@@ -6,19 +6,19 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch FCAJ Community Day
+# Báo cáo thu hoạch: FCAJ Community Day
 
 ### Mục Đích Sự Kiện
 
-* Giao lưu và giải đáp các thắc mắc cùng Chuyên gia AI toàn cầu AWS.
-* Tìm hiểu cách kết nối Godot với AWS và phân tích các kiến trúc mạng (UDP, WebSocket, HTTP Polling).
-* Nắm bắt kiến thức về Docker và kỹ thuật ảo hóa đa nền tảng.
-* Tìm hiểu khái niệm RAG và cách triển khai GraphRAG trên AWS.
-* Định hướng nghề nghiệp và lộ trình phát triển từ IT Helpdesk lên Senior Sysadmin.
+* Giao lưu và hỏi đáp các thắc mắc cùng chuyên gia AI của AWS.
+* Tìm hiểu cách kết nối game làm bằng Godot với AWS và so sánh các giao thức mạng (WebSocket, UDP, HTTP).
+* Học cơ bản về Docker để chạy code đồng bộ giữa máy Windows và Linux.
+* Tìm hiểu về RAG và GraphRAG giúp AI trả lời thông minh hơn.
+* Nghe chia sẻ về lộ trình làm việc từ IT Helpdesk lên Sysadmin.
 
 ### Danh Sách Diễn Giả
 
-* **Slavik Dimitrovic** - Chuyên Gia AI toàn cầu AWS (Khách mời giao lưu)
+* **Slavik Dimitrovic** - Chuyên Gia AI toàn cầu AWS
 * **Anh Long**
 * **Nguyễn Quốc Bảo** - Sinh viên Đại học Swinburne
 * **Huỳnh Nguyễn Quốc Bảo**
@@ -28,40 +28,36 @@ pre: " <b> 4.2. </b> "
 
 ### Nội Dung Nổi Bật
 
-#### 3 Câu hỏi dành cho bác Slavik Dimitrovic
-* Phần giao lưu và đặt câu hỏi trực tiếp với chuyên gia AI toàn cầu đến từ AWS xoay quanh xu hướng phát triển và tương lai của trí tuệ nhân tạo.
+#### Q&A với Slavik Dimitrovic
+* Trò chuyện về tương lai của AI, cách các công ty dùng AI trong thực tế và lời khuyên cho sinh viên.
 
-#### Connecting Godot with AWS
-* Nguyễn Quốc Bảo chia sẻ về phương pháp kết nối game engine Godot với hệ sinh thái điện toán đám mây AWS.
-* Phân tích chi tiết cách lựa chọn kiến trúc mạng phù hợp cho dự án game: UDP, WebSocket, và HTTP Polling.
+#### Kết nối Godot với AWS
+* Cách liên kết game engine Godot với hệ thống cloud của AWS.
+* So sánh các cách truyền dữ liệu: UDP (nhanh, dễ mất dữ liệu), WebSocket (kết nối liên tục, hợp game đối kháng) và HTTP Polling (gửi yêu cầu liên tục, tốn tài nguyên).
 
-#### Nói về Docker và Ảo hóa
-* Huỳnh Nguyễn Quốc Bảo trình bày các kiến thức cốt lõi về công nghệ Docker.
-* Giải thích cơ chế ảo hóa thực tế: Cách chạy môi trường Linux trên Windows và ngược lại để đồng bộ hóa môi trường phát triển.
+#### Docker và ảo hóa đa nền tảng
+* Giới thiệu cơ bản về Container và máy ảo.
+* Demo cách dùng Docker để chạy code mượt mà trên cả Windows, MacOS và Linux mà không bị lỗi môi trường.
 
-#### Chia sẻ về GraphRAG trên AWS
-* Anh Việt Phát giải thích những khái niệm nền tảng về công nghệ RAG (Retrieval-Augmented Generation).
-* Phân tích sâu hơn cách triển khai kiến trúc GraphRAG trực tiếp trên AWS để nâng cao độ chính xác của AI.
+#### GraphRAG trên AWS
+* Khái niệm cơ bản về RAG (tìm kiếm thông tin bổ sung cho AI).
+* Cách dùng cơ sở dữ liệu đồ thị kết hợp với AI để giúp AI trả lời các câu hỏi phức tạp chính xác hơn.
 
-#### Nội dung từ AWS STUDY GROUP
-* Phần thông tin và các bài viết công nghệ hữu ích được Lê Hoàng Gia Đại đúc kết và chia sẻ từ cộng đồng AWS STUDY GROUP FCJ.
-
-#### From IT Helpdesk To Senior Sysadmin
-* Anh Trần Trung Vinh chia sẻ quá trình nỗ lực vươn lên thành Sysadmin xuất sắc từ một xuất phát điểm không thuận lợi (bắt đầu với vị trí IT Helpdesk).
-* Chia sẻ các tình huống (case study) thực tế cực kỳ giá trị từng gặp phải trong quá trình vận hành hệ thống thực tế.
-* Vạch ra lộ trình (roadmap) chi tiết để phát triển sự nghiệp vững chắc trong mảng Sysadmin.
+#### Hành trình từ IT Helpdesk lên Senior Sysadmin
+* Câu chuyện thực tế từ việc làm hỗ trợ kỹ thuật đến lúc quản lý hệ thống lớn của diễn giả.
+* Cách xử lý khi hệ thống gặp sự cố lớn (sập mạng, nghẽn mạng) dưới áp lực công việc.
+* Lộ trình học tập và thi các chứng chỉ AWS cần thiết.
 
 ### Những Gì Học Được
 
-* Hiểu rõ hơn về các giao thức kết nối (UDP, WebSocket, HTTP Polling), từ đó biết cách lựa chọn kiến trúc mạng tối ưu cho các dự án ứng dụng thực tế.
-* Nắm bắt sâu hơn về Docker và cách cấu hình môi trường ảo hóa, hỗ trợ trực tiếp cho việc cấu trúc và triển khai monorepo gồm các dịch vụ backend và frontend cho đồ án tốt nghiệp.
-* Bổ sung kiến thức về RAG, GraphRAG và các xu hướng ứng dụng AI trên nền tảng đám mây AWS.
-* Học được tư duy giải quyết sự cố hệ thống thông qua các case study thực tế từ doanh nghiệp.
-* Có thêm định hướng rõ ràng và động lực phát triển chuyên môn nhờ vào roadmap của vị trí Sysadmin.
+* Hiểu hơn về các giao thức mạng để áp dụng WebSocket cho game Battleship của em.
+* Biết cách dùng Docker để đóng gói code, giúp chạy backend và frontend đồng bộ hơn.
+* Học thêm kiến thức mới về RAG và AI trên đám mây.
+* Học cách bình tĩnh tìm lỗi (log) khi hệ thống gặp sự cố.
 
 ### Trải nghiệm trong event
 
-Sự kiện mang lại những kiến thức công nghệ thực chiến rất bám sát với định hướng kỹ thuật phần mềm. Các phần chia sẻ đi từ tổng quan kiến trúc mạng, ảo hóa, đến các tình huống vận hành hệ thống thực tế giúp bản thân có cái nhìn toàn diện hơn. Đặc biệt ấn tượng với các kiến thức về Docker và giao thức kết nối mạng, đây là những công cụ vô cùng thiết thực để áp dụng ngay vào việc tối ưu mã nguồn và triển khai sản phẩm trong giai đoạn năm cuối.
+Buổi chia sẻ mang lại nhiều kiến thức thực tế rất bổ ích. Em học được nhiều kinh nghiệm thực tế từ các diễn giả, đặc biệt là phần demo Docker và lộ trình nghề nghiệp Sysadmin. Những điều này giúp em có thêm động lực hoàn thiện dự án thực tập tốt hơn.
 
 ### Hình ảnh tham gia sự kiện
 

@@ -17,14 +17,14 @@ pre: " <b> 1.6. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | ---- | ---------- | --------------- |
-| 2 | - **Research:** Learn how login works in AWS Cognito (User Pools) <br> - **Implementation:** Create and configure a Cognito User Pool; design Registration (`Register.jsx`) and Login (`Login.jsx`) interfaces; install the Amplify SDK to connect interfaces with Cognito and call authentication functions (`registerUser`, `confirmRegister`, `loginUser`) | 06/08/2026 | 06/08/2026 |
-| 3 | - **Research:** Learn how to set up Google and Facebook login on Cognito <br> - **Implementation:** Set up App Registrations on Google Cloud Console and Facebook Developers; configure Cognito Identity Providers and call `loginWithSocialProvider` to enable Google and Facebook login | 06/09/2026 | 06/09/2026 |
-| 4 | - **Research:** Learn how to use Lambda and API Gateway for serverless backend <br> - **Implementation:** Create a REST API on API Gateway; write and configure Lambda function to retrieve player profile details (`getUser.js`) | 06/10/2026 | 06/10/2026 |
-| 5 | - **Research:** Learn how to save and manage user data in DynamoDB <br> - **Implementation:** Create a DynamoDB table for player profiles; write a Lambda function (`createUser.js`) connected to DynamoDB to automatically save user details right after successful signup | 06/11/2026 | 06/11/2026 |
-| 6 | - **Research:** Learn how to prepare and size images of warships for the game <br> - **Implementation:** Create images for the first 4 warships; add these images to the code and display them on the Player vs AI board | 06/12/2026 | 06/12/2026 |
-| 7 | - **Research:** Learn how grid coordinates work and how to handle drag-and-drop for images <br> - **Implementation:** Test and fix issues with ship rotation (`rotateShip` / `handleRotate`), dragging and dropping (`dragStart`, `dragOver`, `drop`), and placing ships onto the grid (`isValidPlacement`) to make board setup smoother | 06/13/2026 | 06/14/2026 |
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Configure AWS Cognito (User Pools) for user management <br> - Create and configure a Cognito User Pool; design Registration (`Register.jsx`) and Login (`Login.jsx`) interfaces; install the Amplify SDK to connect interfaces with Cognito and call authentication functions (`registerUser`, `confirmRegister`, `loginUser`) | 06/08/2026 | 06/08/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Integrate Google and Facebook login on Cognito <br> - Set up App Registrations on Google Cloud Console and Facebook Developers; configure Cognito Identity Providers and call `loginWithSocialProvider` to enable Google and Facebook login | 06/09/2026 | 06/09/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Implement serverless backend using AWS Lambda and API Gateway <br> - Create a REST API on API Gateway; write and configure Lambda function to retrieve player profile details (`getUser.js`) | 06/10/2026 | 06/10/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Configure DynamoDB table to save and manage user data <br> - Create a DynamoDB table for player profiles; write a Lambda function (`createUser.js`) connected to DynamoDB to automatically save user details right after successful signup | 06/11/2026 | 06/11/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Prepare and optimize images of warships for the game <br> - Create images for the first 4 warships; add these images to the code and display them on the Player vs AI board | 06/12/2026 | 06/12/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Implement grid coordinates and drag-and-drop mechanics for warships <br> - Test and fix issues with ship rotation (`rotateShip` / `handleRotate`), dragging and dropping (`dragStart`, `dragOver`, `drop`), and placing ships onto the grid (`isValidPlacement`) to make board setup smoother | 06/13/2026 | 06/14/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Week 6 Achievements:
 
